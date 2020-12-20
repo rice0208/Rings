@@ -1,6 +1,6 @@
 /*
     Copyright rice0208(2020) in GitHub
-    Style Sheet v0.1.3-beta (css)
+    Style Sheet v0.1.4-beta (css)
     (Rings stands for 'Rings Is Not Garbage Stuff')
 */
 html,
@@ -635,23 +635,219 @@ table tbody td.figure {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
   text-align: right !important;
 }
-table .table-justified td,
-table .table-justified th {
+table.table-justified td,
+table.table-justified th {
   flex: 1!important;
 }
-table .gray-dark th {
+table.gray-dark th {
   background-color: #303030 !important;
-  color: #e0e0e0 !important;
+  color: #ffffff !important;
 }
-table .c4c .gray-dark tbody > td,
-table .c4c .gray-dark > td {
+table.blue-dark th {
+  background-color: #001D3F !important;
+  color: #ffffff !important;
+}
+table.red-dark th {
+  background-color: #90162C !important;
+  color: #ffffff !important;
+}
+table.yellow-dark th {
+  background-color: #a17e17 !important;
+  color: #ffffff !important;
+}
+table.green-dark th {
+  background-color: #073D08 !important;
+  color: #ffffff !important;
+}
+table.cyan-dark th {
+  background-color: #055251 !important;
+  color: #ffffff !important;
+}
+table.gray-light th {
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+}
+table.blue-light th {
+  background-color: #55ccFF !important;
+  color: #ffffff !important;
+}
+table.red-light th {
+  background-color: #ff8888 !important;
+  color: #ffffff !important;
+}
+table.yellow-light th {
+  background-color: #FFFF88 !important;
+  color: #000000 !important;
+}
+table.green-light th {
+  background-color: #88FF88 !important;
+  color: #ffffff !important;
+}
+table.cyan-light th {
+  background-color: #12FEFF !important;
+  color: #ffffff !important;
+}
+table.c4c.gray-dark tbody > td,
+table.c4c.gray-light tbody > td,
+table.c4c.gray-dark > td,
+table.c4c.gray-light > td {
   background-color: #707070 !important;
-  color: #e0e0e0 !important;
+  color: #ffffff !important;
 }
-table .cc4c .gray-dark tbody > td,
-table .cc4c .gray-dark tbody > td + td {
-  background-color: var(--gray-3) !important;
-  color: var(--light-2) !important;
+table.c4c.blue-dark tbody > td,
+table.c4c.blue-light tbody > td,
+table.c4c.blue-dark > td,
+table.c4c.blue-light > td {
+  background-color: #0365d9 !important;
+  color: #ffffff !important;
+}
+table.c4c.red-dark tbody > td,
+table.c4c.red-light tbody > td,
+table.c4c.red-dark > td,
+table.c4c.red-light > td {
+  background-color: #dd2244 !important;
+  color: #ffffff !important;
+}
+table.c4c.yellow-dark tbody > td,
+table.c4c.yellow-light tbody > td,
+table.c4c.yellow-dark > td,
+table.c4c.yellow-light > td {
+  background-color: #eebb22 !important;
+  color: #000000 !important;
+}
+table.c4c.green-dark tbody > td,
+table.c4c.green-light tbody > td,
+table.c4c.green-dark > td,
+table.c4c.green-light > td {
+  background-color: #108a12 !important;
+  color: #ffffff !important;
+}
+table.c4c.cyan-dark tbody > td,
+table.c4c.cyan-light tbody > td,
+table.c4c.cyan-dark > td,
+table.c4c.cyan-light > td {
+  background-color: #0a9f9e !important;
+  color: #ffffff !important;
+}
+table .cc4c.gray-dark tbody > td,
+table .cc4c.gray-dark > td {
+  background-color: #707070;
+  color: #ffffff;
+}
+table .cc4c.gray-dark tbody > td + td,
+table .cc4c.gray-dark > td + td {
+  background-color: #606060;
+  color: #ffffff;
+}
+table .cc4c.blue-dark tbody > td,
+table .cc4c.blue-dark > td {
+  background-color: #0365d9;
+  color: #ffffff;
+}
+table .cc4c.blue-dark tbody > td + td,
+table .cc4c.blue-dark > td + td {
+  background-color: #024DA5;
+  color: #ffffff;
+}
+table .cc4c.red-dark tbody > td,
+table .cc4c.red-dark > td {
+  background-color: #dd2244;
+  color: #ffffff;
+}
+table .cc4c.red-dark tbody > td + td,
+table .cc4c.red-dark > td + td {
+  background-color: #AA1A34;
+  color: #ffffff;
+}
+table .cc4c.yellow-dark tbody > td,
+table .cc4c.yellow-dark > td {
+  background-color: #eebb22;
+  color: #000000;
+}
+table .cc4c.yellow-dark tbody > td + td,
+table .cc4c.yellow-dark > td + td {
+  background-color: #BB921A;
+  color: #000000;
+}
+table .cc4c.green-dark tbody > td,
+table .cc4c.green-dark > td {
+  background-color: #108a12;
+  color: #ffffff;
+}
+table .cc4c.green-dark tbody > td + td,
+table .cc4c.green-dark > td + td {
+  background-color: #0A560B;
+  color: #ffffff;
+}
+table .cc4c.cyan-dark tbody > td,
+table .cc4c.cyan-dark > td {
+  background-color: #0a9f9e;
+  color: #ffffff;
+}
+table .cc4c.cyan-dark tbody > td + td,
+table .cc4c.cyan-dark > td + td {
+  background-color: #066C6B;
+  color: #ffffff;
+}
+table .cc4c.gray-light tbody > td,
+table .cc4c.gray-light > td {
+  background-color: #707070;
+  color: #ffffff;
+}
+table .cc4c.gray-light tbody > td + td,
+table .cc4c.gray-light > td + td {
+  background-color: #808080;
+  color: #ffffff;
+}
+table .cc4c.blue-light tbody > td,
+table .cc4c.blue-light > td {
+  background-color: #0365d9;
+  color: #ffffff;
+}
+table .cc4c.blue-light tbody > td + td,
+table .cc4c.blue-light > td + td {
+  background-color: #02A0FF;
+  color: #ffffff;
+}
+table .cc4c.red-light tbody > td,
+table .cc4c.red-light > td {
+  background-color: #dd2244;
+  color: #ffffff;
+}
+table .cc4c.red-light tbody > td + td,
+table .cc4c.red-light > td + td {
+  background-color: #E72043;
+  color: #ffffff;
+}
+table .cc4c.yellow-light tbody > td,
+table .cc4c.yellow-light > td {
+  background-color: #eebb22;
+  color: #000000;
+}
+table .cc4c.yellow-light tbody > td + td,
+table .cc4c.yellow-light > td + td {
+  background-color: #FFD624;
+  color: #000000;
+}
+table .cc4c.green-light tbody > td,
+table .cc4c.green-light > td {
+  background-color: #108a12;
+  color: #ffffff;
+}
+table .cc4c.green-light tbody > td + td,
+table .cc4c.green-light > td + td {
+  background-color: #14B016;
+  color: #ffffff;
+}
+table .cc4c.cyan-light tbody > td,
+table .cc4c.cyan-light > td {
+  background-color: #0a9f9e;
+  color: #ffffff;
+}
+table .cc4c.cyan-light tbody > td + td,
+table .cc4c.cyan-light > td + td {
+  background-color: #0CA9A4;
+  color: #ffffff;
 }
 table .c2c td,
 table .c2c th {
