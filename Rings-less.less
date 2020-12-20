@@ -402,18 +402,9 @@ table{
             color: @color;
         }
     }
-    &.gray-dark{ .table-th-theme(@dark-3, @light-4)!important }
-    &.blue-dark{ .table-th-theme(@blue-1, @light-4)!important }
-    &.red-dark{ .table-th-theme(@danger-1, @light-4)!important }
-    &.yellow-dark{ .table-th-theme(@warning-1, @light-4)!important }
-    &.green-dark{ .table-th-theme(@ok-1, @light-4)!important }
-    &.cyan-dark{ .table-th-theme(@info-1, @light-4)!important }
-    &.gray-light{ .table-th-theme(@light-0, @dark-0)!important }
-    &.blue-light{ .table-th-theme(@blue-6, @light-4)!important }
-    &.red-light{ .table-th-theme(@danger-6, @light-4)!important }
-    &.yellow-light{ .table-th-theme(@warning-6, @dark-0)!important }
-    &.green-light{ .table-th-theme(@ok-6, @light-4)!important }
-    &.cyan-light{ .table-th-theme(@info-6, @light-4)!important }
+    &.gray-dark{ .table-th-theme(@dark-3, @light-4) }
+    &.blue-dark{ .table-th-theme(@blue-1, @light-4) }
+    &.red-dark{ .table-th-theme(@danger-1, @light-4) }
     &.c4c{
         .c4c-str(@bg,@color){
             tbody>td,>td{
@@ -421,36 +412,17 @@ table{
                 color:@color;
             }
         }
-        &.gray-dark,&.gray-light{ .c4c-str(@gray-3,@light-4)!important }
-        &.blue-dark,&.blue-light{ .c4c-str(@blue-3,@light-4)!important }
-        &.red-dark,&.red-light{ .c4c-str(@danger-3,@light-4)!important }
-        &.yellow-dark,&.yellow-light{ .c4c-str(@warning-3,@dark-0)!important }
-        &.green-dark,&.green-light{ .c4c-str(@ok-3,@light-4)!important }
-        &.cyan-dark,&.cyan-light{ .c4c-str(@info-3,@light-4)!important }
+        &.gray-dark{ .c4c-str(@gray-3,@light-4) }
+        &.blue-dark{ .c4c-str(@blue-3,@light-4) }
+        &.red-dark{ .c4c-str(@danger-3,@light-4) }
     }
     .cc4c{
-        .cc4c-str(@bg-1,@bg-2,@color){
-            tbody>td,>td{
-                background-color:@bg-1;
-                color:@color;
-            }
-            tbody>td+td,>td+td{
-                background-color:@bg-2;
-                color:@color;
+        .gray-dark{
+            tbody>td,tbody>td+td{
+                background-color: var(--gray-3) !important;
+                color: var(--light-2) !important;
             }
         }
-        &.gray-dark{ .cc4c-str(@gray-3,@gray-2,@light-4)!important }
-        &.blue-dark{ .cc4c-str(@blue-3,@blue-2,@light-4)!important }
-        &.red-dark{ .cc4c-str(@danger-3,@danger-2,@light-4)!important }
-        &.yellow-dark{ .cc4c-str(@warning-3,@warning-2,@dark-0)!important }
-        &.green-dark{ .cc4c-str(@ok-3,@ok-2,@light-4)!important }
-        &.cyan-dark{ .cc4c-str(@info-3,@info-2,@light-4)!important }
-        &.gray-light{ .cc4c-str(@gray-3,@gray-4,@light-4)!important }
-        &.blue-light{ .cc4c-str(@blue-3,@blue-4,@light-4)!important }
-        &.red-light{ .cc4c-str(@danger-3,@danger-4,@light-4)!important }
-        &.yellow-light{ .cc4c-str(@warning-3,@warning-4,@dark-0)!important }
-        &.green-light{ .cc4c-str(@ok-3,@ok-4,@light-4)!important }
-        &.cyan-light{ .cc4c-str(@info-3,@info-4,@light-4)!important }
     }
     .c2c{
         td,th{
@@ -458,6 +430,9 @@ table{
             &.main{ .flex(8); }
             &.sub{ .flex(4); }
         }
+    }
+    .{
+
     }
 }
 code{
