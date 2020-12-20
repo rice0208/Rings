@@ -402,33 +402,33 @@ table{
             color: @color;
         }
     }
-    &.gray-dark{ .table-th-theme(@dark-3, @light-4)!important }
-    &.blue-dark{ .table-th-theme(@blue-1, @light-4)!important }
-    &.red-dark{ .table-th-theme(@danger-1, @light-4)!important }
-    &.yellow-dark{ .table-th-theme(@warning-1, @light-4)!important }
-    &.green-dark{ .table-th-theme(@ok-1, @light-4)!important }
-    &.cyan-dark{ .table-th-theme(@info-1, @light-4)!important }
-    &.gray-light{ .table-th-theme(@light-0, @dark-0)!important }
-    &.blue-light{ .table-th-theme(@blue-6, @light-4)!important }
-    &.red-light{ .table-th-theme(@danger-6, @light-4)!important }
-    &.yellow-light{ .table-th-theme(@warning-6, @dark-0)!important }
-    &.green-light{ .table-th-theme(@ok-6, @light-4)!important }
-    &.cyan-light{ .table-th-theme(@info-6, @light-4)!important }
-    &.c4c{
+    &.table-gray-dark{ .table-th-theme(@dark-3, @light-4)!important }
+    &.table-blue-dark{ .table-th-theme(@blue-1, @light-4)!important }
+    &.table-red-dark{ .table-th-theme(@danger-1, @light-4)!important }
+    &.table-yellow-dark{ .table-th-theme(@warning-1, @light-4)!important }
+    &.table-green-dark{ .table-th-theme(@ok-1, @light-4)!important }
+    &.table-cyan-dark{ .table-th-theme(@info-1, @light-4)!important }
+    &.table-gray-light{ .table-th-theme(@light-0, @dark-0)!important }
+    &.table-blue-light{ .table-th-theme(@blue-6, @light-4)!important }
+    &.table-red-light{ .table-th-theme(@danger-6, @light-4)!important }
+    &.table-yellow-light{ .table-th-theme(@warning-6, @dark-0)!important }
+    &.table-green-light{ .table-th-theme(@ok-6, @light-4)!important }
+    &.table-cyan-light{ .table-th-theme(@info-6, @light-4)!important }
+    &.table-c4c{
         .c4c-str(@bg,@color){
             tbody>td,>td{
                 background-color:@bg;
                 color:@color;
             }
         }
-        &.gray-dark,&.gray-light{ .c4c-str(@gray-3,@light-4)!important }
-        &.blue-dark,&.blue-light{ .c4c-str(@blue-3,@light-4)!important }
-        &.red-dark,&.red-light{ .c4c-str(@danger-3,@light-4)!important }
-        &.yellow-dark,&.yellow-light{ .c4c-str(@warning-3,@dark-0)!important }
-        &.green-dark,&.green-light{ .c4c-str(@ok-3,@light-4)!important }
-        &.cyan-dark,&.cyan-light{ .c4c-str(@info-3,@light-4)!important }
+        &.table-gray-dark,&.gray-light{ .c4c-str(@gray-3,@light-4)!important }
+        &.table-blue-dark,&.blue-light{ .c4c-str(@blue-3,@light-4)!important }
+        &.table-red-dark,&.red-light{ .c4c-str(@danger-3,@light-4)!important }
+        &.table-yellow-dark,&.yellow-light{ .c4c-str(@warning-3,@dark-0)!important }
+        &.table-green-dark,&.green-light{ .c4c-str(@ok-3,@light-4)!important }
+        &.table-cyan-dark,&.cyan-light{ .c4c-str(@info-3,@light-4)!important }
     }
-    .cc4c{
+    &.table-cc4c{
         .cc4c-str(@bg-1,@bg-2,@color){
             tbody>td,>td{
                 background-color:@bg-1;
@@ -439,25 +439,63 @@ table{
                 color:@color;
             }
         }
-        &.gray-dark{ .cc4c-str(@gray-3,@gray-2,@light-4) }
-        &.blue-dark{ .cc4c-str(@blue-3,@blue-2,@light-4) }
-        &.red-dark{ .cc4c-str(@danger-3,@danger-2,@light-4) }
-        &.yellow-dark{ .cc4c-str(@warning-3,@warning-2,@dark-0) }
-        &.green-dark{ .cc4c-str(@ok-3,@ok-2,@light-4) }
-        &.cyan-dark{ .cc4c-str(@info-3,@info-2,@light-4) }
-        &.gray-light{ .cc4c-str(@gray-3,@gray-4,@light-4) }
-        &.blue-light{ .cc4c-str(@blue-3,@blue-4,@light-4) }
-        &.red-light{ .cc4c-str(@danger-3,@danger-4,@light-4) }
-        &.yellow-light{ .cc4c-str(@warning-3,@warning-4,@dark-0) }
-        &.green-light{ .cc4c-str(@ok-3,@ok-4,@light-4) }
-        &.cyan-light{ .cc4c-str(@info-3,@info-4,@light-4) }
+        &.table-gray-dark{ .cc4c-str(@gray-3,@gray-2,@light-4) }
+        &.table-blue-dark{ .cc4c-str(@blue-3,@blue-2,@light-4) }
+        &.table-red-dark{ .cc4c-str(@danger-3,@danger-2,@light-4) }
+        &.table-yellow-dark{ .cc4c-str(@warning-3,@warning-2,@dark-0) }
+        &.table-green-dark{ .cc4c-str(@ok-3,@ok-2,@light-4) }
+        &.table-cyan-dark{ .cc4c-str(@info-3,@info-2,@light-4) }
+        &.table-gray-light{ .cc4c-str(@gray-3,@gray-4,@light-4) }
+        &.table-blue-light{ .cc4c-str(@blue-3,@blue-4,@light-4) }
+        &.table-red-light{ .cc4c-str(@danger-3,@danger-4,@light-4) }
+        &.table-yellow-light{ .cc4c-str(@warning-3,@warning-4,@dark-0) }
+        &.table-green-light{ .cc4c-str(@ok-3,@ok-4,@light-4) }
+        &.table-cyan-light{ .cc4c-str(@info-3,@info-4,@light-4) }
     }
-    .c2c{
+    &.table-c2c{
         td,th{
             .flex(6);
             &.main{ .flex(8); }
             &.sub{ .flex(4); }
         }
+    }
+    &.table-striped{
+        .table-striped-style(@bg){
+            tr:nth-of-type(odd){
+                background-color:@bg;
+                color:inherit;
+            }
+        }
+        &.table-gray-dark,&.gray-light{ .table-striped-style(@gray-9)!important }
+        &.table-blue-dark,&.blue-light{ .table-striped-style(@blue-8)!important }
+        &.table-red-dark,&.red-light{ .table-striped-style(@danger-8)!important }
+        &.table-yellow-dark,&.yellow-light{ .table-striped-style(@warning-9)!important }
+        &.table-green-dark,&.green-light{ .table-striped-style(@ok-9)!important }
+        &.table-cyan-dark,&.cyan-light{ .table-striped-style(@info-9)!important }
+    }
+    &.table-active{
+        .active-line(@bg){
+            tr:hover{
+                background-color:@bg;
+            }
+        }
+        .active-cell(@bg){
+            td,th{
+                &:hover{
+                    background-color:@bg;
+                }
+            }
+        }
+        .active-table-style(@line,@cell){
+            .active-line(@line);
+            .active-cell(@cell);
+        }
+        &.table-gray-dark,&.gray-light{ .active-table-style(@gray-8,@gray-9)!important }
+        &.table-blue-dark,&.blue-light{ .active-table-style(@blue-8,@blue-9)!important }
+        &.table-red-dark,&.red-light{ .active-table-style(@danger-8,@danger-9)!important }
+        &.table-yellow-dark,&.yellow-light{ .active-table-style(@warning-8,@warning-9)!important }
+        &.table-green-dark,&.green-light{ .active-table-style(@ok-8,@ok-9)!important }
+        &.table-cyan-dark,&.cyan-light{ .active-table-style(@info-8,@info-9)!important }
     }
 }
 code{

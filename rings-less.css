@@ -639,236 +639,326 @@ table.table-justified td,
 table.table-justified th {
   flex: 1!important;
 }
-table.gray-dark th {
+table.table-gray-dark th {
   background-color: #303030 !important;
   color: #ffffff !important;
 }
-table.blue-dark th {
+table.table-blue-dark th {
   background-color: #001D3F !important;
   color: #ffffff !important;
 }
-table.red-dark th {
+table.table-red-dark th {
   background-color: #90162C !important;
   color: #ffffff !important;
 }
-table.yellow-dark th {
+table.table-yellow-dark th {
   background-color: #a17e17 !important;
   color: #ffffff !important;
 }
-table.green-dark th {
+table.table-green-dark th {
   background-color: #073D08 !important;
   color: #ffffff !important;
 }
-table.cyan-dark th {
+table.table-cyan-dark th {
   background-color: #055251 !important;
   color: #ffffff !important;
 }
-table.gray-light th {
+table.table-gray-light th {
   background-color: #c0c0c0 !important;
   color: #000000 !important;
 }
-table.blue-light th {
+table.table-blue-light th {
   background-color: #55ccFF !important;
   color: #ffffff !important;
 }
-table.red-light th {
+table.table-red-light th {
   background-color: #ff8888 !important;
   color: #ffffff !important;
 }
-table.yellow-light th {
+table.table-yellow-light th {
   background-color: #FFFF88 !important;
   color: #000000 !important;
 }
-table.green-light th {
+table.table-green-light th {
   background-color: #88FF88 !important;
   color: #ffffff !important;
 }
-table.cyan-light th {
+table.table-cyan-light th {
   background-color: #12FEFF !important;
   color: #ffffff !important;
 }
-table.c4c.gray-dark tbody > td,
-table.c4c.gray-light tbody > td,
-table.c4c.gray-dark > td,
-table.c4c.gray-light > td {
+table.table-c4c.table-gray-dark tbody > td,
+table.table-c4c.gray-light tbody > td,
+table.table-c4c.table-gray-dark > td,
+table.table-c4c.gray-light > td {
   background-color: #707070 !important;
   color: #ffffff !important;
 }
-table.c4c.blue-dark tbody > td,
-table.c4c.blue-light tbody > td,
-table.c4c.blue-dark > td,
-table.c4c.blue-light > td {
+table.table-c4c.table-blue-dark tbody > td,
+table.table-c4c.blue-light tbody > td,
+table.table-c4c.table-blue-dark > td,
+table.table-c4c.blue-light > td {
   background-color: #0365d9 !important;
   color: #ffffff !important;
 }
-table.c4c.red-dark tbody > td,
-table.c4c.red-light tbody > td,
-table.c4c.red-dark > td,
-table.c4c.red-light > td {
+table.table-c4c.table-red-dark tbody > td,
+table.table-c4c.red-light tbody > td,
+table.table-c4c.table-red-dark > td,
+table.table-c4c.red-light > td {
   background-color: #dd2244 !important;
   color: #ffffff !important;
 }
-table.c4c.yellow-dark tbody > td,
-table.c4c.yellow-light tbody > td,
-table.c4c.yellow-dark > td,
-table.c4c.yellow-light > td {
+table.table-c4c.table-yellow-dark tbody > td,
+table.table-c4c.yellow-light tbody > td,
+table.table-c4c.table-yellow-dark > td,
+table.table-c4c.yellow-light > td {
   background-color: #eebb22 !important;
   color: #000000 !important;
 }
-table.c4c.green-dark tbody > td,
-table.c4c.green-light tbody > td,
-table.c4c.green-dark > td,
-table.c4c.green-light > td {
+table.table-c4c.table-green-dark tbody > td,
+table.table-c4c.green-light tbody > td,
+table.table-c4c.table-green-dark > td,
+table.table-c4c.green-light > td {
   background-color: #108a12 !important;
   color: #ffffff !important;
 }
-table.c4c.cyan-dark tbody > td,
-table.c4c.cyan-light tbody > td,
-table.c4c.cyan-dark > td,
-table.c4c.cyan-light > td {
+table.table-c4c.table-cyan-dark tbody > td,
+table.table-c4c.cyan-light tbody > td,
+table.table-c4c.table-cyan-dark > td,
+table.table-c4c.cyan-light > td {
   background-color: #0a9f9e !important;
   color: #ffffff !important;
 }
-table .cc4c.gray-dark tbody > td,
-table .cc4c.gray-dark > td {
+table.table-cc4c.table-gray-dark tbody > td,
+table.table-cc4c.table-gray-dark > td {
   background-color: #707070;
   color: #ffffff;
 }
-table .cc4c.gray-dark tbody > td + td,
-table .cc4c.gray-dark > td + td {
+table.table-cc4c.table-gray-dark tbody > td + td,
+table.table-cc4c.table-gray-dark > td + td {
   background-color: #606060;
   color: #ffffff;
 }
-table .cc4c.blue-dark tbody > td,
-table .cc4c.blue-dark > td {
+table.table-cc4c.table-blue-dark tbody > td,
+table.table-cc4c.table-blue-dark > td {
   background-color: #0365d9;
   color: #ffffff;
 }
-table .cc4c.blue-dark tbody > td + td,
-table .cc4c.blue-dark > td + td {
+table.table-cc4c.table-blue-dark tbody > td + td,
+table.table-cc4c.table-blue-dark > td + td {
   background-color: #024DA5;
   color: #ffffff;
 }
-table .cc4c.red-dark tbody > td,
-table .cc4c.red-dark > td {
+table.table-cc4c.table-red-dark tbody > td,
+table.table-cc4c.table-red-dark > td {
   background-color: #dd2244;
   color: #ffffff;
 }
-table .cc4c.red-dark tbody > td + td,
-table .cc4c.red-dark > td + td {
+table.table-cc4c.table-red-dark tbody > td + td,
+table.table-cc4c.table-red-dark > td + td {
   background-color: #AA1A34;
   color: #ffffff;
 }
-table .cc4c.yellow-dark tbody > td,
-table .cc4c.yellow-dark > td {
+table.table-cc4c.table-yellow-dark tbody > td,
+table.table-cc4c.table-yellow-dark > td {
   background-color: #eebb22;
   color: #000000;
 }
-table .cc4c.yellow-dark tbody > td + td,
-table .cc4c.yellow-dark > td + td {
+table.table-cc4c.table-yellow-dark tbody > td + td,
+table.table-cc4c.table-yellow-dark > td + td {
   background-color: #BB921A;
   color: #000000;
 }
-table .cc4c.green-dark tbody > td,
-table .cc4c.green-dark > td {
+table.table-cc4c.table-green-dark tbody > td,
+table.table-cc4c.table-green-dark > td {
   background-color: #108a12;
   color: #ffffff;
 }
-table .cc4c.green-dark tbody > td + td,
-table .cc4c.green-dark > td + td {
+table.table-cc4c.table-green-dark tbody > td + td,
+table.table-cc4c.table-green-dark > td + td {
   background-color: #0A560B;
   color: #ffffff;
 }
-table .cc4c.cyan-dark tbody > td,
-table .cc4c.cyan-dark > td {
+table.table-cc4c.table-cyan-dark tbody > td,
+table.table-cc4c.table-cyan-dark > td {
   background-color: #0a9f9e;
   color: #ffffff;
 }
-table .cc4c.cyan-dark tbody > td + td,
-table .cc4c.cyan-dark > td + td {
+table.table-cc4c.table-cyan-dark tbody > td + td,
+table.table-cc4c.table-cyan-dark > td + td {
   background-color: #066C6B;
   color: #ffffff;
 }
-table .cc4c.gray-light tbody > td,
-table .cc4c.gray-light > td {
+table.table-cc4c.table-gray-light tbody > td,
+table.table-cc4c.table-gray-light > td {
   background-color: #707070;
   color: #ffffff;
 }
-table .cc4c.gray-light tbody > td + td,
-table .cc4c.gray-light > td + td {
+table.table-cc4c.table-gray-light tbody > td + td,
+table.table-cc4c.table-gray-light > td + td {
   background-color: #808080;
   color: #ffffff;
 }
-table .cc4c.blue-light tbody > td,
-table .cc4c.blue-light > td {
+table.table-cc4c.table-blue-light tbody > td,
+table.table-cc4c.table-blue-light > td {
   background-color: #0365d9;
   color: #ffffff;
 }
-table .cc4c.blue-light tbody > td + td,
-table .cc4c.blue-light > td + td {
+table.table-cc4c.table-blue-light tbody > td + td,
+table.table-cc4c.table-blue-light > td + td {
   background-color: #02A0FF;
   color: #ffffff;
 }
-table .cc4c.red-light tbody > td,
-table .cc4c.red-light > td {
+table.table-cc4c.table-red-light tbody > td,
+table.table-cc4c.table-red-light > td {
   background-color: #dd2244;
   color: #ffffff;
 }
-table .cc4c.red-light tbody > td + td,
-table .cc4c.red-light > td + td {
+table.table-cc4c.table-red-light tbody > td + td,
+table.table-cc4c.table-red-light > td + td {
   background-color: #E72043;
   color: #ffffff;
 }
-table .cc4c.yellow-light tbody > td,
-table .cc4c.yellow-light > td {
+table.table-cc4c.table-yellow-light tbody > td,
+table.table-cc4c.table-yellow-light > td {
   background-color: #eebb22;
   color: #000000;
 }
-table .cc4c.yellow-light tbody > td + td,
-table .cc4c.yellow-light > td + td {
+table.table-cc4c.table-yellow-light tbody > td + td,
+table.table-cc4c.table-yellow-light > td + td {
   background-color: #FFD624;
   color: #000000;
 }
-table .cc4c.green-light tbody > td,
-table .cc4c.green-light > td {
+table.table-cc4c.table-green-light tbody > td,
+table.table-cc4c.table-green-light > td {
   background-color: #108a12;
   color: #ffffff;
 }
-table .cc4c.green-light tbody > td + td,
-table .cc4c.green-light > td + td {
+table.table-cc4c.table-green-light tbody > td + td,
+table.table-cc4c.table-green-light > td + td {
   background-color: #14B016;
   color: #ffffff;
 }
-table .cc4c.cyan-light tbody > td,
-table .cc4c.cyan-light > td {
+table.table-cc4c.table-cyan-light tbody > td,
+table.table-cc4c.table-cyan-light > td {
   background-color: #0a9f9e;
   color: #ffffff;
 }
-table .cc4c.cyan-light tbody > td + td,
-table .cc4c.cyan-light > td + td {
+table.table-cc4c.table-cyan-light tbody > td + td,
+table.table-cc4c.table-cyan-light > td + td {
   background-color: #0CA9A4;
   color: #ffffff;
 }
-table .c2c td,
-table .c2c th {
+table.table-c2c td,
+table.table-c2c th {
   flex: 6;
   -ms-flex: 6;
   -webkit-flex: 6;
   -moz-flex: 6;
 }
-table .c2c td.main,
-table .c2c th.main {
+table.table-c2c td.main,
+table.table-c2c th.main {
   flex: 8;
   -ms-flex: 8;
   -webkit-flex: 8;
   -moz-flex: 8;
 }
-table .c2c td.sub,
-table .c2c th.sub {
+table.table-c2c td.sub,
+table.table-c2c th.sub {
   flex: 4;
   -ms-flex: 4;
   -webkit-flex: 4;
   -moz-flex: 4;
+}
+table.table-striped.table-gray-dark tr:nth-of-type(odd),
+table.table-striped.gray-light tr:nth-of-type(odd) {
+  background-color: #70707080 !important;
+  color: inherit !important;
+}
+table.table-striped.table-blue-dark tr:nth-of-type(odd),
+table.table-striped.blue-light tr:nth-of-type(odd) {
+  background-color: #0365d930 !important;
+  color: inherit !important;
+}
+table.table-striped.table-red-dark tr:nth-of-type(odd),
+table.table-striped.red-light tr:nth-of-type(odd) {
+  background-color: #dd224430 !important;
+  color: inherit !important;
+}
+table.table-striped.table-yellow-dark tr:nth-of-type(odd),
+table.table-striped.yellow-light tr:nth-of-type(odd) {
+  background-color: #eebb2280 !important;
+  color: inherit !important;
+}
+table.table-striped.table-green-dark tr:nth-of-type(odd),
+table.table-striped.green-light tr:nth-of-type(odd) {
+  background-color: #108a1280 !important;
+  color: inherit !important;
+}
+table.table-striped.table-cyan-dark tr:nth-of-type(odd),
+table.table-striped.cyan-light tr:nth-of-type(odd) {
+  background-color: #0a9f9e80 !important;
+  color: inherit !important;
+}
+table.table-active.table-gray-dark tr:hover,
+table.table-active.gray-light tr:hover {
+  background-color: #70707030 !important;
+}
+table.table-active.table-gray-dark td:hover,
+table.table-active.gray-light td:hover,
+table.table-active.table-gray-dark th:hover,
+table.table-active.gray-light th:hover {
+  background-color: #70707080 !important;
+}
+table.table-active.table-blue-dark tr:hover,
+table.table-active.blue-light tr:hover {
+  background-color: #0365d930 !important;
+}
+table.table-active.table-blue-dark td:hover,
+table.table-active.blue-light td:hover,
+table.table-active.table-blue-dark th:hover,
+table.table-active.blue-light th:hover {
+  background-color: #0365d980 !important;
+}
+table.table-active.table-red-dark tr:hover,
+table.table-active.red-light tr:hover {
+  background-color: #dd224430 !important;
+}
+table.table-active.table-red-dark td:hover,
+table.table-active.red-light td:hover,
+table.table-active.table-red-dark th:hover,
+table.table-active.red-light th:hover {
+  background-color: #dd224480 !important;
+}
+table.table-active.table-yellow-dark tr:hover,
+table.table-active.yellow-light tr:hover {
+  background-color: #eebb2230 !important;
+}
+table.table-active.table-yellow-dark td:hover,
+table.table-active.yellow-light td:hover,
+table.table-active.table-yellow-dark th:hover,
+table.table-active.yellow-light th:hover {
+  background-color: #eebb2280 !important;
+}
+table.table-active.table-green-dark tr:hover,
+table.table-active.green-light tr:hover {
+  background-color: #108a1230 !important;
+}
+table.table-active.table-green-dark td:hover,
+table.table-active.green-light td:hover,
+table.table-active.table-green-dark th:hover,
+table.table-active.green-light th:hover {
+  background-color: #108a1280 !important;
+}
+table.table-active.table-cyan-dark tr:hover,
+table.table-active.cyan-light tr:hover {
+  background-color: #0a9f9e30 !important;
+}
+table.table-active.table-cyan-dark td:hover,
+table.table-active.cyan-light td:hover,
+table.table-active.table-cyan-dark th:hover,
+table.table-active.cyan-light th:hover {
+  background-color: #0a9f9e80 !important;
 }
 code {
   padding: 0.3em;
