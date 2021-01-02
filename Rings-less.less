@@ -1,12 +1,12 @@
 // Copyright rice0208(2020) in GitHub
-// Style Sheet v0.1.4-beta (Less.js)
+// Style Sheet v0.1.5-beta (Less.js)
 // (Rings stands for 'Rings Is Not Garbage Stuff')
 
 // css
 
 /*
     Copyright rice0208(2020) in GitHub
-    Style Sheet v0.1.4-beta (css)
+    Style Sheet v0.1.5-beta (css)
     (Rings stands for 'Rings Is Not Garbage Stuff')
 */
 
@@ -107,14 +107,17 @@
 @colors-with-plus:@light-4,@light-4,@dark-0,@light-4,@light-4,@light-4,@light-4,@dark-0;
 
 // basic fonts
+@import url(/fonts/import.css);
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
 @font-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-@font-mono: 'Fira Code',Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+@font-mono: 'Fira Code',SF-Mono,Monaco,Consolas,"Courier New",monospace;
 
 // main
 .root(){
-    html,body{
+    body{
         font-family: @font-sans-serif;
+    }
+    html,body{
         font-size: 1em;
         box-sizing: border-box;
         font-variant-ligatures: common-ligatures;
@@ -162,12 +165,12 @@
     }
 
     .custom-style-color-card(@name,@color,@color-with){
-        .@{name}{
+        .@{name},body.theme-@{name}{
             .custom-style-color(@color,@color-with,@color);
         }
     }
-    .loop-color-style(@i)when(@i<=length(@colors-plus)){
-        .custom-style-color-card(extract(@colors-plus,@i),extract(@colors-value-plus,@i),extract(@colors-with-plus,@i));
+    .loop-color-style(@i)when(@i<=length(@colors)){
+        .custom-style-color-card(extract(@colors,@i),extract(@colors-value,@i),extract(@colors-with,@i));
         .loop-color-style(@i+1);
     }
     .loop-color-style(1);
@@ -473,11 +476,11 @@
         &.table-green-dark{ .table-th-theme(@ok-1, @light-4) }
         &.table-cyan-dark{ .table-th-theme(@info-1, @light-4) }
         &.table-gray-light{ .table-th-theme(@light-0, @dark-0) }
-        &.table-blue-light{ .table-th-theme(@blue-6, @light-4) }
-        &.table-red-light{ .table-th-theme(@danger-6, @light-4) }
-        &.table-yellow-light{ .table-th-theme(@warning-6, @dark-0) }
-        &.table-green-light{ .table-th-theme(@ok-6, @light-4) }
-        &.table-cyan-light{ .table-th-theme(@info-6, @light-4) }
+        &.table-blue-light{ .table-th-theme(@blue-1, @light-4) }
+        &.table-red-light{ .table-th-theme(@danger-1, @light-4) }
+        &.table-yellow-light{ .table-th-theme(@warning-1, @dark-0) }
+        &.table-green-light{ .table-th-theme(@ok-1, @light-4) }
+        &.table-cyan-light{ .table-th-theme(@info-1, @light-4) }
         &.table-c4c{
             .c4c-str(@bg,@color){
                 tbody>td,>td{
@@ -573,32 +576,32 @@
         color:@color;
     }
     .custom-code-light(){
-        code{ .custom-code-color(@blue-9, @blue-1); }
-        code.red,.red code{ .custom-code-color(@danger-9, @danger-1); }
-        code.yellow,.yellow code{ .custom-code-color(@warning-9, @warning-1); }
-        code.green,.green code{ .custom-code-color(@ok-9, @ok-1); }
-        code.cyan,.cyan code{ .custom-code-color(@info-9, @info-1); }
+        code,&.theme-blue code{ .custom-code-color(@blue-9, @blue-1); }
+        code.red,.red code,&.theme-red code{ .custom-code-color(@danger-9, @danger-1); }
+        code.yellow,.yellow code,&.theme-yellow code{ .custom-code-color(@warning-9, @warning-1); }
+        code.green,.green code,&.theme-green code{ .custom-code-color(@ok-9, @ok-1); }
+        code.cyan,.cyan code,&.theme-cyan code{ .custom-code-color(@info-9, @info-1); }
         code.gray,.gray code{ .custom-code-color(@gray-9, @gray-1); }
-        pre{ .custom-code-color(@blue-9, @blue-1); }
-        pre.red,.red pre{ .custom-code-color(@danger-9, @danger-1); }
-        pre.yellow,.yellow pre{ .custom-code-color(@warning-9, @warning-1); }
-        pre.green,.green pre{ .custom-code-color(@ok-9, @ok-1); }
-        pre.cyan,.cyan pre{ .custom-code-color(@info-9, @info-1); }
+        pre,&.theme-blue pre{ .custom-code-color(@blue-9, @blue-1); }
+        pre.red,.red pre,&.theme-danger pre{ .custom-code-color(@danger-9, @danger-1); }
+        pre.yellow,.yellow pre,&.theme-yellow pre{ .custom-code-color(@warning-9, @warning-1); }
+        pre.green,.green pre,&.theme-green pre{ .custom-code-color(@ok-9, @ok-1); }
+        pre.cyan,.cyan pre,&.theme-cyan pre{ .custom-code-color(@info-9, @info-1); }
         pre.gray,.gray pre{ .custom-code-color(@gray-9, @gray-1); }
     }
     .custom-code-dark(){
-        code{ .custom-code-color(@blue-9, @blue-6); }
-        code.red,.red code{ .custom-code-color(@danger-9, @danger-6); }
-        code.yellow,.yellow code{ .custom-code-color(@warning-9, @warning-6); }
-        code.green,.green code{ .custom-code-color(@ok-9, @ok-6); }
-        code.cyan,.cyan code{ .custom-code-color(@info-9, @info-6); }
-        code.gray,.gray code{ .custom-code-color(@gray-9, @gray-6); }
-        pre{ .custom-code-color(@blue-9, @blue-6); }
-        pre.red,.red pre{ .custom-code-color(@danger-9, @danger-6); }
-        pre.yellow,.yellow pre{ .custom-code-color(@warning-9, @warning-6); }
-        pre.green,.green pre{ .custom-code-color(@ok-9, @ok-6); }
-        pre.cyan,.cyan pre{ .custom-code-color(@info-9, @info-6); }
-        pre.gray,.gray pre{ .custom-code-color(@gray-9, @gray-6); }
+        code,&.theme-blue code{ .custom-code-color(@blue-9, @blue-6); }
+        code.red,.red code,&.theme-red code{ .custom-code-color(@danger-9, @danger-6); }
+        code.yellow,.yellow code,&.theme-yellow code{ .custom-code-color(@warning-9, @warning-6); }
+        code.green,.green code,&.theme-green code{ .custom-code-color(@ok-9, @ok-6); }
+        code.cyan,.cyan code,&.theme-cyan code{ .custom-code-color(@info-9, @info-6); }
+        code.gray,.gray code{ .custom-code-color(@gray-9, @gray-7); }
+        pre,&.theme-blue pre{ .custom-code-color(@blue-9, @blue-6); }
+        pre.red,.red pre,&.theme-danger pre{ .custom-code-color(@danger-9, @danger-6); }
+        pre.yellow,.yellow pre,&.theme-yellow pre{ .custom-code-color(@warning-9, @warning-6); }
+        pre.green,.green pre,&.theme-green pre{ .custom-code-color(@ok-9, @ok-6); }
+        pre.cyan,.cyan pre,&.theme-cyan pre{ .custom-code-color(@info-9, @info-6); }
+        pre.gray,.gray pre{ .custom-code-color(@gray-9, @gray-7); }
     }
     pre code{
         background-color:transparent;
@@ -613,14 +616,7 @@
         color: @light-4;
         .custom-code-dark();
     }
-    .dark/* not recommended */{
-        .custom-code-dark();
-    }
-    .light/* not recommended */{
-        .custom-code-light();
-    }
     fieldset{
-        border: 2px solid @dark-0;
         border-radius:.4em;
         margin: 2em;
         margin-top: 1em;
@@ -628,6 +624,16 @@
     }
     fieldset+fieldset{
         margin-top: 0;
+    }
+    body.theme-dark{
+        fieldset{
+            border: 2px solid @light-4;
+        }
+    }
+    body.theme-light{
+        fieldset{
+            border: 2px solid @dark-0;
+        }
     }
     .radius(@radius){
         border-radius:@radius;
@@ -874,6 +880,8 @@
         .bg-main-3,.bg-main{ .bg(@blue-3,@light-4) }
         .bg-main-4{ .bg(@blue-4,@light-4) }
         .bg-main-5{ .bg(@blue-5,@light-4) }
+        .bg-main-8{ .bg(@blue-8,inherit) }
+        .bg-main-9{ .bg(@blue-9,inherit) }
     }
     body.theme-red{
         .bg-main-1{ .bg(@danger-1,@light-4) }
@@ -881,6 +889,8 @@
         .bg-main-3,.bg-main{ .bg(@danger-3,@light-4) }
         .bg-main-4{ .bg(@danger-4,@light-4) }
         .bg-main-5{ .bg(@danger-5,@light-4) }
+        .bg-main-8{ .bg(@danger-8,inherit) }
+        .bg-main-9{ .bg(@danger-9,inherit) }
     }
     body.theme-yellow{
         .bg-main-1{ .bg(@warning-1,@light-4) }
@@ -888,6 +898,8 @@
         .bg-main-3,.bg-main{ .bg(@warning-3,@light-4) }
         .bg-main-4{ .bg(@warning-4,@light-4) }
         .bg-main-5{ .bg(@warning-5,@light-4) }
+        .bg-main-8{ .bg(@warning-8,inherit) }
+        .bg-main-9{ .bg(@warning-9,inherit) }
     }
     body.theme-green{
         .bg-main-1{ .bg(@ok-1,@light-4) }
@@ -895,6 +907,8 @@
         .bg-main-3,.bg-main{ .bg(@ok-3,@light-4) }
         .bg-main-4{ .bg(@ok-4,@light-4) }
         .bg-main-5{ .bg(@ok-5,@light-4) }
+        .bg-main-8{ .bg(@ok-8,inherit) }
+        .bg-main-9{ .bg(@ok-9,inherit) }
     }
     body.theme-cyan{
         .bg-main-1{ .bg(@info-1,@light-4) }
@@ -902,36 +916,50 @@
         .bg-main-3,.bg-main{ .bg(@info-3,@light-4) }
         .bg-main-4{ .bg(@info-4,@light-4) }
         .bg-main-5{ .bg(@info-5,@light-4) }
+        .bg-main-8{ .bg(@info-8,inherit) }
+        .bg-main-9{ .bg(@info-9,inherit) }
     }
     .bg-blue-1{ .bg(@blue-1,@light-4) }
     .bg-blue-2{ .bg(@blue-2,@light-4) }
     .bg-blue-3,.bg-blue{ .bg(@blue-3,@light-4) }
     .bg-blue-4{ .bg(@blue-4,@light-4) }
     .bg-blue-5{ .bg(@blue-5,@light-4) }
+    .bg-blue-8{ .bg(@blue-8,inherit) }
+    .bg-blue-9{ .bg(@blue-9,inherit) }
     .bg-danger-1{ .bg(@danger-1,@light-4) }
     .bg-danger-2{ .bg(@danger-2,@light-4) }
     .bg-danger-3,.bg-danger{ .bg(@danger-3,@light-4) }
     .bg-danger-4{ .bg(@danger-4,@light-4) }
     .bg-danger-5{ .bg(@danger-5,@light-4) }
+    .bg-danger-8{ .bg(@danger-8,inherit) }
+    .bg-danger-9{ .bg(@danger-9,inherit) }
     .bg-warning-1{ .bg(@warning-1,@dark-0) }
     .bg-warning-2{ .bg(@warning-2,@dark-0) }
     .bg-warning-3,.bg-warning{ .bg(@warning-3,@dark-0) }
     .bg-warning-4{ .bg(@warning-4,@dark-0) }
     .bg-warning-5{ .bg(@warning-5,@dark-0) }
+    .bg-warning-8{ .bg(@warning-8,inherit) }
+    .bg-warning-9{ .bg(@warning-9,inherit) }
     .bg-ok-1{ .bg(@ok-1,@light-4) }
     .bg-ok-2{ .bg(@ok-2,@light-4) }
     .bg-ok-3,.bg-ok{ .bg(@ok-3,@light-4) }
     .bg-ok-4{ .bg(@ok-4,@light-4) }
     .bg-ok-5{ .bg(@ok-5,@light-4) }
+    .bg-ok-8{ .bg(@ok-8,inherit) }
+    .bg-ok-9{ .bg(@ok-9,inherit) }
     .bg-info-1{ .bg(@info-1,@light-4) }
     .bg-info-2{ .bg(@info-2,@light-4) }
     .bg-info-3,.bg-info{ .bg(@info-3,@light-4) }
     .bg-info-4{ .bg(@info-4,@light-4) }
     .bg-info-5{ .bg(@info-5,@light-4) }
+    .bg-info-8{ .bg(@info-8,inherit) }
+    .bg-info-9{ .bg(@info-9,inherit) }
     .bg-dark-0,.bg-black{ .bg(@dark-0,@light-4) }
     .bg-dark-1{ .bg(@dark-1,@light-4) }
     .bg-dark-2{ .bg(@dark-2,@light-4) }
     .bg-dark-3,.bg-dark{ .bg(@dark-3,@light-4) }
+    .bg-dark-8{ .bg(@dark-8,inherit) }
+    .bg-dark-9{ .bg(@dark-9,inherit) }
     .bg-gray-0{ .bg(@gray-0,@light-4) }
     .bg-gray-1{ .bg(@gray-1,@light-4) }
     .bg-gray-2{ .bg(@gray-2,@light-4) }
@@ -940,20 +968,24 @@
     .bg-gray-5{ .bg(@gray-5,@light-4) }
     .bg-gray-6{ .bg(@gray-6,@light-4) }
     .bg-gray-7{ .bg(@gray-7,@light-4) }
+    .bg-gray-8{ .bg(@gray-8,inherit) }
+    .bg-gray-9{ .bg(@gray-9,inherit) }
     .bg-light-0{ .bg(@light-0,@light-4) }
     .bg-light-1{ .bg(@light-1,@dark-0) }
     .bg-light-2{ .bg(@light-2,@dark-0) }
     .bg-light-3,.bg-light{ .bg(@light-3,@dark-0) }
     .bg-light-4,.bg-white{ .bg(@light-4,@dark-0) }
+    .bg-light-8{ .bg(@light-8,inherit) }
+    .bg-light-9{ .bg(@light-9,inherit) }
     body.theme-dark{
-        .bg-theme-1{ .bg(@light-3,@light-4) }
+        .bg-theme-1{ .bg(@light-3,@dark-0) }
         .bg-theme-2{ .bg(@light-0,@light-4) }
         .bg-theme-3{ .bg(@gray-3,@light-4) }
         .bg-theme-4{ .bg(@gray-0,@light-4) }
         .bg-theme-5,.bg-theme{ .bg(@dark-3,@light-4) }
     }
     body.theme-light{
-        .bg-theme-5,.bg-theme{ .bg(@light-3,@light-4) }
+        .bg-theme-5,.bg-theme{ .bg(@light-3,@dark-0) }
         .bg-theme-4{ .bg(@light-0,@light-4) }
         .bg-theme-3{ .bg(@gray-3,@light-4) }
         .bg-theme-2{ .bg(@gray-0,@light-4) }
