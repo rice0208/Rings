@@ -1,13 +1,13 @@
 // Copyright rice0208(2020) in GitHub
 // Style Sheet v0.1.5-beta (Less.js)
-// (Rings stands for 'Rings Is Not Garbage Stuff')
+// (Rings stands for 'Rings Is Not GROSS Stuff')
 
 // css
 
 /*
     Copyright rice0208(2020) in GitHub
     Style Sheet v0.1.5-beta (css)
-    (Rings stands for 'Rings Is Not Garbage Stuff')
+    (Rings stands for 'Rings Is Not GROSS Stuff')
 */
 
 // basic color
@@ -25,7 +25,7 @@
 @warning-3: @warning;
 @warning-4: #FFD624;
 @warning-5: #FFE524;
-@warning-6: #FFFF88;
+@warning-6: #FFFFaa;
 @warning-8: #eebb2255;
 @warning-9: #eebb22aa;
 @danger-1: #90162C;
@@ -33,7 +33,7 @@
 @danger-3: @danger;
 @danger-4: #E72043;
 @danger-5: #F6254B;
-@danger-6: #ff8888;
+@danger-6: #ffaaaa;
 @danger-8: #dd224455;
 @danger-9: #dd2244aa;
 @blue-1: #001D3F;
@@ -41,7 +41,7 @@
 @blue-3: @blue;
 @blue-4: #02A0FF;
 @blue-5: #08C7FF;
-@blue-6: #55ccFF;
+@blue-6: #88eeFF;
 @blue-8: #0365d955;
 @blue-9: #0365d9aa;
 @ok-1: #073D08;
@@ -49,7 +49,7 @@
 @ok-3: @ok;
 @ok-4: #14B016;
 @ok-5: #18D61B;
-@ok-6: #88FF88;
+@ok-6: #ccffcc;
 @ok-8: #108a1255;
 @ok-9: #108a12aa;
 @info-1: #055251;
@@ -57,7 +57,7 @@
 @info-3: @info;
 @info-4: #0CA9A4;
 @info-5: #0ECBCA;
-@info-6: #12FEFF;
+@info-6: #82FEFF;
 @info-8: #0a9f9e55;
 @info-9: #0a9f9eaa;
 @dark-0: #000000;
@@ -66,6 +66,7 @@
 @dark-3: #303030;
 @dark-8: #30303055;
 @dark-9: #303030aa;
+@dark-10: #000000dd;
 @gray-0: #404040;
 @gray-1: #505050;
 @gray-2: #606060;
@@ -83,6 +84,7 @@
 @light-4: #ffffff;
 @light-8: #f0f0f055;
 @light-9: #f0f0f0aa;
+@light-10: #ffffffdd;
 
 @size-1:8.3333333%;
 @size-2:16.6666666%;
@@ -99,10 +101,14 @@
 
 @colors:blue,danger,warning,ok,info;
 @colors-value:@blue-3,@danger-3,@warning-3,@ok-3,@info-3;
+@colors-darker:@blue-2,@danger-2,@warning-2,@ok-2,@info-2;
+@colors-lighter:@blue-5,@danger-5,@warning-5,@ok-5,@info-5;
 @colors-with:@light-4,@light-4,@dark-0,@light-4,@light-4;
 @colors-plus:blue,danger,warning,ok,info,dark,light,gray;
 @colors-value-plus:@blue-3,@danger-3,@warning-3,@ok-3,@info-3,@dark-3,@light-3,@gray-3;
-@colors-with-plus:@light-4,@light-4,@dark-0,@light-4,@light-4,@light-4,@dark-0,@dark-0;
+@colors-with-plus:@light-4,@light-4,@dark-0,@light-4,@light-4,@light-4,@dark-0,@light-4;
+@colors-darker-plus:@blue-2,@danger-2,@warning-2,@ok-2,@info-2,@dark-0,@light-1,@gray-1;
+@colors-lighter-plus:@blue-5,@danger-5,@warning-5,@ok-5,@info-5,@gray-2,@light-4,@gray-5;
 
 // basic fonts
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
@@ -156,13 +162,19 @@
         cursor: not-allowed;
         text-decoration: none;
     }
+    body.theme-light{
+        a:hover,a:active{color:@blue-3}
+    }
+    body.theme-dark{
+        a:hover,a:active{color:@blue-5}
+    }
     a:active{
         opacity: .55;
         text-decoration: none;
     }
 
     .custom-style-color-card(@name,@color,@color-with){
-        .@{name},body.@{name}{
+        .@{name}{
             .custom-style-color(@color,@color-with,@color);
         }
     }
@@ -231,8 +243,7 @@
     kbd{font-size:.89em;}
     .code(){
         font-size: .8em;
-        font-weight: 450;
-        opacity: .85;
+        font-weight: 400;
         border-radius: .8em;
         line-height: 1.6em;
     }
@@ -303,41 +314,15 @@
         box-shadow: 0 0 0 .13em @color ;
         &:focus{
             outline: 0px ;
-            box-shadow: 0 0 0 .16em @color ;
         }
         &:hover{
-            text-decoration: none ;
-            box-shadow: 0 0 0 .22em @color ;
-            opacity: .7 ;
+            text-decoration: none;
         }
         &:active{    
-            text-decoration: none ;
-            box-shadow: 0 0 0 .16em @color ;
-            opacity: .8 ;
+            text-decoration: none;
         }
         &:visited{
-            text-decoration: none ;
-        }
-    }
-    .btn-secondary(@color){
-        background-color:transparent;
-        color:@color;
-        border:2px solid @color;
-        box-shadow:none;
-        &:hover,&:focus{
-            background-color:@color;
-            text-decoration:none;
-            box-shadow:none;
-        }
-        &:active{
-            box-shadow:0 0 0 .13em @color;
-            text-decoration:none;
-            box-shadow:none;
-        }
-        &:focus{
-            box-shadow:0 0 0 .1em @color;
-            outline:0;
-            box-shadow:none;
+            text-decoration: none;
         }
     }
     .btn{
@@ -346,16 +331,28 @@
         -webkit-transition: box-shadow .15s,opacity .15s,background-color .15s;
         -o-transition: box-shadow .15s,opacity .15s,background-color .15s;
         cursor: pointer;
-        .btn-style(4px,4px,2px,4px,1px);
+        .btn-style(4px,4px,2px,4px,3px);
 
         &{ .btn-btn-style(@blue-3,@light-4); }
-        .btn-color(@name,@style,@with){
-            &.btn-@{name}{
+        .btn-color(@name,@style,@with,@darker){
+            &.btn.btn-@{name}{
                 .btn-btn-style(@style,@with);
+                &:focus{
+                    background-color:@style;
+                    box-shadow: 0 0 0 .16em @style;
+                }
+                &:hover{
+                    background-color:@darker;
+                    box-shadow: 0 0 0 .22em @darker;
+                }
+                &:active{
+                    background-color:@darker;
+                    box-shadow: 0 0 0 .16em @darker;
+                }
             }
         }
         .loop-btn-color(@i)when(@i<=length(@colors-plus)){
-            .btn-color(extract(@colors-plus,@i),extract(@colors-value-plus,@i),extract(@colors-with-plus,@i));
+            .btn-color(extract(@colors-plus,@i),extract(@colors-value-plus,@i),extract(@colors-with-plus,@i),extract(@colors-darker-plus,@i));
             .loop-btn-color(@i+1);
         }
         .loop-btn-color(1);
@@ -487,10 +484,10 @@
             }
             &.table-gray-dark,&.gray-light{ .c4c-str(@gray-3,@light-4) }
             &.table-blue-dark,&.blue-light{ .c4c-str(@blue-3,@light-4) }
-            &.table-danger-dark,&.red-light{ .c4c-str(@danger-3,@light-4) }
-            &.table-warning-dark,&.yellow-light{ .c4c-str(@warning-3,@dark-0) }
-            &.table-ok-dark,&.green-light{ .c4c-str(@ok-3,@light-4) }
-            &.table-info-dark,&.cyan-light{ .c4c-str(@info-3,@light-4) }
+            &.table-danger-dark,&.danger-light{ .c4c-str(@danger-3,@light-4) }
+            &.table-warning-dark,&.warning-light{ .c4c-str(@warning-3,@dark-0) }
+            &.table-ok-dark,&.ok-light{ .c4c-str(@ok-3,@light-4) }
+            &.table-info-dark,&.info-light{ .c4c-str(@info-3,@light-4) }
         }
         &.table-cc4c{
             .cc4c-str(@bg-1,@bg-2,@color){
@@ -532,10 +529,10 @@
             }
             &.table-gray-dark,&.gray-light{ .table-striped-style(@gray-9) }
             &.table-blue-dark,&.blue-light{ .table-striped-style(@blue-8) }
-            &.table-danger-dark,&.red-light{ .table-striped-style(@danger-8) }
-            &.table-warning-dark,&.yellow-light{ .table-striped-style(@warning-9) }
-            &.table-ok-dark,&.green-light{ .table-striped-style(@ok-9) }
-            &.table-info-dark,&.cyan-light{ .table-striped-style(@info-9) }
+            &.table-danger-dark,&.danger-light{ .table-striped-style(@danger-8) }
+            &.table-warning-dark,&.warning-light{ .table-striped-style(@warning-9) }
+            &.table-ok-dark,&.ok-light{ .table-striped-style(@ok-9) }
+            &.table-info-dark,&.info-light{ .table-striped-style(@info-9) }
         }
         &.table-active{
             .active-line(@bg){
@@ -556,10 +553,10 @@
             }
             &.table-gray-dark,&.gray-light{ .active-table-style(@gray-8,@gray-9) }
             &.table-blue-dark,&.blue-light{ .active-table-style(@blue-8,@blue-9) }
-            &.table-danger-dark,&.red-light{ .active-table-style(@danger-8,@danger-9) }
-            &.table-warning-dark,&.yellow-light{ .active-table-style(@warning-8,@warning-9) }
-            &.table-ok-dark,&.green-light{ .active-table-style(@ok-8,@ok-9) }
-            &.table-info-dark,&.cyan-light{ .active-table-style(@info-8,@info-9) }
+            &.table-danger-dark,&.danger-light{ .active-table-style(@danger-8,@danger-9) }
+            &.table-warning-dark,&.warning-light{ .active-table-style(@warning-8,@warning-9) }
+            &.table-ok-dark,&.ok-light{ .active-table-style(@ok-8,@ok-9) }
+            &.table-info-dark,&.info-light{ .active-table-style(@info-8,@info-9) }
         }
     }
     code{
@@ -573,35 +570,32 @@
         color:@color;
     }
     .custom-code-light(){
-        code,&.blue code{ .custom-code-color(@blue-9, @blue-1); }
-        code.red,.red code,&.danger code{ .custom-code-color(@danger-9, @danger-1); }
-        code.yellow,.yellow code,&.warning code{ .custom-code-color(@warning-9, @warning-1); }
-        code.green,.green code,&.ok code{ .custom-code-color(@ok-9, @ok-1); }
-        code.cyan,.cyan code,&.info code{ .custom-code-color(@info-9, @info-1); }
-        code.gray,.gray code{ .custom-code-color(@gray-9, @gray-1); }
-        pre,&.blue pre{ .custom-code-color(@blue-9, @blue-1); }
-        pre.red,.red pre,&.danger pre{ .custom-code-color(@danger-9, @danger-1); }
-        pre.yellow,.yellow pre,&.warning pre{ .custom-code-color(@warning-9, @warning-1); }
-        pre.green,.green pre,&.ok pre{ .custom-code-color(@ok-9, @ok-1); }
-        pre.cyan,.cyan pre,&.info pre{ .custom-code-color(@info-9, @info-1); }
-        pre.gray,.gray pre{ .custom-code-color(@gray-9, @gray-1); }
+        code,&.blue code{ .custom-code-color(@blue-9, @dark-10); }
+        code.danger,.danger code,&.danger code{ .custom-code-color(@danger-9, @dark-10); }
+        code.warning,.warning code,&.warning code{ .custom-code-color(@warning-9, @dark-10); }
+        code.ok,.ok code,&.ok code{ .custom-code-color(@ok-9, @dark-10); }
+        code.info,.info code,&.info code{ .custom-code-color(@info-9, @dark-10); }
+        code.gray,.gray code{ .custom-code-color(@gray-9, @dark-10); }
+        pre,&.blue pre{ .custom-code-color(@blue-9, @dark-10); }
+        pre.danger,.danger pre,&.danger pre{ .custom-code-color(@danger-9, @dark-10); }
+        pre.warning,.warning pre,&.warning pre{ .custom-code-color(@warning-9, @dark-10); }
+        pre.ok,.ok pre,&.ok pre{ .custom-code-color(@ok-9, @dark-10); }
+        pre.info,.info pre,&.info pre{ .custom-code-color(@info-9, @dark-10); }
+        pre.gray,.gray pre{ .custom-code-color(@gray-9, @dark-10); }
     }
     .custom-code-dark(){
-        code,&.blue code{ .custom-code-color(@blue-9, @blue-6); }
-        code.red,.red code,&.danger code{ .custom-code-color(@danger-9, @danger-6); }
-        code.yellow,.yellow code,&.warning code{ .custom-code-color(@warning-9, @warning-6); }
-        code.green,.green code,&.ok code{ .custom-code-color(@ok-9, @ok-6); }
-        code.cyan,.cyan code,&.info code{ .custom-code-color(@info-9, @info-6); }
-        code.gray,.gray code{ .custom-code-color(@gray-9, @gray-7); }
-        pre,&.blue pre{ .custom-code-color(@blue-9, @blue-6); }
-        pre.red,.red pre,&.danger pre{ .custom-code-color(@danger-9, @danger-6); }
-        pre.yellow,.yellow pre,&.warning pre{ .custom-code-color(@warning-9, @warning-6); }
-        pre.green,.green pre,&.ok pre{ .custom-code-color(@ok-9, @ok-6); }
-        pre.cyan,.cyan pre,&.info pre{ .custom-code-color(@info-9, @info-6); }
-        pre.gray,.gray pre{ .custom-code-color(@gray-9, @gray-7); }
-    }
-    pre code{
-        background-color:transparent;
+        code,&.blue code{ .custom-code-color(@blue-9, @light-10); }
+        code.danger,.danger code,&.danger code{ .custom-code-color(@danger-9, @light-10); }
+        code.warning,.warning code,&.warning code{ .custom-code-color(@warning-9, @light-10); }
+        code.ok,.ok code,&.ok code{ .custom-code-color(@ok-9, @light-10); }
+        code.info,.info code,&.info code{ .custom-code-color(@info-9, @light-10); }
+        code.gray,.gray code{ .custom-code-color(@gray-9, @light-10); }
+        pre,&.blue pre{ .custom-code-color(@blue-9, @light-10); }
+        pre.danger,.danger pre,&.danger pre{ .custom-code-color(@danger-9, @light-10); }
+        pre.warning,.warning pre,&.warning pre{ .custom-code-color(@warning-9, @light-10); }
+        pre.ok,.ok pre,&.ok pre{ .custom-code-color(@ok-9, @light-10); }
+        pre.info,.info pre,&.info pre{ .custom-code-color(@info-9, @light-10); }
+        pre.gray,.gray pre{ .custom-code-color(@gray-9, @light-10); }
     }
     body.theme-light{
         background-color: @light-4;
@@ -880,6 +874,9 @@
             margin: .3em;
         }
     }
+    pre code{
+        background-color:transparent;
+    }
     select.custom-text-active{
         &:not(:focus){
             color:@gray-5;
@@ -1029,7 +1026,7 @@
     .bg-gray-7{ .bg(@gray-7,@light-4) }
     .bg-gray-8{ .bg(@gray-8,inherit) }
     .bg-gray-9{ .bg(@gray-9,inherit) }
-    .bg-light-0{ .bg(@light-0,@light-4) }
+    .bg-light-0{ .bg(@light-0,@dark-0) }
     .bg-light-1{ .bg(@light-1,@dark-0) }
     .bg-light-2{ .bg(@light-2,@dark-0) }
     .bg-light-3,.bg-light{ .bg(@light-3,@dark-0) }
@@ -1038,17 +1035,57 @@
     .bg-light-9{ .bg(@light-9,inherit) }
     body.theme-dark{
         .bg-theme-1{ .bg(@light-3,@dark-0) }
-        .bg-theme-2{ .bg(@light-0,@light-4) }
+        .bg-theme-2{ .bg(@light-0,@dark-0) }
         .bg-theme-3{ .bg(@gray-3,@light-4) }
         .bg-theme-4{ .bg(@gray-0,@light-4) }
         .bg-theme-5,.bg-theme{ .bg(@dark-3,@light-4) }
     }
     body.theme-light{
         .bg-theme-5,.bg-theme{ .bg(@light-3,@dark-0) }
-        .bg-theme-4{ .bg(@light-0,@light-4) }
+        .bg-theme-4{ .bg(@light-0,@dark-0) }
         .bg-theme-3{ .bg(@gray-3,@light-4) }
         .bg-theme-2{ .bg(@gray-0,@light-4) }
         .bg-theme-1{ .bg(@dark-3,@light-4) }
+    }
+    .blue{
+        .bg-blue-1,.bg-blue-2,.bg-blue-3,.bg-blue-4,.bg-blue-5,.bg-blue-8,.bg-blue-9,.bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9{
+            &::selection{
+                background-color:@light-3;
+                color:@blue-3;
+            }
+        }
+    }
+    .info{
+        .bg-blue-1,.bg-blue-2,.bg-blue-3,.bg-blue-4,.bg-blue-5,.bg-blue-8,.bg-blue-9,.bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9,.bg-ok-1,.bg-ok-2,.bg-ok-3,.bg-ok-4,.bg-ok-5,.bg-ok-8,.bg-ok-9{
+            &::selection{
+                background-color:@light-3;
+                color:@info-3;
+            }
+        }
+    }
+    .ok{
+        .bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9,.bg-ok-1,.bg-ok-2,.bg-ok-3,.bg-ok-4,.bg-ok-5,.bg-ok-8,.bg-ok-9{
+            &::selection{
+                background-color:@light-3;
+                color:@ok-3;
+            }
+        }
+    }
+    .danger{
+        .bg-danger-1,.bg-danger-2,.bg-danger-3,.bg-danger-4,.bg-danger-5,.bg-danger-8,.bg-danger-9{
+            &::selection{
+                background-color:@light-3;
+                color:@info-3;
+            }
+        }
+    }
+    .warning{
+        .bg-warning-1,.bg-warning-2,.bg-warning-3,.bg-warning-4,.bg-warning-5,.bg-warning-8,.bg-warning-9{
+            &::selection{
+                background-color:@light-3;
+                color:@ok-3;
+            }
+        }
     }
 
     .blue,body{
