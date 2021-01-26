@@ -182,6 +182,7 @@
         .custom-style-color-card(extract(@colors,@i),extract(@colors-value,@i),extract(@colors-with,@i));
         .loop-color-style(@i+1);
     }
+    .custom-style-color(@blue-3,@light-4,@blue-3);
     .loop-color-style(1);
 
     .flex,.box{
@@ -454,8 +455,25 @@
                 text-align: right;
             }
         }
+        &:not(.table-justified){
+            td,th{
+                .flex(6);
+                &.cell-1{ .flex(1) }
+                &.cell-2{ .flex(2) }
+                &.cell-3{ .flex(3) }
+                &.cell-4{ .flex(4) }
+                &.cell-5{ .flex(5) }
+                &.cell-6{ .flex(6) }
+                &.cell-7{ .flex(7) }
+                &.cell-8{ .flex(8) }
+                &.cell-9{ .flex(9) }
+                &.cell-10{ .flex(10) }
+                &.cell-11{ .flex(11) }
+                &.cell-12{ .flex(12) }
+            }
+        }
         &.table-justified{
-            td,th{ flex:1; }
+            td,th{ .flex(6); }
         }
         .table-th-theme(@bg,@color){
             th{
@@ -463,76 +481,27 @@
                 color: @color;
             }
         }
-        &.table-gray-dark{ .table-th-theme(@dark-3, @light-4) }
-        &.table-blue-dark{ .table-th-theme(@blue-1, @light-4) }
-        &.table-danger-dark{ .table-th-theme(@danger-1, @light-4) }
-        &.table-warning-dark{ .table-th-theme(@warning-1, @light-4) }
-        &.table-ok-dark{ .table-th-theme(@ok-1, @light-4) }
-        &.table-info-dark{ .table-th-theme(@info-1, @light-4) }
-        &.table-gray-light{ .table-th-theme(@light-0, @dark-0) }
-        &.table-blue-light{ .table-th-theme(@blue-1, @light-4) }
-        &.table-danger-light{ .table-th-theme(@danger-1, @light-4) }
-        &.table-warning-light{ .table-th-theme(@warning-1, @dark-0) }
-        &.table-ok-light{ .table-th-theme(@ok-1, @light-4) }
-        &.table-info-light{ .table-th-theme(@info-1, @light-4) }
-        &.table-c4c{
-            .c4c-str(@bg,@color){
-                tbody>td,>td{
-                    background-color:@bg;
-                    color:@color;
-                }
-            }
-            &.table-gray-dark,&.gray-light{ .c4c-str(@gray-3,@light-4) }
-            &.table-blue-dark,&.blue-light{ .c4c-str(@blue-3,@light-4) }
-            &.table-danger-dark,&.danger-light{ .c4c-str(@danger-3,@light-4) }
-            &.table-warning-dark,&.warning-light{ .c4c-str(@warning-3,@dark-0) }
-            &.table-ok-dark,&.ok-light{ .c4c-str(@ok-3,@light-4) }
-            &.table-info-dark,&.info-light{ .c4c-str(@info-3,@light-4) }
-        }
-        &.table-cc4c{
-            .cc4c-str(@bg-1,@bg-2,@color){
-                tbody>td,>td{
-                    background-color:@bg-1;
-                    color:@color;
-                }
-                tbody>td+td,>td+td{
-                    background-color:@bg-2;
-                    color:@color;
-                }
-            }
-            &.table-gray-dark{ .cc4c-str(@gray-3,@gray-2,@light-4) }
-            &.table-blue-dark{ .cc4c-str(@blue-3,@blue-2,@light-4) }
-            &.table-danger-dark{ .cc4c-str(@danger-3,@danger-2,@light-4) }
-            &.table-warning-dark{ .cc4c-str(@warning-3,@warning-2,@dark-0) }
-            &.table-ok-dark{ .cc4c-str(@ok-3,@ok-2,@light-4) }
-            &.table-info-dark{ .cc4c-str(@info-3,@info-2,@light-4) }
-            &.table-gray-light{ .cc4c-str(@gray-3,@gray-4,@light-4) }
-            &.table-blue-light{ .cc4c-str(@blue-3,@blue-4,@light-4) }
-            &.table-danger-light{ .cc4c-str(@danger-3,@danger-4,@light-4) }
-            &.table-warning-light{ .cc4c-str(@warning-3,@warning-4,@dark-0) }
-            &.table-ok-light{ .cc4c-str(@ok-3,@ok-4,@light-4) }
-            &.table-info-light{ .cc4c-str(@info-3,@info-4,@light-4) }
-        }
-        &.table-c2c{
-            td,th{
-                .flex(6);
-                &.main{ .flex(8); }
-                &.sub{ .flex(4); }
-            }
-        }
+        .table-th-theme(@blue-9,@light-4);
+        &.table-gray{ .table-th-theme(@dark-9, @light-4) }
+        &.table-blue{ .table-th-theme(@blue-9, @light-4) }
+        &.table-danger{ .table-th-theme(@danger-9, @light-4) }
+        &.table-warning{ .table-th-theme(@warning-9, @light-4) }
+        &.table-ok{ .table-th-theme(@ok-9, @light-4) }
+        &.table-info{ .table-th-theme(@info-9, @light-4) }
         &.table-striped{
             .table-striped-style(@bg){
-                tr:nth-of-type(odd){
+                tr:nth-of-type(odd) *:not(th){
                     background-color:@bg;
                     color:inherit;
                 }
             }
-            &.table-gray-dark,&.gray-light{ .table-striped-style(@gray-9) }
-            &.table-blue-dark,&.blue-light{ .table-striped-style(@blue-8) }
-            &.table-danger-dark,&.danger-light{ .table-striped-style(@danger-8) }
-            &.table-warning-dark,&.warning-light{ .table-striped-style(@warning-9) }
-            &.table-ok-dark,&.ok-light{ .table-striped-style(@ok-9) }
-            &.table-info-dark,&.info-light{ .table-striped-style(@info-9) }
+            .table-striped-style(@blue-8);
+            &.table-gray{ .table-striped-style(@gray-8) }
+            &.table-blue{ .table-striped-style(@blue-8) }
+            &.table-danger{ .table-striped-style(@danger-8) }
+            &.table-warning{ .table-striped-style(@warning-8) }
+            &.table-ok{ .table-striped-style(@ok-8) }
+            &.table-info{ .table-striped-style(@info-8) }
         }
         &.table-active{
             .active-line(@bg){
@@ -551,12 +520,12 @@
                 .active-line(@line);
                 .active-cell(@cell);
             }
-            &.table-gray-dark,&.gray-light{ .active-table-style(@gray-8,@gray-9) }
-            &.table-blue-dark,&.blue-light{ .active-table-style(@blue-8,@blue-9) }
-            &.table-danger-dark,&.danger-light{ .active-table-style(@danger-8,@danger-9) }
-            &.table-warning-dark,&.warning-light{ .active-table-style(@warning-8,@warning-9) }
-            &.table-ok-dark,&.ok-light{ .active-table-style(@ok-8,@ok-9) }
-            &.table-info-dark,&.info-light{ .active-table-style(@info-8,@info-9) }
+            &.table-gray{ .active-table-style(@gray-8,@gray-9) }
+            &.table-blue{ .active-table-style(@blue-8,@blue-9) }
+            &.table-danger{ .active-table-style(@danger-8,@danger-9) }
+            &.table-warning{ .active-table-style(@warning-8,@warning-9) }
+            &.table-ok{ .active-table-style(@ok-8,@ok-9) }
+            &.table-info{ .active-table-style(@info-8,@info-9) }
         }
     }
     code{
@@ -607,15 +576,6 @@
         color: @light-4;
         .custom-code-dark();
     }
-    fieldset{
-        border-radius:.4em;
-        margin: 2em;
-        margin-top: 1em;
-        overflow: auto;
-    }
-    fieldset+fieldset{
-        margin-top: 0;
-    }
     body.theme-dark{
         fieldset{
             border: 2px solid @light-4;
@@ -625,6 +585,15 @@
         fieldset{
             border: 2px solid @dark-0;
         }
+    }
+    fieldset{
+        border-radius:.4em;
+        margin: 2em;
+        margin-top: 1em;
+        overflow: auto;
+    }
+    fieldset+fieldset{
+        margin-top: 0;
     }
     .radius(@radius){
         border-radius:@radius;
@@ -806,11 +775,18 @@
             &-white{&,td,th{border-right:2px solid @light-4;}}
         }
     }
+    body.theme-dark,body.theme-light{
+        fieldset.danger{border:2px solid @danger-3;}
+        fieldset.blue{border:2px solid @blue-3;}
+        fieldset.warning{border:2px solid @warning-3;}
+        fieldset.ok{border:2px solid @ok-3;}
+        fieldset.info{border:2px solid @info-3;}
+    }
     .custom-text{
         border-radius: 6px;
         height: 2.2em;
         vertical-align: middle;
-        font-family: var(--sans-serif);
+        font-family: @font-sans-serif;
         border: 0;
         box-shadow: 0 0 0 .1em @gray-2;
         padding-left: .6em;
@@ -1048,43 +1024,28 @@
         .bg-theme-1{ .bg(@dark-3,@light-4) }
     }
     .blue{
-        .bg-blue-1,.bg-blue-2,.bg-blue-3,.bg-blue-4,.bg-blue-5,.bg-blue-8,.bg-blue-9,.bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9{
-            &::selection{
-                background-color:@light-3;
-                color:@blue-3;
-            }
+        .bg-blue-1,.bg-blue-2,.bg-blue-3,.bg-blue-4,.bg-blue-5,.bg-blue-8,.bg-blue-9,.bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9,.bg-blue,.bg-info{
+            .custom-selection(@light-4, @blue-3);
         }
     }
     .info{
-        .bg-blue-1,.bg-blue-2,.bg-blue-3,.bg-blue-4,.bg-blue-5,.bg-blue-8,.bg-blue-9,.bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9,.bg-ok-1,.bg-ok-2,.bg-ok-3,.bg-ok-4,.bg-ok-5,.bg-ok-8,.bg-ok-9{
-            &::selection{
-                background-color:@light-3;
-                color:@info-3;
-            }
+        .bg-blue-1,.bg-blue-2,.bg-blue-3,.bg-blue-4,.bg-blue-5,.bg-blue-8,.bg-blue-9,.bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9,.bg-ok-1,.bg-ok-2,.bg-ok-3,.bg-ok-4,.bg-ok-5,.bg-ok-8,.bg-ok-9,.bg-blue,.bg-info,.bg-ok{
+            .custom-selection(@light-4, @info-3);
         }
     }
     .ok{
-        .bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9,.bg-ok-1,.bg-ok-2,.bg-ok-3,.bg-ok-4,.bg-ok-5,.bg-ok-8,.bg-ok-9{
-            &::selection{
-                background-color:@light-3;
-                color:@ok-3;
-            }
+        .bg-info-1,.bg-info-2,.bg-info-3,.bg-info-4,.bg-info-5,.bg-info-8,.bg-info-9,.bg-ok-1,.bg-ok-2,.bg-ok-3,.bg-ok-4,.bg-ok-5,.bg-ok-8,.bg-ok-9,.bg-info,.bg-ok{
+            .custom-selection(@light-4, @ok-3);
         }
     }
     .danger{
-        .bg-danger-1,.bg-danger-2,.bg-danger-3,.bg-danger-4,.bg-danger-5,.bg-danger-8,.bg-danger-9{
-            &::selection{
-                background-color:@light-3;
-                color:@info-3;
-            }
+        .bg-danger-1,.bg-danger-2,.bg-danger-3,.bg-danger-4,.bg-danger-5,.bg-danger-8,.bg-danger-9,.bg-danger{
+            .custom-selection(@light-4, @danger-3);
         }
     }
     .warning{
-        .bg-warning-1,.bg-warning-2,.bg-warning-3,.bg-warning-4,.bg-warning-5,.bg-warning-8,.bg-warning-9{
-            &::selection{
-                background-color:@light-3;
-                color:@ok-3;
-            }
+        .bg-warning-1,.bg-warning-2,.bg-warning-3,.bg-warning-4,.bg-warning-5,.bg-warning-8,.bg-warning-9,.bg-warning{
+            .custom-selection(@light-4, @warning-3);
         }
     }
 
@@ -1122,6 +1083,20 @@
         .text-main-3,.text-main{ .color(@info-3) }
         .text-main-4{ .color(@info-4) }
         .text-main-5{ .color(@info-5) }
+    }
+    body.theme-dark{
+        .text-theme-1{ .color(@light-3) }
+        .text-theme-2{ .color(@light-0) }
+        .text-theme-3{ .color(@gray-3) }
+        .text-theme-4{ .color(@gray-0) }
+        .text-theme-5,.text-theme{ .color(@dark-3) }
+    }
+    body.theme-light{
+        .text-theme-5,.text-theme{ .color(@light-3) }
+        .text-theme-4{ .color(@light-0) }
+        .text-theme-3{ .color(@gray-3) }
+        .text-theme-2{ .color(@gray-0) }
+        .text-theme-1{ .color(@dark-3) }
     }
     .text-blue-1{ .color(@blue-1) }
     .text-blue-2{ .color(@blue-2) }
