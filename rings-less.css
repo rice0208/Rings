@@ -162,6 +162,12 @@ h1,
 h2 {
   margin-left: 20px !important;
 }
+.mono *,
+.monospace *,
+code *,
+pre *,
+kbd *,
+samp *,
 .mono,
 .monospace,
 code,
@@ -170,44 +176,59 @@ kbd,
 samp {
   font-family: 'Fira Code', SF-Mono, Monaco, Consolas, "Courier New", monospace !important;
 }
+.align-left *,
 .align-left {
   text-align: left !important;
 }
+.align-center *,
 .align-center {
   text-align: center !important;
 }
+.align-right *,
 .align-right {
   text-align: right !important;
 }
+.float-right *,
 .float-right {
   float: right !important;
 }
+.float-left *,
 .float-left {
   float: left !important;
 }
+.text-light *,
+.text-light-1 *,
 .text-light,
-.font-bold-1 {
+.text-light-1 {
   font-weight: 300 !important;
 }
+.text-light-2 *,
 .text-light-2 {
   font-weight: 100 !important;
 }
+.text-normal *,
 .text-normal {
   font-weight: 400 !important;
 }
+.font-bold *,
+.font-bold-1 *,
 .font-bold,
 .font-bold-1 {
   font-weight: 700 !important;
 }
+.font-bold-2 *,
 .font-bold-2 {
   font-weight: 900 !important;
 }
+.lowercase *,
 .lowercase {
   text-transform: lowercase !important;
 }
+.uppercase *,
 .uppercase {
   text-transform: uppercase !important;
 }
+.caps *,
 .caps {
   text-transform: capitalize !important;
 }
@@ -720,6 +741,9 @@ table tbody * {
 }
 table tbody td.figure {
   font-family: 'Fira Code', SF-Mono, Monaco, Consolas, "Courier New", monospace !important;
+}
+table tbody td.figure *,
+table tbody td.figure {
   text-align: right !important;
 }
 table:not(.table-justified) td,
@@ -3928,4 +3952,3 @@ input.custom-checkbox-switch.checkbox-to-dark:checked + label::after {
 div.switch {
   display: inline-block !important;
 }
-/* flags */
