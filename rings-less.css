@@ -900,6 +900,13 @@ table.table-striped.table-info tr:nth-of-type(odd) *:not(th) {
   background-color: #0a9f9e55 !important;
   color: inherit !important;
 }
+table.table-active tr:hover {
+  background-color: #0365d955 !important;
+}
+table.table-active td:hover,
+table.table-active th:hover {
+  background-color: #0365d9aa !important;
+}
 table.table-active.table-gray tr:hover {
   background-color: #70707055 !important;
 }
