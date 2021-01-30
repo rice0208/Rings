@@ -1,11 +1,11 @@
-// Copyright rice0208(2020) in GitHub
+// Copyright rice0208(2021) in GitHub
 // Style Sheet v0.1.5-beta (Less.js)
 // (Rings stands for 'Rings Is Not GROSS Stuff')
 
 // css
 
 /*
-    Copyright rice0208(2020) in GitHub
+    Copyright rice0208(2021) in GitHub
     Style Sheet v0.1.5-beta (css)
     (Rings stands for 'Rings Is Not GROSS Stuff')
 */
@@ -199,20 +199,20 @@
     h5,h6{font-size: 1.2em;}
     h1,h2,h3,h4,h5,h6{margin-top:20px;margin-bottom:20px;}
     h1,h2{margin-left:20px;}
-    .mono,.monospace,code,pre,kbd,samp{font-family:@font-mono;}
-    .align-left{text-align: left;}
-    .align-center{text-align: center;}
-    .align-right{text-align: right;}
-    .float-right{float: right;}
-    .float-left{float: left;}
-    .text-light,.font-bold-1{font-weight:300;}
-    .text-light-2{font-weight:100;}
-    .text-normal{font-weight:400;}
-    .font-bold,.font-bold-1{font-weight:700;}
-    .font-bold-2{font-weight:900;}
-    .lowercase{text-transform:lowercase;}
-    .uppercase{text-transform:uppercase;}
-    .caps{text-transform:capitalize;}
+    .mono,.monospace,code,pre,kbd,samp{*,&{font-family:@font-mono;}}
+    .align-left{*,&{text-align: left;}}
+    .align-center{*,&{text-align: center;}}
+    .align-right{*,&{text-align: right;}}
+    .float-right{*,&{float: right;}}
+    .float-left{*,&{float: left;}}
+    .text-light,.text-light-1{*,&{font-weight:300;}}
+    .text-light-2{*,&{font-weight:100;}}
+    .text-normal{*,&{font-weight:400;}}
+    .text-bold,.text-bold-1{*,&{font-weight:700;}}
+    .text-bold-2{*,&{font-weight:900;}}
+    .lowercase{*,&{text-transform:lowercase;}}
+    .uppercase{*,&{text-transform:uppercase;}}
+    .caps{*,&{text-transform:capitalize;}}
     .block{overflow:hidden;-ms-overflow-style:scrollbar;}
     .small-1,.small{font-size: 85%;}
     .small-2{font-size: 72%;}
@@ -452,7 +452,7 @@
             }
             td.figure{
                 font-family: @font-mono;
-                text-align: right;
+                .align-right;
             }
         }
         &:not(.table-justified){
@@ -520,6 +520,7 @@
                 .active-line(@line);
                 .active-cell(@cell);
             }
+            &{ .active-table-style(@blue-8,@blue-9) }
             &.table-gray{ .active-table-style(@gray-8,@gray-9) }
             &.table-blue{ .active-table-style(@blue-8,@blue-9) }
             &.table-danger{ .active-table-style(@danger-8,@danger-9) }
@@ -829,7 +830,11 @@
                 color:@gray-5;
             }
             &:focus{
-                box-shadow:0 0 0 .22em @blue-3;
+                &,&.blue{box-shadow:0 0 0 .22em @blue-3;}
+                &.danger{box-shadow:0 0 0 .22em @danger-3;}
+                &.warning{box-shadow:0 0 0 .22em @warning-3;}
+                &.ok{box-shadow:0 0 0 .22em @ok-3;}
+                &.info{box-shadow:0 0 0 .22em @info-3;}
                 background-color:@light-4;
                 &::placeholder{
                     color:@light-0;
@@ -838,7 +843,11 @@
         }
         &:focus{
             outline:0;
-            box-shadow: 0 0 0 .22em @blue-3;
+            &,&.blue{box-shadow:0 0 0 .22em @blue-3;}
+            &.danger{box-shadow:0 0 0 .22em @danger-3;}
+            &.warning{box-shadow:0 0 0 .22em @warning-3;}
+            &.ok{box-shadow:0 0 0 .22em @ok-3;}
+            &.info{box-shadow:0 0 0 .22em @info-3;}
         }
         &[type=number]{
             width: calc(28% - 250px);
@@ -850,6 +859,11 @@
             margin: .3em;
         }
     }
+    .blue .custom-text{&:focus{box-shadow:0 0 0 .22em @blue-3;}}
+    .danger .custom-text{&:focus{box-shadow:0 0 0 .22em @danger-3;}}
+    .warning .custom-text{&:focus{box-shadow:0 0 0 .22em @warning-3;}}
+    .ok .custom-text{&:focus{box-shadow:0 0 0 .22em @ok-3;}}
+    .info .custom-text{&:focus{box-shadow:0 0 0 .22em @info-3;}}
     pre code{
         background-color:transparent;
     }
@@ -1193,6 +1207,9 @@
         cursor: pointer;
         outline: none;
         user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
     }
     input.custom-checkbox-switch + label {
         padding: 2px;
@@ -1203,35 +1220,32 @@
         -webkit-transition: background .27s;
         -moz-transition: background .27s;
         -o-transition: background .27s;
-    }
-    input.custom-checkbox-switch + label::before,
-    input.custom-checkbox-switch + label::after {
-        display: block;
-        position: absolute;
-        content: "";
-    }
-    input.custom-checkbox-switch + label::before {
-        top: 2px;
-        left: 2px;
-        bottom: 2px;
-        right: 2px;
-        background-color: transparent;
-        border-radius: 20px;
-        transition: background .27s;
-        -webkit-transition: background .27s;
-        -moz-transition: background .27s;
-        -o-transition: background .27s;
-    }
-    input.custom-checkbox-switch + label::after {
-        top: 4px;
-        left: 4px;
-        bottom: 4px;
-        width: 16px;
-        border-radius: 12px;
-        transition: margin .27s, background .27s;
-        -webkit-transition: margin .27s, background .27s;
-        -moz-transition: margin .27s, background .27s;
-        -o-transition: margin .27s, background .27s;
+        &::before,&::after{
+            display: block;
+            position: absolute;
+            content: "";
+        }
+        &::before{
+            top: 2px;
+            left: 2px;
+            bottom: 2px;
+            right: 2px;
+            background-color: transparent;
+            border-radius: 20px;
+            transition: background .27s;
+            -webkit-transition: background .27s;
+            -moz-transition: background .27s;
+            -o-transition: background .27s;
+        }
+        &::after{
+            top: 4px;
+            left: 4px;
+            bottom: 4px;
+            width: 16px;
+            border-radius: 12px;
+            transition: margin .27s, background .27s;
+            -webkit-transition: margin .27s, background .27s;
+            -moz-transition: margin .27s, background .27s;}
     }
     input.custom-checkbox-switch:checked + label::after {
         margin-left: 20px;
@@ -1239,42 +1253,170 @@
     .custom-switch-from-style(@bg,@color){
         &+label{
             background-color: @bg;
-        }
-        &+label::after{
-            background-color: @color;
+            &::after{
+                background-color: @color;
+            }
         }
     }
     .custom-switch-to-style(@bg,@color){
         &:checked+label {
             background-color: @bg;
+            &::after{
+                background-color: @color;
+            }
         }
-        &:checked+label::after{
-            background-color: @color;
-        }
+    }
+    .custom-switch-default(@color,@with){
+        .custom-switch-from-style(@gray-3,@light-4);
+        .custom-switch-to-style(@color,@with);
     }
     input.custom-checkbox-switch{
         .custom-switch-from-style(@gray-3,@light-4);
         .custom-switch-to-style(@blue-3,@light-4);
     }
-    input.custom-checkbox-switch.checkbox-from-blue{.custom-switch-from-style(@blue-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-from-danger{.custom-switch-from-style(@danger-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-from-ok{.custom-switch-from-style(@ok-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-from-warning{.custom-switch-from-style(@warning-3,@dark-0);}
-    input.custom-checkbox-switch.checkbox-from-info{.custom-switch-from-style(@info-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-from-gray{.custom-switch-from-style(@gray-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-from-light{.custom-switch-from-style(@light-3,@dark-0);}
-    input.custom-checkbox-switch.checkbox-from-dark{.custom-switch-from-style(@dark-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-to-blue{.custom-switch-to-style(@blue-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-to-danger{.custom-switch-to-style(@danger-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-to-ok{.custom-switch-to-style(@ok-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-to-warning{.custom-switch-to-style(@warning-3,@dark-0);}
-    input.custom-checkbox-switch.checkbox-to-info{.custom-switch-to-style(@info-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-to-gray{.custom-switch-to-style(@gray-3,@light-4);}
-    input.custom-checkbox-switch.checkbox-to-light{.custom-switch-to-style(@light-3,@dark-0);}
-    input.custom-checkbox-switch.checkbox-to-dark{.custom-switch-to-style(@dark-3,@light-4);}
+    input.custom-checkbox-switch{
+        &{
+            &.blue{.custom-switch-default(@blue-3,@light-4);}
+            &.danger{.custom-switch-default(@danger-3,@light-4);}
+            &.ok{.custom-switch-default(@ok-3,@light-4);}
+            &.warning{.custom-switch-default(@warning-3,@dark-0);}
+            &.info{.custom-switch-default(@info-3,@light-4);}
+            &.gray{.custom-switch-default(@gray-3,@light-4);}
+            &.light{.custom-switch-default(@light-3,@dark-0);}
+            &.dark{.custom-switch-default(@dark-3,@light-4);}
+        }
+    }
+    input.custom-checkbox-switch{
+        &.from-{
+            &blue{.custom-switch-from-style(@blue-3,@light-4);}
+            &danger{.custom-switch-from-style(@danger-3,@light-4);}
+            &ok{.custom-switch-from-style(@ok-3,@light-4);}
+            &warning{.custom-switch-from-style(@warning-3,@dark-0);}
+            &info{.custom-switch-from-style(@info-3,@light-4);}
+            &gray{.custom-switch-from-style(@gray-3,@light-4);}
+            &light{.custom-switch-from-style(@light-3,@dark-0);}
+            &dark{.custom-switch-from-style(@dark-3,@light-4);}
+        }
+    }
+    input.custom-checkbox-switch{
+        &.to-{
+            &blue{.custom-switch-to-style(@blue-3,@light-4);}
+            &danger{.custom-switch-to-style(@danger-3,@light-4);}
+            &ok{.custom-switch-to-style(@ok-3,@light-4);}
+            &warning{.custom-switch-to-style(@warning-3,@dark-0);}
+            &info{.custom-switch-to-style(@info-3,@light-4);}
+            &gray{.custom-switch-to-style(@gray-3,@light-4);}
+            &light{.custom-switch-to-style(@light-3,@dark-0);}
+            &dark{.custom-switch-to-style(@dark-3,@light-4);}
+        }
+    }
     div.switch{.inline}
- 
-    /* flags */
 
+    .checked-label(@color){
+        &+label::after{
+            border: 1px solid @color;
+            background-color:@color;
+        }
+        &+label::before{
+            background-color:@light-4;
+        }
+    }
+    input.custom-checkbox,input.custom-radio{
+        position: absolute;
+        margin:0;
+        visibility: hidden;
+        display: inline-block;
+        &+label{
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            padding: 0;
+            &::after{
+                width: 12px;
+                height: 12px;
+                border: 1px solid @gray-3;
+                background-color: transparent;
+                transition: background .12s,border .12s,box-shadow .12s;
+                -webkit-transition: background .12s,border .12s,box-shadow .12s;
+                -moz-transition: background .12s,border .12s,box-shadow .12s;
+                -o-transition: background .12s,border .12s,box-shadow .12s;
+                margin:0;
+                position:absolute;
+                left:0;
+                top:0;
+                content:"";
+                margin-top:5px;
+            }
+            margin-bottom: 12px;
+            *{
+                margin-left: 20px;
+                display:inline-block;
+                width:max-content;
+            }
+            &::before{
+                content:"";
+                display:block;
+                position:absolute;
+                left:4px;
+                top:9px;
+                width:6px;
+                height:6px;
+                &:not(:checked){
+                    background-color: transparent;
+                }
+                transition:background .12s;
+                -webkit-transition:background .12s;
+                -moz-transition:background .12s;
+                -o-transition:background .12s;
+                z-index:99999;
+            }
+        }
+        &:checked{
+            &{
+                .checked-label(@blue-3);
+            }
+            &.blue{ .checked-label(@blue-3) }
+            &.danger{ .checked-label(@danger-3) }
+            &.warning{ .checked-label(@warning-3) }
+            &.ok{ .checked-label(@ok-3) }
+            &.info{ .checked-label(@info-3) }
+            &.light{ .checked-label(@light-3) }
+            &.dark{ .checked-label(@dark-3) }
+            &.gray{ .checked-label(@gray-3) }
+        }
+    }
+    input.custom-checkbox+label{
+        &::after{
+            border-radius:4px;
+        }
+        &::before{
+            border-radius:0;
+        }
+    }
+    input.custom-radio+label{
+        &::after{
+            border-radius:12px;
+        }
+        &::before{
+            border-radius:6px;
+        }
+    }
+    .checkbox_value(@color){
+        .custom-checkbox,.custom-radio{
+            &:checked{
+                .checked-label(@color);
+            }
+        }
+    }
+    .blue{ .checkbox_value(@blue-3); }
+    .danger{ .checkbox_value(@danger-3); }
+    .warning{ .checkbox_value(@warning-3); }
+    .ok{ .checkbox_value(@ok-3); }
+    .info{ .checkbox_value(@info-3); }
 }
 .root()!important;
