@@ -1,12 +1,12 @@
 // Copyright rice0208(2021) in GitHub
-// Style Sheet v0.1.5-beta (Less.js)
+// Style Sheet v0.2.0-beta (Less.js)
 // (Rings stands for 'Rings Is Not GROSS Stuff')
 
 // css
 
 /*
     Copyright rice0208(2021) in GitHub
-    Style Sheet v0.1.5-beta (css)
+    Style Sheet v0.2.0-beta (css)
     (Rings stands for 'Rings Is Not GROSS Stuff')
 */
 
@@ -357,6 +357,188 @@
             .loop-btn-color(@i+1);
         }
         .loop-btn-color(1);
+        &{
+            &.btn-angular{
+                border-radius:0;
+            }
+            &.btn-angular-right{
+                border-top-right-radius:0;
+                border-bottom-right-radius:0;
+            }
+            &.btn-angular-left{
+                border-top-left-radius:0;
+                border-bottom-left-radius:0;
+            }
+            &.btn-angular-top{
+                border-top-left-radius:0;
+                border-top-right-radius:0;
+            }
+            &.btn-angular-bottom{
+                border-bottom-left-radius:0;
+                border-bottom-right-radius:0;
+            }
+            &.btn-large{
+                padding:1.6em;
+                font-size:1.1em;
+            }
+            &.btn-small{
+                padding:0;
+                font-size:.6em;
+            }
+        }
+        &.btn-secondary{
+            &,&-blue,&-danger,&-warning,&-ok,&-info,&-dark,&-gray,&-light{
+                transition: color .15s,background-color .15s,border .15s,box-shadow .15s;
+                transition: color .15s,background-color .15s,border .15s,box-shadow .15s;
+                transition: color .15s,background-color .15s,border .15s,box-shadow .15s;
+                transition: color .15s,background-color .15s,border .15s,box-shadow .15s;
+                box-shadow: unset;
+            }
+            &-blue,&{
+                color: @blue-3;
+                border: 2px solid @blue-3;
+                background-color:transparent;
+                &:not(:disabled):not(.disabled){
+                    &:hover,&:active{
+                        color: @light-4;
+                        border: 2px solid @blue-3;
+                        background-color:@blue-3;
+                    }
+                    &:active{
+                        box-shadow: 0 0 0 .16em @blue-3;
+                    }
+                    &:focus:not(:active){
+                        box-shadow: 0 0 0 .09em @blue-3;
+                    }
+                }
+            }
+            &-danger{
+                color: @danger-3;
+                border: 2px solid @danger-3;
+                background-color:transparent;
+                &:not(:disabled):not(.disabled){
+                    &:hover,&:active{
+                        color: @light-4;
+                        border: 2px solid @danger-3;
+                        background-color:@danger-3;
+                    }
+                    &:active{
+                        box-shadow: 0 0 0 .16em @danger-3;
+                    }
+                    &:focus:not(:active){
+                        box-shadow: 0 0 0 .09em @danger-3;
+                    }
+                }
+            }
+            &-warning{
+                color: @warning-3;
+                border: 2px solid @warning-3;
+                background-color:transparent;
+                &:not(:disabled):not(.disabled){
+                    &:hover,&:active{
+                        color: @dark-0;
+                        border: 2px solid @warning-3;
+                        background-color:@warning-3;
+                    }
+                    &:active{
+                        box-shadow: 0 0 0 .16em @warning-3;
+                    }
+                    &:focus:not(:active){
+                        box-shadow: 0 0 0 .09em @warning-3;
+                    }
+                }
+            }
+            &-ok{
+                color: @ok-3;
+                border: 2px solid @ok-3;
+                background-color:transparent;
+                &:not(:disabled):not(.disabled){
+                    &:hover,&:active{
+                        color: @light-4;
+                        border: 2px solid @ok-3;
+                        background-color:@ok-3;
+                    }
+                    &:active{
+                        box-shadow: 0 0 0 .16em @ok-3;
+                    }
+                    &:focus:not(:active){
+                        box-shadow: 0 0 0 .09em @ok-3;
+                    }
+                }
+            }
+            &-info{
+                color: @info-3;
+                border: 2px solid @info-3;
+                background-color:transparent;
+                &:not(:disabled):not(.disabled){
+                    &:hover,&:active{
+                        color: @light-4;
+                        border: 2px solid @info-3;
+                        background-color:@info-3;
+                    }
+                    &:active{
+                        box-shadow: 0 0 0 .16em @info-3;
+                    }
+                    &:focus:not(:active){
+                        box-shadow: 0 0 0 .09em @info-3;
+                    }
+                }
+            }
+            &-dark{
+                color: @dark-3;
+                border: 2px solid @dark-3;
+                background-color:transparent;
+                &:not(:disabled):not(.disabled){
+                    &:hover,&:active{
+                        color: @light-4;
+                        border: 2px solid @dark-3;
+                        background-color:@dark-3;
+                    }
+                    &:active{
+                        box-shadow: 0 0 0 .16em @dark-3;
+                    }
+                    &:focus:not(:active){
+                        box-shadow: 0 0 0 .09em @dark-3;
+                    }
+                }
+            }
+            &-gray{
+                color: @gray-3;
+                border: 2px solid @gray-3;
+                background-color:transparent;
+                &:not(:disabled):not(.disabled){
+                    &:hover,&:active{
+                        color: @light-4;
+                        border: 2px solid @gray-3;
+                        background-color:@gray-3;
+                    }
+                    &:active{
+                        box-shadow: 0 0 0 .16em @gray-3;
+                    }
+                    &:focus:not(:active){
+                        box-shadow: 0 0 0 .09em @gray-3;
+                    }
+                }
+            }
+            &-light{
+                color:@light-3;
+                border: 2px solid @light-3;
+                background-color:transparent;
+                &:not(:disabled):not(.disabled){
+                    &:hover,&:active{
+                        color: @dark-0;
+                        border: 2px solid @light-3;
+                        background-color:@light-3;
+                    }
+                    &:active{
+                        box-shadow: 0 0 0 .16em @light-3;
+                    }
+                    &:focus:not(:active){
+                        box-shadow: 0 0 0 .09em @light-3;
+                    }
+                }
+            }
+        }
     }
     .flex(@flex){
         flex:@flex;
@@ -533,7 +715,6 @@
         padding: .3em;
         margin: .07em;
         display: inline-block;
-        background-color: @blue-9;
     }
     .custom-code-color(@bg,@color){
         background-color:@bg;
@@ -567,7 +748,7 @@
         pre.info,.info pre,&.info pre{ .custom-code-color(@info-9, @light-10); }
         pre.gray,.gray pre{ .custom-code-color(@gray-9, @light-10); }
     }
-    body.theme-light{
+    body.theme-light,body{
         background-color: @light-4;
         color: @dark-0;
         .custom-code-light();
@@ -582,7 +763,7 @@
             border: 2px solid @light-4;
         }
     }
-    body.theme-light{
+    body.theme-light,body{
         fieldset{
             border: 2px solid @dark-0;
         }
@@ -1195,7 +1376,10 @@
         .loop-flex(1,l-);
         .hid-l{visibility:hidden;}
     }
-    
+    frame,iframe{
+        border:0;
+        outline:0;
+    }
     .custom-checkbox-switch{
         position: absolute;
         margin-left: -9999px;
@@ -1418,5 +1602,32 @@
     .warning{ .checkbox_value(@warning-3); }
     .ok{ .checkbox_value(@ok-3); }
     .info{ .checkbox_value(@info-3); }
+
+    .alert-box{
+        min-height: 1em;
+        font-size: 1em;
+        padding: 1.25em;
+        &{
+            margin: 25px;
+            border-radius: 8px;
+        }
+        .alert-box-full{
+            width: 100%;
+            min-width: 100%;
+            margin: 0;
+            border-radius: 0;
+        }
+        background-color:@blue-8;
+        color:@blue-3;
+        border:1px solid @blue-3;
+        &.alert-box-blue{background-color:@blue-8;color:inherit;border:1px solid @blue-3;color:@blue-3;}
+        &.alert-box-danger{background-color:@danger-8;color:inherit;border:1px solid @danger-3;color:@danger-3;}
+        &.alert-box-warning{background-color:@warning-8;color:inherit;border:1px solid @warning-3;color:@warning-3;}
+        &.alert-box-ok{background-color:@ok-8;color:inherit;border:1px solid @ok-3;color:@ok-3;}
+        &.alert-box-info{background-color:@info-8;color:inherit;border:1px solid @info-3;color:@info-3;}
+        &.alert-box-dark{background-color:@dark-8;color:inherit;border:1px solid @dark-3;color:@light-3;}
+        &.alert-box-gray{background-color:@gray-8;color:inherit;border:1px solid @gray-3;color:@gray-3;}
+        &.alert-box-light{background-color:@light-8;color:inherit;border:1px solid @light-0;color:@dark-3;}
+    }
 }
 .root()!important;
