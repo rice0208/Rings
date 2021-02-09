@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="../rings.js"></script>
+    </head>
+    <body>
+        <div id="another" style="padding:0;float:right;">
+            <fieldset id="bg_text">
+                <legend><h3> <code>.bg</code> 类与 <code>.text</code> 的用法<span class="tag tag-blue">v0.1.5</span></h3></legend>
+                <h4 id="bg_text_common">一般颜色<span class="tag tag-ok">v0.1.5</span></h4>
+                示例：<br><pre>&lt;div class="bg-blue-3"&gt;<br>    &lt;!-- ... --&gt;<br>&lt;/div&gt;<br>&lt;span class="text-blue-3"&gt;<br>    &lt;!-- ... --&gt;<br>&lt;/span&gt;</pre>
+                使用.bg可以将一个元素的背景设置成你想要的颜色。如：.bg-blue-3将背景颜色设置成#0365D9。（详见Rings颜色表）
+                将<code>.bg-</code>放在任意颜色名后可以设置背景。
+                <br><br>
+                使用.text可以将一个元素的文字颜色设置成你想要的颜色。如：.text-blue-3将背景颜色设置成#0365D9。
+                将<code>.text-</code>放在任意颜色名后可以设置文字颜色。
+                <h4 id="theme_color">theme用法<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
+                theme背景色规定了在不同的<code>body class</code>下该规定元素的黑白颜色。theme共分5级，但是与其它颜色不同的是：theme仅仅在bg与text生效（确实，好像在别的地方也没什么用）。
+                <br><span class="text-main">更改颜色主题查看效果！</span>
+                <table class="table-justified bordered">
+                    <tbody>
+                        <tr>
+                            <th>背景class</th><th>预览</th>
+                        </tr>
+                        <tr><td><code>.bg-theme-1</code></td><td class="bg-theme-1"></td></tr>
+                        <tr><td><code>.bg-theme-2</code></td><td class="bg-theme-2"></td></tr>
+                        <tr><td><code>.bg-theme-3</code></td><td class="bg-theme-3"></td></tr>
+                        <tr><td><code>.bg-theme-4</code></td><td class="bg-theme-4"></td></tr>
+                        <tr><td><code>.bg-theme-5</code></td><td class="bg-theme-5"></td></tr>
+                    </tbody>
+                </table>
+            </fieldset>
+        </div>
+    </body>
+</html>

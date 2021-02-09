@@ -402,6 +402,18 @@ nav ol ol {
 .btn:visited {
   text-decoration: none !important;
 }
+.btn:focus {
+  background-color: #0365d9 !important;
+  box-shadow: 0 0 0 0.16em #0365d9 !important;
+}
+.btn:hover {
+  background-color: #024DA5 !important;
+  box-shadow: 0 0 0 0.22em #024DA5 !important;
+}
+.btn:active {
+  background-color: #024DA5 !important;
+  box-shadow: 0 0 0 0.16em #024DA5 !important;
+}
 .btn.btn-blue {
   background-color: #0365d9 !important;
   color: #ffffff !important;
@@ -654,12 +666,17 @@ nav ol ol {
   border-bottom-right-radius: 0 !important;
 }
 .btn.btn-large {
-  padding: 0.7em !important;
+  padding: 0.5em !important;
+  padding-left: 1.3em !important;
+  padding-right: 1.3em !important;
   font-size: 1.5em !important;
 }
 .btn.btn-small {
   padding: 0 !important;
+  padding-left: 1em !important;
+  padding-right: 1em !important;
   font-size: 0.8em !important;
+  border-radius: 2px !important;
 }
 .btn.btn-secondary,
 .btn.btn-secondary-blue,
@@ -4544,49 +4561,41 @@ input.custom-radio + label::before {
 }
 .alert-box.alert-box-blue {
   background-color: #0365d955 !important;
-  color: inherit !important;
   border: 1px solid #0365d9 !important;
   color: #0365d9 !important;
 }
 .alert-box.alert-box-danger {
   background-color: #dd224455 !important;
-  color: inherit !important;
   border: 1px solid #dd2244 !important;
   color: #dd2244 !important;
 }
 .alert-box.alert-box-warning {
   background-color: #eebb2255 !important;
-  color: inherit !important;
   border: 1px solid #eebb22 !important;
   color: #eebb22 !important;
 }
 .alert-box.alert-box-ok {
   background-color: #108a1255 !important;
-  color: inherit !important;
   border: 1px solid #108a12 !important;
   color: #108a12 !important;
 }
 .alert-box.alert-box-info {
   background-color: #0a9f9e55 !important;
-  color: inherit !important;
   border: 1px solid #0a9f9e !important;
   color: #0a9f9e !important;
 }
 .alert-box.alert-box-dark {
-  background-color: #30303055 !important;
-  color: inherit !important;
-  border: 1px solid #303030 !important;
+  background-color: #303030 !important;
+  border: 1px solid #404040 !important;
   color: #f0f0f0 !important;
 }
 .alert-box.alert-box-gray {
-  background-color: #70707055 !important;
-  color: inherit !important;
-  border: 1px solid #707070 !important;
-  color: #707070 !important;
+  background-color: #707070 !important;
+  border: 1px solid #b0b0b0 !important;
+  color: #f0f0f0 !important;
 }
 .alert-box.alert-box-light {
-  background-color: #f0f0f055 !important;
-  color: inherit !important;
-  border: 1px solid #c0c0c0 !important;
+  background-color: #e0e0e0 !important;
+  border: 1px solid #ffffff !important;
   color: #303030 !important;
 }

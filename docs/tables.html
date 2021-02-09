@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="../rings.js"></script>
+    </head>
+    <body>
+        <fieldset id="tables">
+            <legend><h3>Rings表格<span class="tag tag-blue">v0.1.5</span></h3></legend>
+            Rings提供了各种各样的表格样式。这些表格样式可以有效清除用户的理解障碍。
+            <br><br>
+            <h4 id="table-striped">添加条纹<span class="tag tag-ok">v0.1.5</span></h4>
+            <code>.table-striped</code>让表格增加了隔行的条纹。
+            <table class="table-striped">
+                <tbody>
+                    <tr>
+                        <th>Lorem Ipsum</th><th>Lorem Ipsum</th>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                    <tr>
+                        <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <h4 id="cell-width">规定单元格宽度<span class="tag tag-ok">v0.1.5</span></h4>
+            <code>.cell-*</code>规定了单元格在同一行内宽度之比。
+            <br>表格中的数值x均代表单元格class<code>.cell-x</code>，其中，x为1至12的整数。
+            <table class="align-center">
+                <tbody>
+                    <tr><td class="cell-7 bg-blue-9">.cell-7</td><td class="cell-9 bg-danger-9">.cell-9</td></tr>
+                </tbody>
+            </table>
+            <br>
+            <table class="align-center">
+                <tbody>
+                    <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-2 bg-danger-9">2</td></tr>
+                    <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-3 bg-danger-9">3</td></tr>
+                    <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-4 bg-danger-9">4</td></tr>
+                    <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-5 bg-danger-9">5</td></tr>
+                    <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-6 bg-danger-9">6</td></tr>
+                    <tr><td class="cell-2 bg-blue-9">2</td><td class="cell-10 bg-danger-9">10</td></tr>
+                    <tr><td class="cell-3 bg-blue-9">3</td><td class="cell-9 bg-danger-9">9</td></tr>
+                    <tr><td class="cell-4 bg-blue-9">4</td><td class="cell-8 bg-danger-9">8</td></tr>
+                    <tr><td class="cell-5 bg-blue-9">5</td><td class="cell-7 bg-danger-9">7</td></tr>
+                    <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-6 bg-danger-9">6</td></tr>
+                </tbody>
+            </table>
+            <br>
+            <table class="align-center">
+                <tbody>
+                    <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td></tr>
+                    <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td><td class="cell-8 bg-warning-9">8</td></tr>
+                    <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td><td class="cell-8 bg-warning-9">8</td><td class="cell-9 bg-ok-9">9</td></tr>
+                    <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td><td class="cell-8 bg-warning-9">8</td><td class="cell-9 bg-ok-9">9</td><td class="cell-10 bg-info-9">10</td></tr>
+                    <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td><td class="cell-8 bg-warning-9">8</td><td class="cell-9 bg-ok-9">9</td><td class="cell-10 bg-info-9">10</td><td class="cell-11 bg-gray-9">11</td></tr>
+                </tbody>
+            </table>
+            通过这个，我们可以制作各种表格，例如下面这个：<br>
+            <pre>&lt;table&gt;<br>    &lt;tbody&gt;<br>        &lt;tr&gt;<br>            &lt;th class="cell-3"&gt;Lorem&lt;/th&gt;<br>            &lt;th class="cell-3"&gt;Lorem&lt;/th&gt;<br>            &lt;th class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/th&gt;<br>            &lt;th class="cell-6"&gt;Lorem&lt;/th&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>    &lt;/tbody&gt;<br>&lt;/table&gt;</pre>
+            输出：<br>
+            <table>
+                <tbody>
+                    <tr>
+                        <th class="cell-3">Lorem</th>
+                        <th class="cell-3">Lorem</th>
+                        <th class="cell-9">Lorem ipsum dolor sit amet.</th>
+                        <th class="cell-6">Lorem</th>
+                    </tr>
+                    <tr>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-9">Lorem ipsum dolor sit amet.</td>
+                        <td class="cell-6">Lorem ipsum dolor</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-9">Lorem ipsum dolor sit amet.</td>
+                        <td class="cell-6">Lorem ipsum dolor</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-9">Lorem ipsum dolor sit amet.</td>
+                        <td class="cell-6">Lorem ipsum dolor</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-9">Lorem ipsum dolor sit amet.</td>
+                        <td class="cell-6">Lorem ipsum dolor</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-9">Lorem ipsum dolor sit amet.</td>
+                        <td class="cell-6">Lorem ipsum dolor</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-9">Lorem ipsum dolor sit amet.</td>
+                        <td class="cell-6">Lorem ipsum dolor</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-9">Lorem ipsum dolor sit amet.</td>
+                        <td class="cell-6">Lorem ipsum dolor</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-3">Lorem</td>
+                        <td class="cell-9">Lorem ipsum dolor sit amet.</td>
+                        <td class="cell-6">Lorem ipsum dolor</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h4 id="add-figure">向表格添加数据：<code>.figure</code><span class="tag tag-ok">v0.1.5</span></h4>
+            <p>当我们在表格中显示数据时，数据的比较非常重要，因此Rings使用了等宽字体(Monospace)以对齐文本。如果将<code>.figure</code>加入<code>td</code>元素，数据将会自动向右对齐并等宽(灵感来自Microsoft Excel)。</p><br>效果如下：
+            <pre>&lt;table class="table-striped"&gt;<br>    &lt;tbody&gt;<br>        &lt;tr&gt;<br>            &lt;th class="cell-1"&gt;&lt;/th&gt;&lt;th class="cell-6"&gt;Set A&lt;/th&gt;&lt;th class="cell-6"&gt;Set B&lt;/th&gt;&lt;th class="cell-6"&gt;Set C&lt;/th&gt;&lt;th class="cell-6"&gt;Set D&lt;/th&gt;&lt;th class="cell-6"&gt;Set E&lt;/th&gt;&lt;th class="cell-6"&gt;Set F&lt;/th&gt;&lt;th class="cell-6"&gt;Set G&lt;/th&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-1"&gt;1&lt;/td&gt;&lt;td class="cell-6 figure"&gt;29.01&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.40&lt;/td&gt;&lt;td class="cell-6 figure"&gt;29.30&lt;/td&gt;&lt;td class="cell-6 figure"&gt;28.36&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.45&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.42&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.48&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-1"&gt;2&lt;/td&gt;&lt;td class="cell-6 figure"&gt;27.70&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.51&lt;/td&gt;&lt;td class="cell-6 figure"&gt;25.43&lt;/td&gt;&lt;td class="cell-6 figure"&gt;24.21&lt;/td&gt;&lt;td class="cell-6 figure"&gt;27.91&lt;/td&gt;&lt;td class="cell-6 figure"&gt;24.32&lt;/td&gt;&lt;td class="cell-6 figure"&gt;27.52&lt;/td&gt;<br>        &lt;/tr&gt;<br>    &lt;/tbody&gt;<br>&lt;/table&gt;</pre>
+            输出元素：<br>
+            <table class="table-striped">
+                <tbody>
+                    <tr>
+                        <th class="cell-1"></th><th class="cell-6">Set A</th><th class="cell-6">Set B</th><th class="cell-6">Set C</th><th class="cell-6">Set D</th><th class="cell-6">Set E</th><th class="cell-6">Set F</th><th class="cell-6">Set G</th>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">1</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">2</td><td class="cell-6 figure">27.70</td><td class="cell-6 figure">26.51</td><td class="cell-6 figure">25.43</td><td class="cell-6 figure">24.21</td><td class="cell-6 figure">27.91</td><td class="cell-6 figure">24.32</td><td class="cell-6 figure">27.52</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h4 id="table-color">表格颜色样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
+            表格的颜色样式也与其它的元素一样。<span class="text-danger">注意：目前仍不支持随着父元素改变而改变！</span>
+            <br>示例：<code>&lt;table class="table-danger"&gt; &lt;!-- ... --&gt; &lt;/table&gt;</code>
+            <br>输出：
+            <table class="table-striped table-danger">
+                <tbody>
+                    <tr>
+                        <th class="cell-1"></th><th class="cell-6">Set A</th><th class="cell-6">Set B</th><th class="cell-6">Set C</th><th class="cell-6">Set D</th><th class="cell-6">Set E</th><th class="cell-6">Set F</th><th class="cell-6">Set G</th>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">1</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">2</td><td class="cell-6 figure">27.70</td><td class="cell-6 figure">26.51</td><td class="cell-6 figure">25.43</td><td class="cell-6 figure">24.21</td><td class="cell-6 figure">27.91</td><td class="cell-6 figure">24.32</td><td class="cell-6 figure">27.52</td>
+                    </tr>
+                </tbody>
+            </table>
+            当然还有其它样式，目前支持5种基本颜色：blue, danger, warning, ok, info.
+            <h4 id="active-cell">追踪单元格<span class="tag tag-ok">v0.1.5</span></h4>
+            单元格太多的时候，你是否会两眼发黑、生无可恋，只是为了找一个单元格的索引？
+            <br>如果是的话，我们不建议你在开发中把相同的问题留给用户。
+            <br>在Rings中，使用class<code>.table-active</code>可以解决这个问题。
+            以上一个表格为例，不过这次我们为<code>table</code>加上<code>.table-active</code>，显示的效果如下：<br>
+            <table class="table-active">
+                <tbody>
+                    <tr>
+                        <th class="cell-1"></th><th class="cell-6">Set A</th><th class="cell-6">Set B</th><th class="cell-6">Set C</th><th class="cell-6">Set D</th><th class="cell-6">Set E</th><th class="cell-6">Set F</th><th class="cell-6">Set G</th>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">1</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">2</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">3</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">4</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">5</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">6</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">7</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">8</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">9</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">10</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">11</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">12</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">13</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">14</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">15</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">16</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">17</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">18</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">19</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">20</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                    <tr>
+                        <td class="cell-1">21</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </body>
+</html>

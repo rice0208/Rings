@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="../rings.js"></script>
+    </head>
+    <body>
+        <fieldset id="forms">
+            <legend><h3>表单控件<span class="tag tag-warning">v0.1.5 - Developing</span></h3></legend>
+            使用Rings可以搭配使用class，使得表单可以拥有很棒的样式。下面了解一下特殊表单控件的使用。
+            <b>首先，你需要知道的是：浏览器提供的表单控件一般不方便使用样式。（输入框除外，不信你亲测一下），因此，我们需要额外添加元素<code>&lt;label&gt;</code></b>
+            <h4 id="checkbox">复选框样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
+            Rings复选框用法如下：
+            <pre>&lt;form&gt;<br>    &lt;div&gt;&lt;b&gt;请选择你的爱好:&lt;/b&gt;<br>        &lt;input class="custom-checkbox" id="check1" type="checkbox" value="" name="check"&gt;&lt;label for="check1"&gt;&lt;p&gt;篮球&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-checkbox" id="check2" type="checkbox" value="" name="check"&gt;&lt;label for="check2"&gt;&lt;p&gt;滑雪&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-checkbox" id="check3" type="checkbox" value="" name="check"&gt;&lt;label for="check3"&gt;&lt;p&gt;跳伞&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-checkbox" id="check4" type="checkbox" value="" name="check"&gt;&lt;label for="check4"&gt;&lt;p&gt;骑行&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-checkbox" id="check5" type="checkbox" value="" name="check"&gt;&lt;label for="check5"&gt;&lt;p&gt;游泳&lt;/p&gt;&lt;/label&gt;<br>    &lt;/div&gt;<br>&lt;/form&gt;</pre>
+            显示效果：
+            <form>
+                <div><b>请选择你的爱好:</b>
+                    <input class="custom-checkbox" id="check1" type="checkbox" value="" name="check"><label for="check1"><p>篮球</p></label>
+                    <input class="custom-checkbox" id="check2" type="checkbox" value="" name="check"><label for="check2"><p>滑雪</p></label>
+                    <input class="custom-checkbox" id="check3" type="checkbox" value="" name="check"><label for="check3"><p>跳伞</p></label>
+                    <input class="custom-checkbox" id="check4" type="checkbox" value="" name="check"><label for="check4"><p>骑行</p></label>
+                    <input class="custom-checkbox" id="check5" type="checkbox" value="" name="check"><label for="check5"><p>游泳</p></label>
+                </div>
+            </form>
+            <h4 id="radio">单选框样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
+            Rings单选框用法如下：
+            <pre>&lt;form&gt;<br>    &lt;div&gt;&lt;b&gt;请选择你的爱好:&lt;/b&gt;<br>        &lt;input class="custom-radio" id="radio1" type="radio" value="" name="radio"&gt;&lt;label for="radio1"&gt;&lt;p&gt;篮球&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-radio" id="radio2" type="radio" value="" name="radio"&gt;&lt;label for="radio2"&gt;&lt;p&gt;滑雪&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-radio" id="radio3" type="radio" value="" name="radio"&gt;&lt;label for="radio3"&gt;&lt;p&gt;跳伞&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-radio" id="radio4" type="radio" value="" name="radio"&gt;&lt;label for="radio4"&gt;&lt;p&gt;骑行&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-radio" id="radio5" type="radio" value="" name="radio"&gt;&lt;label for="radio5"&gt;&lt;p&gt;游泳&lt;/p&gt;&lt;/label&gt;<br>    &lt;/div&gt;<br>&lt;/form&gt;</pre>
+            显示效果：
+            <form>
+                <div><b>请选择你的爱好:</b>
+                    <input class="custom-radio" id="radio1" type="radio" value="" name="radio"><label for="radio1"><p>篮球</p></label>
+                    <input class="custom-radio" id="radio2" type="radio" value="" name="radio"><label for="radio2"><p>滑雪</p></label>
+                    <input class="custom-radio" id="radio3" type="radio" value="" name="radio"><label for="radio3"><p>跳伞</p></label>
+                    <input class="custom-radio" id="radio4" type="radio" value="" name="radio"><label for="radio4"><p>骑行</p></label>
+                    <input class="custom-radio" id="radio5" type="radio" value="" name="radio"><label for="radio5"><p>游泳</p></label>
+                </div>
+            </form>
+            复选框与单选框都有颜色样式选择：与code元素相同，如果input元素或父元素添加了class<code class="blue">.blue</code>
+            <code class="danger">.danger</code>
+            <code class="warning">.warning</code>
+            <code class="ok">.ok</code>
+            <code class="info">.info</code>，颜色将会改变。你可以现场按下F12试一试。
+            <h4 id="switch">开关样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
+            Rings的开关按钮基于复选框，用法是复选框+label。
+            <pre>&lt;div class="switch"&gt;<br>    &lt;input class="custom-checkbox-switch" type="checkbox" id="switch1"&gt;<br>    &lt;label for="switch1"&gt;<br>&lt;/div&gt;</pre>
+            <b>显示效果：</b><div class="switch">
+                <input class="custom-checkbox-switch" type="checkbox" id="switch1">
+                <label for="switch1"></label>
+            </div>
+            <br>另外，Rings开关还有丰富的颜色样式可供选择。
+            <br><b>第一种样式：直接添加基本颜色class</b>
+            <br>一共有八种class可选：
+            <code class="blue">.blue</code>
+            <code class="danger">.danger</code>
+            <code class="warning">.warning</code>
+            <code class="ok">.ok</code>
+            <code class="info">.info</code>
+            <code class="gray">.gray</code>
+            <code class="gray">.dark</code>
+            <code class="gray">.light</code>
+            <br><b>第二种样式：添加from颜色与to颜色来改变详细变色方式</b><br>
+            在第一种方式的基础上，在class前添加“from”与“to”从而改变样式。
+            例如<code>.from-danger.to-ok</code>显示效果为：<div class="switch">
+                <input class="custom-checkbox-switch from-danger to-ok" type="checkbox" id="switch2">
+                <label for="switch2"></label>
+            </div>
+            <h4 id="textarea">输入框样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
+            Rings的输入框改善了原本丑陋而又不好用的浏览器输入框。
+            <pre>&lt;input class="custom-text"&gt;</pre>
+            输出：<input class="custom-text">
+            <br>还有更多的样式：<br>
+            <code>&nbsp;&nbsp;&nbsp;.custom-text.custom-text-xs</code><input class="custom-text custom-text-xs" placeholder="xs"><br>
+            <code>.custom-text.custom-text-small</code><input class="custom-text custom-text-small" placeholder="small"><br>
+            <code>.custom-text.custom-text-large</code><input class="custom-text custom-text-large" placeholder="large"><br>
+            <br><br>
+            <b>动态颜色：</b>
+            <code>.custom-text.custom-text-active</code><input class="custom-text custom-text-active" placeholder="Hello"><br>
+            <br><br>另外，输入框还支持class<code class="blue">.blue</code>
+            <code class="danger">.danger</code>
+            <code class="warning">.warning</code>
+            <code class="ok">.ok</code>
+            <code class="info">.info</code>，如果添加，键入时边框的颜色将会改变。
+            <br>示例：<code class="danger">.custom-text.danger</code><input class="custom-text danger" placeholder="Hello">
+        </fieldset>
+    </body>
+</html>

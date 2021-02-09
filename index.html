@@ -3,131 +3,59 @@
     <head>
         <meta charset="utf-8">
         <title>Rings中文文档</title>
-        <link rel="stylesheet" href="rings.min.css" />
-        <link rel="shortcut icon" href="rings.svg" />
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
         <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
         <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
         <style>
             #contents{
-                width: 365px;
-                padding-right:0;
-                left: -300px;
-                transition: left 0.3s;
-                -moz-transition: left 0.3s;
-                -webkit-transition: left 0.3s;
-                -o-transition: left 0.3s;
+                padding:2%!important;
             }
-            #contents ul{
-                visibility:hidden;
+            @media screen and (min-width: 992px){
+                #contents{
+                    width: 19%;
+                    padding-right:0;
+                }
             }
-            #contents:hover{
-                left: 0;
-            }
-            #contents:hover *{
-                visibility:visible;
+            @media screen and (max-width: 992px){
+                #contents{
+                    visibility: hidden;
+                    left: -30%
+                }
             }
             table *{
                 z-index:1!important;
             }
+            @media screen and (min-width:992px){
+                #things{width:63%;}
+                #another{width:74%;}
+            }
+            @media screen and (max-width:992px){
+                #things{width:89%;}
+                #another{width:100%;}
+            }
+            div.blank{
+                height:120px;
+                width:100%;
+            }
         </style>
     </head>
-    <body>
-        <nav class="bg-main light no-selected full fixed" style="height:auto;max-height:35px;">
-            <div>
-                <ul class="inline">
-                    <li class="small-3" style="margin-left:75px"><h1>Rings</h1></li>
-                </ul>
-                <form name="theme" class="inline" style="z-index: 10;">
-                    <p class="inline">选择颜色主题: </p>
-                    <select class="custom-text custom-text-active custom-text-xs inline" name="lightness">
-                        <option class="text-main-5">浅色</option>
-                        <option class="text-main-2">深色</option>
-                    </select>
-                    <input type="button" class="btn btn-light" onclick="
-                    if(document.theme.lightness.value=='深色'){
-                        document.getElementsByTagName('body')[0].classList.add('theme-dark');
-                        document.getElementsByTagName('body')[0].classList.remove('theme-light')
-                        $(document).ready(function(){
-                            if($.cookie('themelight')!=undefined){
-                                $.removeCookie('themelight', { path: '/' });
-                            }
-                            $.cookie('themelight','dark', { expires: 99999, path: '/' })
-                        })
-                    }
-                    else if(document.theme.lightness.value=='浅色'){
-                        document.getElementsByTagName('body')[0].classList.add('theme-light');
-                        document.getElementsByTagName('body')[0].classList.remove('theme-dark');
-                        $(document).ready(function(){
-                            if($.cookie('themelight')!=undefined){
-                                $.removeCookie('themelight', { path: '/' });
-                            }
-                            $.cookie('themelight','light', { expires: 99999, path: '/' })
-                        })
-                    }" value="应用">
-                </form>
-            </div>
-        </nav>
-
-        <div class="bg-theme-5 no-selected" id="contents" style="position:fixed;height:calc(94% + 60px);padding:3%;padding-top:60px;padding:0;z-index:200000!important;">
-            <h2 style="transform:rotate(90deg);-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-o-transform:rotate(90deg);top:80px;right:-78px;position:absolute">Contents&nbsp;&nbsp;&nbsp;↓</h2>
+    <body class="theme-light">
+        <div class="bg-theme-4 no-selected" id="contents" style="position:fixed;height:calc(94% + 60px);padding-top:60px;padding:0;z-index:200000!important;">
             <div>
                 <h2>目录</h2>
-                <ul style="height:calc(94% - 140px);overflow:auto;position: absolute;padding-right:3%">
-                    <li>
-                        <ul><h4><a href="#intro">概述</a></h4>
-                            <li><a href="#license">LICENSE</a></li>
-                            <li><a href="#what-is-rings">什么是Rings？</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul><h4><a href="#mainuse">基本用法</a></h4>
-                            <li><a href="#rings-colors">Rings颜色</a>
-                                <ul>
-                                    <li><a href="#basic_color">基本颜色</a></li>
-                                    <li><a href="#detailed_color">具体的Rings颜色名</a></li>
-                                    <li><a href="#colors_main">颜色名main</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#bg_text">.bg类与.text的用法</a>
-                                <ul>
-                                    <li><a href="#bg_text_common">一般颜色</a></li>
-                                    <li><a href="#theme_color">theme用法</a></li>
-                                </ul></li>
-                            <li><a href="#buttons">按钮样式</a></li>
-                            <li><a href="#code_pre">&lt;code&gt; 与 &lt;pre&gt;</a></li>
-                            <li><a href="#::selection">Rings提供的::selection</a></li>
-                            <li><a href="#tags">Rings标签</a></li>
-                            <li><a href="#tables">Rings表格</a>
-                                <ul>
-                                    <li><a href="#table-striped">添加条纹</a></li>
-                                    <li><a href="#cell-width">规定单元格宽度</a></li>
-                                    <li><a href="#add-figure">向表格添加数据</a></li>
-                                    <li><a href="#table-color">表格颜色样式</a></li>
-                                    <li><a href="#active-cell">追踪单元格</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#forms">表单控件</a>
-                                <ul>
-                                    <li><a href="#checkbox">复选框样式</a></li>
-                                    <li><a href="#radio">单选框样式</a></li>
-                                    <li><a href="#switch">开关样式</a></li>
-                                    <li><a href="#textarea">输入框样式</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#other">其它没有提到的class</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul><h4>源代码</h4>
-                            <li><ul><h5>v0.1.5</h5>
+                <a href="/">HOME</a>
+                <ul style="height:calc(94% - 140px);overflow:auto;position: absolute;padding-right:3%"><a href="docs/">Docs</a>
+                    <li><b>源代码</b>
+                        <ul>
+                            <li>v0.1.5<ul>
                                     <li><a href="https://github.com/rice0208/Rings/blob/master/versions/0.1.5/Rings-less.less" target="_blank">Less.js</a></li>
                                     <li><a href="https://github.com/rice0208/Rings/blob/master/versions/0.1.5/rings-less.css" target="_blank">CSS</a></li>
                                     <li><a href="https://github.com/rice0208/Rings/blob/master/versions/0.1.5/rings.min.css" target="_blank">Compressed CSS</a></li>
                                 </ul>
                             </li>
-                            
                         </ul>
                     </li>
                 </ul>
@@ -136,695 +64,27 @@
 
         <div class="fixed" style="right:10px;top:66px;">©Copyright rice0208 (2021)</div>
 
-        <div id="main-content" style="top:55px;overflow:scroll;" class="hidden-s">
-            <div class="bg-main-9 no-selected" style="width:calc(83.99999998% - 65px);float:right;padding:8%;height:14%">
-                <div style="text-align:center;"><img class="inline" src="rings.svg" style="width:48%!important;height:auto;margin:0;"></div>
+        <div id="main-content" style="overflow:scroll;" class="hidden-s">
+            <div id="things" class="bg-main-9 no-selected" style="float:right;padding:8%;height:14%;padding-top:75px">
+                <div style="text-align:center;"><img class="inline" src="../rings.svg" style="width:48%!important;height:auto;margin:0;margin-top:200px"></div>
                 <h1 style="font-size:75px!important;text-align:center">Rings</h1>
                 <p class="big-4 align-center" style="margin:40px!important;">更好的Web开发方式。</p>
-                <p class="big-3 text-main align-center">v0.1.5 (Beta)</p>
-            </div>
-            <div style="width:calc(100% - 75px);padding:0;float:right;">
-                <h2 id="intro">概述</h2>
-                <fieldset style="padding:5%;margin:0;" id="license">
-                    <legend class="text-main"><h3>LICENSE</h3>(Licensed under MIT)</legend>
-                    <p><strong>MIT License</strong><br><br><strong>Copyright (c) 2021 rice0208</strong><br><br>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:<br><br>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br><br><span class="text-main font-bold">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></p>
-                </fieldset>
-                <fieldset class="danger" style="padding:5%;margin:0;" id="what-is-rings">
-                    <legend><h3>什么是Rings？(必读！)</h3></legend>
-                    <p>Rings是一款基于Less开发的，方便的HTML样式库。Rings为“Rings Is Not GROSS Stuff”的缩写。</p>
-                    <h4>Rings的开发者</h4>
-                    <p>目前该项目仅由我(<a href="https://www.github.com/rice0208" target="_blank">@rice0208</a>)开发，源代码在GitHub上有开源库<a href="https://www.github.com/rice0208/Rings" target="_blank">rice0208/Rings</a>。</p>
-                    <h4>Rings的工作机制</h4>
-                    <p>Rings通过在HTML中添加<code>&lt;element class&gt;</code>来改变样式，具体参见下文。</p>
-                    <h4>Rings需要什么？</h4>
-                    <p>毋庸置疑，Rings需要HTML/XML，以及比原来少得多的CSS。如果你连HTML都不会的话，先去<a href="https://www.runoob.com/html/html-tutorial.html" target="_blank">Runoob</a>或者<a href="https://www.w3school.com.cn/h.asp" target="_blank">W3School</a>花1个小时学一学HTML与CSS再回来。</p>
-                    <h4>Rings适合哪些开发人员？</h4>
-                    <p>Rings与<a href="https://getbootstrap.com" target="blank">Bootstrap</a>的原理相似，但是Rings比Bootstrap轻量一些（功能当然没有Bootstrap强大）。Rings没有很强的算法逻辑，如果你是一个不太喜欢逻辑的或者不太喜欢Bootstrap的前端开发人员，Rings很适合用于你的网站。当然，如果你能分得清哪些class是哪些，你完全可以把Rings和Bootstrap叠起来用。</p>
-                </fieldset>
-                <h2 id="mainuse">基本用法</h2>
-                <fieldset style="padding:5%;margin:0;" id="rings-colors">
-                    <legend><h3>Rings颜色<span class="tag tag-blue">v0.1.5</span></h3></legend>
-                    <p>Rings提供了丰富的颜色表，让您在Web开发中总是能找到合适的颜色。</p>
-                    <h4 id="basic_color">基本颜色<span class="tag tag-ok">v0.1.5</span></h4>
-                    <table class="table-justified bordered">
-                        <tbody>
-                            <tr>
-                                <th>Rings颜色名</th><th>HEX(16进制)颜色值</th><th>预览</th>
-                            </tr>
-                            <tr><td>warning</td><td>#eebb22</td><td class="bg-warning"></td></tr>
-                            <tr><td>danger</td><td>#dd2244</td><td class="bg-danger"></td></tr>
-                            <tr><td>blue</td><td>#0365d9</td><td class="bg-blue"></td></tr>
-                            <tr><td>ok</td><td>#108a12</td><td class="bg-ok"></td></tr>
-                            <tr><td>info</td><td>#0a9f9e</td><td class="bg-info"></td></tr>
-                            <tr><td>dark</td><td>#303030</td><td class="bg-dark"></td></tr>
-                            <tr><td>gray</td><td>#707070</td><td class="bg-gray"></td></tr>
-                            <tr><td>light</td><td>#f0f0f0</td><td class="bg-light"></td></tr>
-                        </tbody>
-                    </table>
-
-                    <h4 id="detailed_color">具体的Rings颜色名<span class="tag tag-ok">v0.1.5</span></h4>
-                    <table class="table-justified bordered">
-                        <tbody>
-                            <tr>
-                                <th>Rings颜色名</th><th>HEX(16进制)颜色值</th><th>不透明度</th><th>预览</th>
-                            </tr>
-                            <tr><td>warning-1</td><td>#a17e17</td><td>1</td><td class="bg-warning-1"></td></tr>
-                            <tr><td>warning-2</td><td>#BB921A</td><td>1</td><td class="bg-warning-2"></td></tr>
-                            <tr><td>warning-3</td><td>#eebb22</td><td>1</td><td class="bg-warning-3"></td></tr>
-                            <tr><td>warning-4</td><td>#FFD624</td><td>1</td><td class="bg-warning-4"></td></tr>
-                            <tr><td>warning-5</td><td>#FFE524</td><td>1</td><td class="bg-warning-5"></td></tr>
-                            <tr><td>warning-8</td><td>#eebb2255</td><td>.33</td><td class="bg-warning-8"></td></tr>
-                            <tr><td>warning-9</td><td>#eebb22aa</td><td>.66</td><td class="bg-warning-9"></td></tr>
-                            <tr><td>danger-1</td><td>#90162C</td><td>1</td><td class="bg-danger-1"></td></tr>
-                            <tr><td>danger-2</td><td>#AA1A34</td><td>1</td><td class="bg-danger-2"></td></tr>
-                            <tr><td>danger-3</td><td>#dd2244</td><td>1</td><td class="bg-danger-3"></td></tr>
-                            <tr><td>danger-4</td><td>#E72043</td><td>1</td><td class="bg-danger-4"></td></tr>
-                            <tr><td>danger-5</td><td>#F6254B</td><td>1</td><td class="bg-danger-5"></td></tr>
-                            <tr><td>danger-8</td><td>#dd224455</td><td>.33</td><td class="bg-danger-8"></td></tr>
-                            <tr><td>danger-9</td><td>#dd2244aa</td><td>.66</td><td class="bg-danger-9"></td></tr>
-                            <tr><td>blue-1</td><td>#001D3F</td><td>1</td><td class="bg-blue-1"></td></tr>
-                            <tr><td>blue-2</td><td>#024DA5</td><td>1</td><td class="bg-blue-2"></td></tr>
-                            <tr><td>blue-3</td><td>#0365d9</td><td>1</td><td class="bg-blue-3"></td></tr>
-                            <tr><td>blue-4</td><td>#02A0FF</td><td>1</td><td class="bg-blue-4"></td></tr>
-                            <tr><td>blue-5</td><td>#08C7FF</td><td>1</td><td class="bg-blue-5"></td></tr>
-                            <tr><td>blue-8</td><td>#0365d955</td><td>.33</td><td class="bg-blue-8"></td></tr>
-                            <tr><td>blue-9</td><td>#0365d9aa</td><td>.66</td><td class="bg-blue-9"></td></tr>
-                            <tr><td>ok-1</td><td>#073D08</td><td>1</td><td class="bg-ok-1"></td></tr>
-                            <tr><td>ok-2</td><td>#0A560B</td><td>1</td><td class="bg-ok-2"></td></tr>
-                            <tr><td>ok-3</td><td>#108a12</td><td>1</td><td class="bg-ok-3"></td></tr>
-                            <tr><td>ok-4</td><td>#14B016</td><td>1</td><td class="bg-ok-4"></td></tr>
-                            <tr><td>ok-5</td><td>#18D61B</td><td>1</td><td class="bg-ok-5"></td></tr>
-                            <tr><td>ok-8</td><td>#108a1255</td><td>.33</td><td class="bg-ok-8"></td></tr>
-                            <tr><td>ok-9</td><td>#108a12aa</td><td>.66</td><td class="bg-ok-9"></td></tr>
-                            <tr><td>info-1</td><td>#055251</td><td>1</td><td class="bg-info-1"></td></tr>
-                            <tr><td>info-2</td><td>#066C6B</td><td>1</td><td class="bg-info-2"></td></tr>
-                            <tr><td>info-3</td><td>#0a9f9e</td><td>1</td><td class="bg-info-3"></td></tr>
-                            <tr><td>info-4</td><td>#0CA9A4</td><td>1</td><td class="bg-info-4"></td></tr>
-                            <tr><td>info-5</td><td>#0ECBCA</td><td>1</td><td class="bg-info-5"></td></tr>
-                            <tr><td>info-8</td><td>#0a9f9e55</td><td>.33</td><td class="bg-info-8"></td></tr>
-                            <tr><td>info-9</td><td>#0a9f9eaa</td><td>.66</td><td class="bg-info-9"></td></tr>
-                            <tr><td>dark-0</td><td>#000000</td><td>1</td><td class="bg-dark-0"></td></tr>
-                            <tr><td>dark-1</td><td>#101010</td><td>1</td><td class="bg-dark-1"></td></tr>
-                            <tr><td>dark-2</td><td>#202020</td><td>1</td><td class="bg-dark-2"></td></tr>
-                            <tr><td>dark-3</td><td>#303030</td><td>1</td><td class="bg-dark-3"></td></tr>
-                            <tr><td>dark-8</td><td>#30303055</td><td>.33</td><td class="bg-dark-8"></td></tr>
-                            <tr><td>dark-9</td><td>#303030aa</td><td>.66</td><td class="bg-dark-9"></td></tr>
-                            <tr><td>gray-0</td><td>#404040</td><td>1</td><td class="bg-gray-0"></td></tr>
-                            <tr><td>gray-1</td><td>#505050</td><td>1</td><td class="bg-gray-1"></td></tr>
-                            <tr><td>gray-2</td><td>#606060</td><td>1</td><td class="bg-gray-2"></td></tr>
-                            <tr><td>gray-3</td><td>#707070</td><td>1</td><td class="bg-gray-3"></td></tr>
-                            <tr><td>gray-4</td><td>#808080</td><td>1</td><td class="bg-gray-4"></td></tr>
-                            <tr><td>gray-5</td><td>#909090</td><td>1</td><td class="bg-gray-5"></td></tr>
-                            <tr><td>gray-6</td><td>#a0a0a0</td><td>1</td><td class="bg-gray-6"></td></tr>
-                            <tr><td>gray-7</td><td>#b0b0b0</td><td>1</td><td class="bg-gray-7"></td></tr>
-                            <tr><td>gray-8</td><td>#70707055</td><td>.33</td><td class="bg-gray-8"></td></tr>
-                            <tr><td>gray-9</td><td>#707070aa</td><td>.66</td><td class="bg-gray-9"></td></tr>
-                            <tr><td>light-0</td><td>#c0c0c0</td><td>1</td><td class="bg-light-0"></td></tr>
-                            <tr><td>light-1</td><td>#d0d0d0</td><td>1</td><td class="bg-light-1"></td></tr>
-                            <tr><td>light-2</td><td>#e0e0e0</td><td>1</td><td class="bg-light-2"></td></tr>
-                            <tr><td>light-3</td><td>#f0f0f0</td><td>1</td><td class="bg-light-3"></td></tr>
-                            <tr><td>light-4</td><td>#ffffff</td><td>1</td><td class="bg-light-4"></td></tr>
-                            <tr><td>light-8</td><td>#f0f0f055</td><td>.33</td><td class="bg-light-8"></td></tr>
-                            <tr><td>light-9</td><td>#f0f0f0aa</td><td>.66</td><td class="bg-light-9"></td></tr>
-                        </tbody>
-                    </table>
-                    <h4 id="colors_main">颜色名main<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
-                    <p>有时在网站开发中会遇到这样的问题：<br>需要一个主题下所有颜色随着主题改变而改变，但在使用JavaScript改变时有时需要上百行代码。颜色名main可以解决这个问题。<br><br>
-                        更换全局主题只需要2行JavaScript代码(在Chrome或Microsoft Edge浏览器下尝试按<kbd>Ctrl+Shift+J</kbd>将它敲到调试区里试一试！)：
-                        <pre>javascript:document.getElementById("main_color").classList.remove("blue")<br>javascript:document.getElementById("main_color").classList.add("danger") // or blue, warning, ok, info</pre>
-                        相应的，在HTML中你想要更改的地方添加class：
-                        <pre>&lt;element class="blue"&gt;<br>    &lt;!-- ... --&gt;<br>&lt;/element&gt;</pre><br>
-                    </p>
-                    <table id="main_color" class="table-justified bordered">
-                        <tbody>
-                            <tr>
-                                <th>Rings颜色名</th><th>预览</th>
-                            </tr>
-                            <tr><td>main-1</td><td class="bg-main-1"></td></tr>
-                            <tr><td>main-2</td><td class="bg-main-2"></td></tr>
-                            <tr><td>main-3</td><td class="bg-main-3"></td></tr>
-                            <tr><td>main-4</td><td class="bg-main-4"></td></tr>
-                            <tr><td>main-5</td><td class="bg-main-5"></td></tr>
-                            <tr><td>main-8</td><td class="bg-main-8"></td></tr>
-                            <tr><td>main-9</td><td class="bg-main-9"></td></tr>
-                        </tbody>
-                    </table>
-                </fieldset>
-                <fieldset id="bg_text">
-                    <legend><h3> <code>.bg</code> 类与 <code>.text</code> 的用法<span class="tag tag-blue">v0.1.5</span></h3></legend>
-                    <h4 id="bg_text_common">一般颜色<span class="tag tag-ok">v0.1.5</span></h4>
-                    示例：<br><pre>&lt;div class="bg-blue-3"&gt;<br>    &lt;!-- ... --&gt;<br>&lt;/div&gt;<br>&lt;span class="text-blue-3"&gt;<br>    &lt;!-- ... --&gt;<br>&lt;/span&gt;</pre>
-                    使用.bg可以将一个元素的背景设置成你想要的颜色。如：.bg-blue-3将背景颜色设置成#0365D9。（详见Rings颜色表）
-                    将<code>.bg-</code>放在任意颜色名后可以设置背景。
-                    <br><br>
-                    使用.text可以将一个元素的文字颜色设置成你想要的颜色。如：.text-blue-3将背景颜色设置成#0365D9。
-                    将<code>.text-</code>放在任意颜色名后可以设置文字颜色。
-                    <h4 id="theme_color">theme用法<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
-                    theme背景色规定了在不同的<code>body class</code>下该规定元素的黑白颜色。theme共分5级，但是与其它颜色不同的是：theme仅仅在bg与text生效（确实，好像在别的地方也没什么用）。
-                    <br><span class="text-main">更改颜色主题查看效果！</span>
-                    <table class="table-justified bordered">
-                        <tbody>
-                            <tr>
-                                <th>背景class</th><th>预览</th>
-                            </tr>
-                            <tr><td><code>.bg-theme-1</code></td><td class="bg-theme-1"></td></tr>
-                            <tr><td><code>.bg-theme-2</code></td><td class="bg-theme-2"></td></tr>
-                            <tr><td><code>.bg-theme-3</code></td><td class="bg-theme-3"></td></tr>
-                            <tr><td><code>.bg-theme-4</code></td><td class="bg-theme-4"></td></tr>
-                            <tr><td><code>.bg-theme-5</code></td><td class="bg-theme-5"></td></tr>
-                        </tbody>
-                    </table>
-                </fieldset>
-                <fieldset id="buttons">
-                    <legend><h3>按钮样式<span class="tag tag-warning">v0.1.5 - Developing</span></h3></legend>
-                    互联网开发正在不断扁平化，平滑化——因此浏览器提供的按钮已经算是过时了。<br><button>我是一个过时的按钮</button>
-                    <p>Rings使用了一系列自定义按钮样式。<br>通过给元素添加class <code>.btn-*</code> 从而添加自定义按钮样式。<br><br>有以下样式可选:</p><br>
-                    <code class="blue">&nbsp;&nbsp;&nbsp;.btn.btn-blue</code><button class="btn btn-blue">我只是一个按钮</button><br>
-                    <code class="danger">&nbsp;.btn.btn-danger</code><button class="btn btn-danger">我是一个危险的按钮</button><br>
-                    <code class="warning">.btn.btn-warning</code><button class="btn btn-warning">我警告你，我可是一个按钮</button><br>
-                    <code class="ok">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.btn.btn-ok</code><button class="btn btn-ok">我是一个按钮，一切都非常顺利</button><br>
-                    <code class="info">&nbsp;&nbsp;&nbsp;.btn.btn-info</code><button class="btn btn-info">我是一个按钮，我有一些事情想告诉你</button><br>
-                    <code class="gray">&nbsp;&nbsp;&nbsp;.btn.btn-dark</code><button class="btn btn-dark">我是一个很暗，很暗，很暗，很暗，非常暗的按钮</button><br>
-                    <code class="gray">&nbsp;&nbsp;&nbsp;.btn.btn-gray</code><button class="btn btn-gray">我是一个没有楼上这么暗，而且看起来不怎么重要的按钮</button><br>
-                    <code class="gray">&nbsp;&nbsp;.btn.btn-light</code><button class="btn btn-light">我是一个很明亮的按钮，但是通常不怎么显眼，不太引人注目</button><br>
-                </fieldset>
-                <fieldset id="code_pre">
-                    <legend><h3> <code>&lt;code&gt;</code> 与 <code>&lt;pre&gt;</code> <span class="tag tag-ok">v0.1.5</span></h3></legend>
-                    在Rings中，<code>&lt;code&gt;</code> 标签与 <code>&lt;pre&gt;</code> 标签可以设置多种颜色。
-                    <br><br><b>第一种方式：通过直接添加class来更换</b><br>
-                    <br>以 <code>&lt;code&gt;</code> 标签为例，我们有了这样一行代码：<br>
-                    <pre>&lt;code&gt;print('Hello World')&lt;/code&gt;</pre>
-                    输出元素：
-                    <br><br><code>print('Hello World')</code><br><br>但当我们向标签添加class时：
-                    <pre>&lt;code class="danger"&gt;print('Hello World')&lt;/code&gt;</pre>
-                    输出元素：
-                    <br><br><code class="danger">print('Hello World')</code>
-                    <br><br><b>第二种方式：通过更改父元素的main主题色来更换</b><br>
-                    相对来说，第一种方式比较适合单个元素，而第二种方式更适合一整块元素的属性设置。
-                    <br>还是以code标签为例：
-                    <pre>&lt;div&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;print('Hello World')&lt;/code&gt;<br>&lt;/div&gt;</pre>
-                    输出同上。<br><br>当我们往父元素（即示例中的div）添加class时：
-                    <pre>&lt;div class="info"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;print('Hello World')&lt;/code&gt;<br>&lt;/div&gt;</pre>
-                    输出元素：<br><br><div class="info">
-                        <code>print('Hello World')</code>
-                    </div>
-                    
-                    <br><br>
-                    <b>*注1：code支持blue,danger,warning,danger,info和gray.</b><br>
-                    <b>*注2：虽然这两种方法在code元素上都达到了目的，几乎没有区别，但是我们还是想强调一下一个小细节：当你选取元素中的内容时，你会发现code选取的颜色是父元素的main-3。因此第一种的颜色是blue-3，而第二种则是info-3，如果谁往里面放了 <code>a</code> 标签，也是一个样。关于它的原因我们将在后面介绍。</b>
-                </fieldset>
-                <fieldset id="::selection">
-                    <legend><h3>Rings提供的<code>::selection</code><span class="tag tag-ok">v0.1.5</span></h3></legend>
-                    <p>Rings在提供主题的同时也提供了选取时的颜色样式。在上文已经提到，大多数情况下，选取时颜色会被Rings判断为main-3。</p><br>
-                    详见下面的表格：<br>
-                    <table class="table-justified bordered">
-                        <tbody>
-                            <tr>
-                                <th>基本颜色</th><th>预览</th>
-                            </tr>
-                            <tr class="blue"><td><code>.blue</code></td><td>Lorem ipsum dolor sit amet.</td></tr>
-                            <tr class="danger"><td><code>.danger</code></td><td>Lorem ipsum dolor sit amet.</td></tr>
-                            <tr class="warning"><td><code>.warning</code></td><td>Lorem ipsum dolor sit amet.</td></tr>
-                            <tr class="ok"><td><code>.ok</code></td><td>Lorem ipsum dolor sit amet.</td></tr>
-                            <tr class="info"><td><code>.info</code></td><td>Lorem ipsum dolor sit amet.</td></tr>
-                        </tbody>
-                    </table><br>
-                    但是在设置了bg类时，对于相近的颜色选取时不明显，Rings设置了例外：<br>
-                    <table class="table-justified bordered">
-                        <tbody>
-                            <tr>
-                                <th>基本颜色</th><th>预览</th>
-                            </tr>
-                            <tr class="blue"><td><code>.blue</code></td><td class="bg-blue">Lorem ipsum dolor sit amet.</td></tr>
-                            <tr class="danger"><td><code>.danger</code></td><td class="bg-danger">Lorem ipsum dolor sit amet.</td></tr>
-                            <tr class="warning"><td><code>.warning</code></td><td class="bg-warning">Lorem ipsum dolor sit amet.</td></tr>
-                            <tr class="ok"><td><code>.ok</code></td><td class="bg-ok">Lorem ipsum dolor sit amet.</td></tr>
-                            <tr class="info"><td><code>.info</code></td><td class="bg-info">Lorem ipsum dolor sit amet.</td></tr>
-                        </tbody>
-                    </table>
-                </fieldset>
-                <fieldset id="tags">
-                    <legend><h3>Rings标签<span class="tag tag-ok">v0.1.5</span></h3></legend>
-                    Rings使用span引用标签样式：<code>span.tag.tag-*</code>
-                    <h1>我是h1<span class="tag tag-blue">我是标签</span></h1>
-                    <h2>我是h2<span class="tag tag-blue">我是标签</span></h2>
-                    <h3>我是h3<span class="tag tag-blue">我是标签</span></h3>
-                    <h4>我是h4<span class="tag tag-blue">我是标签</span></h4>
-                    <h5>我是h5<span class="tag tag-blue">我是标签</span></h5>
-                    <h6>我是h6<span class="tag tag-blue">我是标签</span></h6>
-                    <p><br>具体使用方法:</p>
-                    <pre>&lt;div&gt;<br>    &lt;p&gt;<br>        &lt;span class="tag tag-blue"&gt;Lorem&lt;/span&gt;<br>        &lt;span class="tag tag-danger"&gt;Lorem&lt;/span&gt;<br>        &lt;span class="tag tag-warning"&gt;Lorem&lt;/span&gt;<br>        &lt;span class="tag tag-ok"&gt;Lorem&lt;/span&gt;<br>        &lt;span class="tag tag-info"&gt;Lorem&lt;/span&gt;<br>        &lt;span class="tag tag-dark"&gt;Lorem&lt;/span&gt;<br>        &lt;span class="tag tag-gray"&gt;Lorem&lt;/span&gt;<br>        &lt;span class="tag tag-light"&gt;Lorem&lt;/span&gt;<br>    &lt;/p&gt;<br>&lt;/div&gt;</pre>
-                    <p><br>输出如下：</p><div>
-                        <p>
-                            <span class="tag tag-blue">Lorem</span>
-                            <span class="tag tag-danger">Lorem</span>
-                            <span class="tag tag-warning">Lorem</span>
-                            <span class="tag tag-ok">Lorem</span>
-                            <span class="tag tag-info">Lorem</span>
-                            <span class="tag tag-dark">Lorem</span>
-                            <span class="tag tag-gray">Lorem</span>
-                            <span class="tag tag-light">Lorem</span>
-                        </p>
-                    </div>
-                </fieldset>
-                <fieldset id="tables">
-                    <legend><h3>Rings表格<span class="tag tag-blue">v0.1.5</span></h3></legend>
-                    Rings提供了各种各样的表格样式。这些表格样式可以有效清除用户的理解障碍。
-                    <br><br>
-                    <h4 id="table-striped">添加条纹<span class="tag tag-ok">v0.1.5</span></h4>
-                    <code>.table-striped</code>让表格增加了隔行的条纹。
-                    <table class="table-striped">
-                        <tbody>
-                            <tr>
-                                <th>Lorem Ipsum</th><th>Lorem Ipsum</th>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem Ipsum</td><td>Lorem Ipsum</td>
-                            </tr>
-                        </tbody>
-                    </table><br>
-                    <h4 id="cell-width">规定单元格宽度<span class="tag tag-ok">v0.1.5</span></h4>
-                    <code>.cell-*</code>规定了单元格在同一行内宽度之比。
-                    <br>表格中的数值x均代表单元格class<code>.cell-x</code>，其中，x为1至12的整数。
-                    <table class="align-center">
-                        <tbody>
-                            <tr><td class="cell-7 bg-blue-9">.cell-7</td><td class="cell-9 bg-danger-9">.cell-9</td></tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <table class="align-center">
-                        <tbody>
-                            <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-2 bg-danger-9">2</td></tr>
-                            <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-3 bg-danger-9">3</td></tr>
-                            <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-4 bg-danger-9">4</td></tr>
-                            <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-5 bg-danger-9">5</td></tr>
-                            <tr><td class="cell-1 bg-blue-9">1</td><td class="cell-6 bg-danger-9">6</td></tr>
-                            <tr><td class="cell-2 bg-blue-9">2</td><td class="cell-10 bg-danger-9">10</td></tr>
-                            <tr><td class="cell-3 bg-blue-9">3</td><td class="cell-9 bg-danger-9">9</td></tr>
-                            <tr><td class="cell-4 bg-blue-9">4</td><td class="cell-8 bg-danger-9">8</td></tr>
-                            <tr><td class="cell-5 bg-blue-9">5</td><td class="cell-7 bg-danger-9">7</td></tr>
-                            <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-6 bg-danger-9">6</td></tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <table class="align-center">
-                        <tbody>
-                            <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td></tr>
-                            <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td><td class="cell-8 bg-warning-9">8</td></tr>
-                            <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td><td class="cell-8 bg-warning-9">8</td><td class="cell-9 bg-ok-9">9</td></tr>
-                            <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td><td class="cell-8 bg-warning-9">8</td><td class="cell-9 bg-ok-9">9</td><td class="cell-10 bg-info-9">10</td></tr>
-                            <tr><td class="cell-6 bg-blue-9">6</td><td class="cell-7 bg-danger-9">7</td><td class="cell-8 bg-warning-9">8</td><td class="cell-9 bg-ok-9">9</td><td class="cell-10 bg-info-9">10</td><td class="cell-11 bg-gray-9">11</td></tr>
-                        </tbody>
-                    </table>
-                    通过这个，我们可以制作各种表格，例如下面这个：<br>
-                    <pre>&lt;table&gt;<br>    &lt;tbody&gt;<br>        &lt;tr&gt;<br>            &lt;th class="cell-3"&gt;Lorem&lt;/th&gt;<br>            &lt;th class="cell-3"&gt;Lorem&lt;/th&gt;<br>            &lt;th class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/th&gt;<br>            &lt;th class="cell-6"&gt;Lorem&lt;/th&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-3"&gt;Lorem&lt;/td&gt;<br>            &lt;td class="cell-9"&gt;Lorem ipsum dolor sit amet.&lt;/td&gt;<br>            &lt;td class="cell-6"&gt;Lorem ipsum dolor&lt;/td&gt;<br>        &lt;/tr&gt;<br>    &lt;/tbody&gt;<br>&lt;/table&gt;</pre>
-                    输出：<br>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th class="cell-3">Lorem</th>
-                                <th class="cell-3">Lorem</th>
-                                <th class="cell-9">Lorem ipsum dolor sit amet.</th>
-                                <th class="cell-6">Lorem</th>
-                            </tr>
-                            <tr>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-9">Lorem ipsum dolor sit amet.</td>
-                                <td class="cell-6">Lorem ipsum dolor</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-9">Lorem ipsum dolor sit amet.</td>
-                                <td class="cell-6">Lorem ipsum dolor</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-9">Lorem ipsum dolor sit amet.</td>
-                                <td class="cell-6">Lorem ipsum dolor</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-9">Lorem ipsum dolor sit amet.</td>
-                                <td class="cell-6">Lorem ipsum dolor</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-9">Lorem ipsum dolor sit amet.</td>
-                                <td class="cell-6">Lorem ipsum dolor</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-9">Lorem ipsum dolor sit amet.</td>
-                                <td class="cell-6">Lorem ipsum dolor</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-9">Lorem ipsum dolor sit amet.</td>
-                                <td class="cell-6">Lorem ipsum dolor</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-3">Lorem</td>
-                                <td class="cell-9">Lorem ipsum dolor sit amet.</td>
-                                <td class="cell-6">Lorem ipsum dolor</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <h4 id="add-figure">向表格添加数据：<code>.figure</code><span class="tag tag-ok">v0.1.5</span></h4>
-                    <p>当我们在表格中显示数据时，数据的比较非常重要，因此Rings使用了等宽字体(Monospace)以对齐文本。如果将<code>.figure</code>加入<code>td</code>元素，数据将会自动向右对齐并等宽(灵感来自Microsoft Excel)。</p><br>效果如下：
-                    <pre>&lt;table class="table-striped"&gt;<br>    &lt;tbody&gt;<br>        &lt;tr&gt;<br>            &lt;th class="cell-1"&gt;&lt;/th&gt;&lt;th class="cell-6"&gt;Set A&lt;/th&gt;&lt;th class="cell-6"&gt;Set B&lt;/th&gt;&lt;th class="cell-6"&gt;Set C&lt;/th&gt;&lt;th class="cell-6"&gt;Set D&lt;/th&gt;&lt;th class="cell-6"&gt;Set E&lt;/th&gt;&lt;th class="cell-6"&gt;Set F&lt;/th&gt;&lt;th class="cell-6"&gt;Set G&lt;/th&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-1"&gt;1&lt;/td&gt;&lt;td class="cell-6 figure"&gt;29.01&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.40&lt;/td&gt;&lt;td class="cell-6 figure"&gt;29.30&lt;/td&gt;&lt;td class="cell-6 figure"&gt;28.36&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.45&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.42&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.48&lt;/td&gt;<br>        &lt;/tr&gt;<br>        &lt;tr&gt;<br>            &lt;td class="cell-1"&gt;2&lt;/td&gt;&lt;td class="cell-6 figure"&gt;27.70&lt;/td&gt;&lt;td class="cell-6 figure"&gt;26.51&lt;/td&gt;&lt;td class="cell-6 figure"&gt;25.43&lt;/td&gt;&lt;td class="cell-6 figure"&gt;24.21&lt;/td&gt;&lt;td class="cell-6 figure"&gt;27.91&lt;/td&gt;&lt;td class="cell-6 figure"&gt;24.32&lt;/td&gt;&lt;td class="cell-6 figure"&gt;27.52&lt;/td&gt;<br>        &lt;/tr&gt;<br>    &lt;/tbody&gt;<br>&lt;/table&gt;</pre>
-                    输出元素：<br>
-                    <table class="table-striped">
-                        <tbody>
-                            <tr>
-                                <th class="cell-1"></th><th class="cell-6">Set A</th><th class="cell-6">Set B</th><th class="cell-6">Set C</th><th class="cell-6">Set D</th><th class="cell-6">Set E</th><th class="cell-6">Set F</th><th class="cell-6">Set G</th>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">1</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">2</td><td class="cell-6 figure">27.70</td><td class="cell-6 figure">26.51</td><td class="cell-6 figure">25.43</td><td class="cell-6 figure">24.21</td><td class="cell-6 figure">27.91</td><td class="cell-6 figure">24.32</td><td class="cell-6 figure">27.52</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h4 id="table-color">表格颜色样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
-                    表格的颜色样式也与其它的元素一样。<span class="text-danger">注意：目前仍不支持随着父元素改变而改变！</span>
-                    <br>示例：<code>&lt;table class="table-danger"&gt; &lt;!-- ... --&gt; &lt;/table&gt;</code>
-                    <br>输出：
-                    <table class="table-striped table-danger">
-                        <tbody>
-                            <tr>
-                                <th class="cell-1"></th><th class="cell-6">Set A</th><th class="cell-6">Set B</th><th class="cell-6">Set C</th><th class="cell-6">Set D</th><th class="cell-6">Set E</th><th class="cell-6">Set F</th><th class="cell-6">Set G</th>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">1</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">2</td><td class="cell-6 figure">27.70</td><td class="cell-6 figure">26.51</td><td class="cell-6 figure">25.43</td><td class="cell-6 figure">24.21</td><td class="cell-6 figure">27.91</td><td class="cell-6 figure">24.32</td><td class="cell-6 figure">27.52</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    当然还有其它样式，目前支持5种基本颜色：blue, danger, warning, ok, info.
-                    <h4 id="active-cell">追踪单元格<span class="tag tag-ok">v0.1.5</span></h4>
-                    单元格太多的时候，你是否会两眼发黑、生无可恋，只是为了找一个单元格的索引？
-                    <br>如果是的话，我们不建议你在开发中把相同的问题留给用户。
-                    <br>在Rings中，使用class<code>.table-active</code>可以解决这个问题。
-                    以上一个表格为例，不过这次我们为<code>table</code>加上<code>.table-active</code>，显示的效果如下：<br>
-                    <table class="table-active">
-                        <tbody>
-                            <tr>
-                                <th class="cell-1"></th><th class="cell-6">Set A</th><th class="cell-6">Set B</th><th class="cell-6">Set C</th><th class="cell-6">Set D</th><th class="cell-6">Set E</th><th class="cell-6">Set F</th><th class="cell-6">Set G</th>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">1</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">2</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">3</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">4</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">5</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">6</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">7</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">8</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">9</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">10</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">11</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">12</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">13</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">14</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">15</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">16</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">17</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">18</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">19</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">20</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                            <tr>
-                                <td class="cell-1">21</td><td class="cell-6 figure">29.01</td><td class="cell-6 figure">26.40</td><td class="cell-6 figure">29.30</td><td class="cell-6 figure">28.36</td><td class="cell-6 figure">26.45</td><td class="cell-6 figure">26.42</td><td class="cell-6 figure">26.48</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </fieldset>
-                <fieldset id="forms">
-                    <legend><h3>表单控件<span class="tag tag-warning">v0.1.5 - Developing</span></h3></legend>
-                    使用Rings可以搭配使用class，使得表单可以拥有很棒的样式。下面了解一下特殊表单控件的使用。
-                    <b>首先，你需要知道的是：浏览器提供的表单控件一般不方便使用样式。（输入框除外，不信你亲测一下），因此，我们需要额外添加元素<code>&lt;label&gt;</code></b>
-                    <h4 id="checkbox">复选框样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
-                    Rings复选框用法如下：
-                    <pre>&lt;form&gt;<br>    &lt;div&gt;&lt;b&gt;请选择你的爱好:&lt;/b&gt;<br>        &lt;input class="custom-checkbox" id="check1" type="checkbox" value="" name="check"&gt;&lt;label for="check1"&gt;&lt;p&gt;篮球&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-checkbox" id="check2" type="checkbox" value="" name="check"&gt;&lt;label for="check2"&gt;&lt;p&gt;滑雪&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-checkbox" id="check3" type="checkbox" value="" name="check"&gt;&lt;label for="check3"&gt;&lt;p&gt;跳伞&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-checkbox" id="check4" type="checkbox" value="" name="check"&gt;&lt;label for="check4"&gt;&lt;p&gt;骑行&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-checkbox" id="check5" type="checkbox" value="" name="check"&gt;&lt;label for="check5"&gt;&lt;p&gt;游泳&lt;/p&gt;&lt;/label&gt;<br>    &lt;/div&gt;<br>&lt;/form&gt;</pre>
-                    显示效果：
-                    <form>
-                        <div><b>请选择你的爱好:</b>
-                            <input class="custom-checkbox" id="check1" type="checkbox" value="" name="check"><label for="check1"><p>篮球</p></label>
-                            <input class="custom-checkbox" id="check2" type="checkbox" value="" name="check"><label for="check2"><p>滑雪</p></label>
-                            <input class="custom-checkbox" id="check3" type="checkbox" value="" name="check"><label for="check3"><p>跳伞</p></label>
-                            <input class="custom-checkbox" id="check4" type="checkbox" value="" name="check"><label for="check4"><p>骑行</p></label>
-                            <input class="custom-checkbox" id="check5" type="checkbox" value="" name="check"><label for="check5"><p>游泳</p></label>
-                        </div>
-                    </form>
-                    <h4 id="radio">单选框样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
-                    Rings单选框用法如下：
-                    <pre>&lt;form&gt;<br>    &lt;div&gt;&lt;b&gt;请选择你的爱好:&lt;/b&gt;<br>        &lt;input class="custom-radio" id="radio1" type="radio" value="" name="radio"&gt;&lt;label for="radio1"&gt;&lt;p&gt;篮球&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-radio" id="radio2" type="radio" value="" name="radio"&gt;&lt;label for="radio2"&gt;&lt;p&gt;滑雪&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-radio" id="radio3" type="radio" value="" name="radio"&gt;&lt;label for="radio3"&gt;&lt;p&gt;跳伞&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-radio" id="radio4" type="radio" value="" name="radio"&gt;&lt;label for="radio4"&gt;&lt;p&gt;骑行&lt;/p&gt;&lt;/label&gt;<br>        &lt;input class="custom-radio" id="radio5" type="radio" value="" name="radio"&gt;&lt;label for="radio5"&gt;&lt;p&gt;游泳&lt;/p&gt;&lt;/label&gt;<br>    &lt;/div&gt;<br>&lt;/form&gt;</pre>
-                    显示效果：
-                    <form>
-                        <div><b>请选择你的爱好:</b>
-                            <input class="custom-radio" id="radio1" type="radio" value="" name="radio"><label for="radio1"><p>篮球</p></label>
-                            <input class="custom-radio" id="radio2" type="radio" value="" name="radio"><label for="radio2"><p>滑雪</p></label>
-                            <input class="custom-radio" id="radio3" type="radio" value="" name="radio"><label for="radio3"><p>跳伞</p></label>
-                            <input class="custom-radio" id="radio4" type="radio" value="" name="radio"><label for="radio4"><p>骑行</p></label>
-                            <input class="custom-radio" id="radio5" type="radio" value="" name="radio"><label for="radio5"><p>游泳</p></label>
-                        </div>
-                    </form>
-                    复选框与单选框都有颜色样式选择：与code元素相同，如果input元素或父元素添加了class<code class="blue">.blue</code>
-                    <code class="danger">.danger</code>
-                    <code class="warning">.warning</code>
-                    <code class="ok">.ok</code>
-                    <code class="info">.info</code>，颜色将会改变。你可以现场按下F12试一试。
-                    <h4 id="switch">开关样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
-                    Rings的开关按钮基于复选框，用法是复选框+label。
-                    <pre>&lt;div class="switch"&gt;<br>    &lt;input class="custom-checkbox-switch" type="checkbox" id="switch1"&gt;<br>    &lt;label for="switch1"&gt;<br>&lt;/div&gt;</pre>
-                    <b>显示效果：</b><div class="switch">
-                        <input class="custom-checkbox-switch" type="checkbox" id="switch1">
-                        <label for="switch1"></label>
-                    </div>
-                    <br>另外，Rings开关还有丰富的颜色样式可供选择。
-                    <br><b>第一种样式：直接添加基本颜色class</b>
-                    <br>一共有八种class可选：
-                    <code class="blue">.blue</code>
-                    <code class="danger">.danger</code>
-                    <code class="warning">.warning</code>
-                    <code class="ok">.ok</code>
-                    <code class="info">.info</code>
-                    <code class="gray">.gray</code>
-                    <code class="gray">.dark</code>
-                    <code class="gray">.light</code>
-                    <br><b>第二种样式：添加from颜色与to颜色来改变详细变色方式</b><br>
-                    在第一种方式的基础上，在class前添加“from”与“to”从而改变样式。
-                    例如<code>.from-danger.to-ok</code>显示效果为：<div class="switch">
-                        <input class="custom-checkbox-switch from-danger to-ok" type="checkbox" id="switch2">
-                        <label for="switch2"></label>
-                    </div>
-                    <h4 id="textarea">输入框样式<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
-                    Rings的输入框改善了原本丑陋而又不好用的浏览器输入框。
-                    <pre>&lt;input class="custom-text"&gt;</pre>
-                    输出：<input class="custom-text">
-                    <br>还有更多的样式：<br>
-                    <code>&nbsp;&nbsp;&nbsp;.custom-text.custom-text-xs</code><input class="custom-text custom-text-xs" placeholder="xs"><br>
-                    <code>.custom-text.custom-text-small</code><input class="custom-text custom-text-small" placeholder="small"><br>
-                    <code>.custom-text.custom-text-large</code><input class="custom-text custom-text-large" placeholder="large"><br>
-                    <br><br>
-                    <b>动态颜色：</b>
-                    <code>.custom-text.custom-text-active</code><input class="custom-text custom-text-active" placeholder="Hello"><br>
-                    <br><br>另外，输入框还支持class<code class="blue">.blue</code>
-                    <code class="danger">.danger</code>
-                    <code class="warning">.warning</code>
-                    <code class="ok">.ok</code>
-                    <code class="info">.info</code>，如果添加，键入时边框的颜色将会改变。
-                    <br>示例：<code class="danger">.custom-text.danger</code><input class="custom-text danger" placeholder="Hello">
-                </fieldset>
-                <fieldset id="other">
-                    <legend><h3>其它没有提到的class</h3></legend>
-                    我们还有未提到的一些基本class，虽然不在前面的主要特性中，但还是比较实用的：
-                    <br><b>.inline:</b>
-                    <pre>.inline{display: inline-block;}</pre>
-                    <b>.monospace:</b>
-                    <pre>.mono,.monospace,.mono *,.monospace *{font-family:@font-mono;}</pre>
-                    <b>.align-left,.align-right,.align-center:</b>
-                    <br>这三个不说都知道。
-                    <br><b>.float-*</b>
-                    <pre>.float-right,.float-right *{float: right;}<br>.float-left,.float-right *{float: left;}</pre>
-                    <b>text-*</b>
-                    <pre>
-.text-light *,
-.text-light-1 *,
-.text-light,
-.text-light-1 {
-    font-weight: 300 !important;
-}
-.text-light-2 *,
-.text-light-2 {
-    font-weight: 100 !important;
-}
-.text-normal *,
-.text-normal {
-    font-weight: 400 !important;
-}
-.text-bold *,
-.text-bold-1 *,
-.text-bold,
-.text-bold-1 {
-    font-weight: 700 !important;
-}
-.text-bold-2 *,
-.text-bold-2 {
-    font-weight: 900 !important;
-}
-                    </pre>
-                    <b>.lowercase , .uppercase , .caps</b>
-                    <pre>
-.lowercase *,
-.lowercase {
-    text-transform: lowercase !important;
-}
-.uppercase *,
-.uppercase {
-    text-transform: uppercase !important;
-}
-.caps *,
-.caps {
-  text-transform: capitalize !important;
-}</pre>
-                    <b>.small , .big</b>
-                    <pre>.small-1,.small{font-size: 85%;}
-.small-2{font-size: 72%;}
-.small-3{font-size: 60%;}
-.small-4{font-size: 50%;}
-.small-5{font-size: 42%;}
-.big-1,.big{font-size: 115%;}
-.big-2{font-size: 125%;}
-.big-3{font-size: 150%;}
-.big-4{font-size: 190%;}
-.big-5{font-size: 250%;}</pre>
-                    <b>以及一些不太用得上的：</b>
-                    <pre>
-.fixed{position:fixed}
-.flex-box{display:flex}
-.block{overflow:hidden;-ms-overflow-style:scrollbar;}
-.full{
-    float:left;
-    width:100%;
-}
-.no-selected{
-    user-select:none;
-    -ms-user-select:none;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-}</pre>
-                </fieldset>
-                <p class="big-5 text-bold-2 uppercase align-center">to be continued...</p>
-                <p class="align-center"><b>Rings在不断地开发成长，欢迎大家及时<a href="https://github.com/rice0208/Rings/issues/new">提交Issue</a>或<a href="https://github.com/rice0208/Rings/compare">提交PR</a>，这有利于Rings的快速开发！</b><br>
-<a href="https://github.com/rice0208">rice0208</a> | <a href="https://github.com/rice0208/Rings">Rings</a><br>©Copyright rice0208 (2021)
-                </p>
-                <div style="height:130px;"></div>
+                <p class="big-3 text-main align-center">v0.2.0 (Beta)</p>
             </div>
         </div>
-        
-        
-
-        <script>
-            $(document).ready(function(){
-                if($.cookie('themelight')!=undefined){
-                    document.getElementsByTagName('body')[0].classList.remove('theme-dark');
-                    document.getElementsByTagName('body')[0].classList.remove('theme-light');
-                    if($.cookie('themelight')=='dark'){
-                        document.getElementsByTagName('body')[0].classList.add('theme-dark');
-                    }
-                    else if($.cookie('themelight')=='light'){
-                        document.getElementsByTagName('body')[0].classList.add('theme-light');
-                    }
-                }
-                else{
-                    $.cookie('themelight','light', { expires: 99999, path: '/' })
-                    document.getElementsByTagName('body')[0].classList.add('theme-light');
-                }
-            })
-        </script>
+        <div style="float:right;padding:0;padding-top:70px;padding-bottom:70px;" id="another">
+            <p class="big-5 text-bold full align-center">欢迎来到Rings！</p><div class="blank"></div>
+            <p class="align-center"><a href="docs/" class="btn btn-blue align-center">Read Documentation</a><a href="https://github.com/rice0208/Rings" class="btn btn-secondary-blue align-center" target="_blank">GitHub Repository</a><a href="https://flask-rings.readthedocs.io/en/latest/" target="_blank" class="btn btn-secondary-blue align-center">Flask-Rings</a></p>
+            <div class="blank"></div>
+            <div class="alert-box">Copy and use Rings: <code>&lt;link rel="stylesheet" src="https://cdn.jsdelivr.net/gh/rice0208/Rings/versions/latest/rings.min.css" /&gt;</code></div>
+            <h4>版本v0.2更新特性</h4>
+            <ol>
+                <li>改善并增加了按钮样式。<br>
+                </li>
+                <li>增加提示框功能。<br>
+                </li>
+                <li>由合作人员z-t-y提供的<a href="https://flask-rings.readthedocs.io/en/latest/">Flask-Rings</a>可用。</li>
+            </ol>
+        </div>
     </body>
 </html>

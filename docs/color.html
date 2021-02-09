@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="../rings.js"></script>
+    </head>
+    <body>
+            <fieldset style="padding:5%;margin:0;" id="rings-colors">
+                <legend><h3>Rings颜色<span class="tag tag-blue">v0.1.5</span></h3></legend>
+                <p>Rings提供了丰富的颜色表，让您在Web开发中总是能找到合适的颜色。</p>
+                <h4 id="basic_color">基本颜色<span class="tag tag-ok">v0.1.5</span></h4>
+                <table class="table-justified bordered">
+                    <tbody>
+                        <tr>
+                            <th>Rings颜色名</th><th>HEX(16进制)颜色值</th><th>预览</th>
+                        </tr>
+                        <tr><td>warning</td><td>#eebb22</td><td class="bg-warning"></td></tr>
+                        <tr><td>danger</td><td>#dd2244</td><td class="bg-danger"></td></tr>
+                        <tr><td>blue</td><td>#0365d9</td><td class="bg-blue"></td></tr>
+                        <tr><td>ok</td><td>#108a12</td><td class="bg-ok"></td></tr>
+                        <tr><td>info</td><td>#0a9f9e</td><td class="bg-info"></td></tr>
+                        <tr><td>dark</td><td>#303030</td><td class="bg-dark"></td></tr>
+                        <tr><td>gray</td><td>#707070</td><td class="bg-gray"></td></tr>
+                        <tr><td>light</td><td>#f0f0f0</td><td class="bg-light"></td></tr>
+                    </tbody>
+                </table>
+
+                <h4 id="detailed_color">具体的Rings颜色名<span class="tag tag-ok">v0.1.5</span></h4>
+                <table class="table-justified bordered">
+                    <tbody>
+                        <tr>
+                            <th>Rings颜色名</th><th>HEX(16进制)颜色值</th><th>不透明度</th><th>预览</th>
+                        </tr>
+                        <tr><td>warning-1</td><td>#a17e17</td><td>1</td><td class="bg-warning-1"></td></tr>
+                        <tr><td>warning-2</td><td>#BB921A</td><td>1</td><td class="bg-warning-2"></td></tr>
+                        <tr><td>warning-3</td><td>#eebb22</td><td>1</td><td class="bg-warning-3"></td></tr>
+                        <tr><td>warning-4</td><td>#FFD624</td><td>1</td><td class="bg-warning-4"></td></tr>
+                        <tr><td>warning-5</td><td>#FFE524</td><td>1</td><td class="bg-warning-5"></td></tr>
+                        <tr><td>warning-8</td><td>#eebb2255</td><td>.33</td><td class="bg-warning-8"></td></tr>
+                        <tr><td>warning-9</td><td>#eebb22aa</td><td>.66</td><td class="bg-warning-9"></td></tr>
+                        <tr><td>danger-1</td><td>#90162C</td><td>1</td><td class="bg-danger-1"></td></tr>
+                        <tr><td>danger-2</td><td>#AA1A34</td><td>1</td><td class="bg-danger-2"></td></tr>
+                        <tr><td>danger-3</td><td>#dd2244</td><td>1</td><td class="bg-danger-3"></td></tr>
+                        <tr><td>danger-4</td><td>#E72043</td><td>1</td><td class="bg-danger-4"></td></tr>
+                        <tr><td>danger-5</td><td>#F6254B</td><td>1</td><td class="bg-danger-5"></td></tr>
+                        <tr><td>danger-8</td><td>#dd224455</td><td>.33</td><td class="bg-danger-8"></td></tr>
+                        <tr><td>danger-9</td><td>#dd2244aa</td><td>.66</td><td class="bg-danger-9"></td></tr>
+                        <tr><td>blue-1</td><td>#001D3F</td><td>1</td><td class="bg-blue-1"></td></tr>
+                        <tr><td>blue-2</td><td>#024DA5</td><td>1</td><td class="bg-blue-2"></td></tr>
+                        <tr><td>blue-3</td><td>#0365d9</td><td>1</td><td class="bg-blue-3"></td></tr>
+                        <tr><td>blue-4</td><td>#02A0FF</td><td>1</td><td class="bg-blue-4"></td></tr>
+                        <tr><td>blue-5</td><td>#08C7FF</td><td>1</td><td class="bg-blue-5"></td></tr>
+                        <tr><td>blue-8</td><td>#0365d955</td><td>.33</td><td class="bg-blue-8"></td></tr>
+                        <tr><td>blue-9</td><td>#0365d9aa</td><td>.66</td><td class="bg-blue-9"></td></tr>
+                        <tr><td>ok-1</td><td>#073D08</td><td>1</td><td class="bg-ok-1"></td></tr>
+                        <tr><td>ok-2</td><td>#0A560B</td><td>1</td><td class="bg-ok-2"></td></tr>
+                        <tr><td>ok-3</td><td>#108a12</td><td>1</td><td class="bg-ok-3"></td></tr>
+                        <tr><td>ok-4</td><td>#14B016</td><td>1</td><td class="bg-ok-4"></td></tr>
+                        <tr><td>ok-5</td><td>#18D61B</td><td>1</td><td class="bg-ok-5"></td></tr>
+                        <tr><td>ok-8</td><td>#108a1255</td><td>.33</td><td class="bg-ok-8"></td></tr>
+                        <tr><td>ok-9</td><td>#108a12aa</td><td>.66</td><td class="bg-ok-9"></td></tr>
+                        <tr><td>info-1</td><td>#055251</td><td>1</td><td class="bg-info-1"></td></tr>
+                        <tr><td>info-2</td><td>#066C6B</td><td>1</td><td class="bg-info-2"></td></tr>
+                        <tr><td>info-3</td><td>#0a9f9e</td><td>1</td><td class="bg-info-3"></td></tr>
+                        <tr><td>info-4</td><td>#0CA9A4</td><td>1</td><td class="bg-info-4"></td></tr>
+                        <tr><td>info-5</td><td>#0ECBCA</td><td>1</td><td class="bg-info-5"></td></tr>
+                        <tr><td>info-8</td><td>#0a9f9e55</td><td>.33</td><td class="bg-info-8"></td></tr>
+                        <tr><td>info-9</td><td>#0a9f9eaa</td><td>.66</td><td class="bg-info-9"></td></tr>
+                        <tr><td>dark-0</td><td>#000000</td><td>1</td><td class="bg-dark-0"></td></tr>
+                        <tr><td>dark-1</td><td>#101010</td><td>1</td><td class="bg-dark-1"></td></tr>
+                        <tr><td>dark-2</td><td>#202020</td><td>1</td><td class="bg-dark-2"></td></tr>
+                        <tr><td>dark-3</td><td>#303030</td><td>1</td><td class="bg-dark-3"></td></tr>
+                        <tr><td>dark-8</td><td>#30303055</td><td>.33</td><td class="bg-dark-8"></td></tr>
+                        <tr><td>dark-9</td><td>#303030aa</td><td>.66</td><td class="bg-dark-9"></td></tr>
+                        <tr><td>gray-0</td><td>#404040</td><td>1</td><td class="bg-gray-0"></td></tr>
+                        <tr><td>gray-1</td><td>#505050</td><td>1</td><td class="bg-gray-1"></td></tr>
+                        <tr><td>gray-2</td><td>#606060</td><td>1</td><td class="bg-gray-2"></td></tr>
+                        <tr><td>gray-3</td><td>#707070</td><td>1</td><td class="bg-gray-3"></td></tr>
+                        <tr><td>gray-4</td><td>#808080</td><td>1</td><td class="bg-gray-4"></td></tr>
+                        <tr><td>gray-5</td><td>#909090</td><td>1</td><td class="bg-gray-5"></td></tr>
+                        <tr><td>gray-6</td><td>#a0a0a0</td><td>1</td><td class="bg-gray-6"></td></tr>
+                        <tr><td>gray-7</td><td>#b0b0b0</td><td>1</td><td class="bg-gray-7"></td></tr>
+                        <tr><td>gray-8</td><td>#70707055</td><td>.33</td><td class="bg-gray-8"></td></tr>
+                        <tr><td>gray-9</td><td>#707070aa</td><td>.66</td><td class="bg-gray-9"></td></tr>
+                        <tr><td>light-0</td><td>#c0c0c0</td><td>1</td><td class="bg-light-0"></td></tr>
+                        <tr><td>light-1</td><td>#d0d0d0</td><td>1</td><td class="bg-light-1"></td></tr>
+                        <tr><td>light-2</td><td>#e0e0e0</td><td>1</td><td class="bg-light-2"></td></tr>
+                        <tr><td>light-3</td><td>#f0f0f0</td><td>1</td><td class="bg-light-3"></td></tr>
+                        <tr><td>light-4</td><td>#ffffff</td><td>1</td><td class="bg-light-4"></td></tr>
+                        <tr><td>light-8</td><td>#f0f0f055</td><td>.33</td><td class="bg-light-8"></td></tr>
+                        <tr><td>light-9</td><td>#f0f0f0aa</td><td>.66</td><td class="bg-light-9"></td></tr>
+                    </tbody>
+                </table>
+                <h4 id="colors_main">颜色名main<span class="tag tag-warning">v0.1.5 - Developing</span></h4>
+                <p>有时在网站开发中会遇到这样的问题：<br>需要一个主题下所有颜色随着主题改变而改变，但在使用JavaScript改变时有时需要上百行代码。颜色名main可以解决这个问题。<br><br>
+                    更换全局主题只需要2行JavaScript代码(在Chrome或Microsoft Edge浏览器下尝试按<kbd>Ctrl+Shift+J</kbd>将它敲到调试区里试一试！)：
+                    <pre>javascript:document.getElementById("main_color").classList.remove("blue")<br>javascript:document.getElementById("main_color").classList.add("danger") // or blue, warning, ok, info</pre>
+                    相应的，在HTML中你想要更改的地方添加class：
+                    <pre>&lt;element class="blue"&gt;<br>    &lt;!-- ... --&gt;<br>&lt;/element&gt;</pre><br>
+                </p>
+                <table id="main_color" class="table-justified bordered">
+                    <tbody>
+                        <tr>
+                            <th>Rings颜色名</th><th>预览</th>
+                        </tr>
+                        <tr><td>main-1</td><td class="bg-main-1"></td></tr>
+                        <tr><td>main-2</td><td class="bg-main-2"></td></tr>
+                        <tr><td>main-3</td><td class="bg-main-3"></td></tr>
+                        <tr><td>main-4</td><td class="bg-main-4"></td></tr>
+                        <tr><td>main-5</td><td class="bg-main-5"></td></tr>
+                        <tr><td>main-8</td><td class="bg-main-8"></td></tr>
+                        <tr><td>main-9</td><td class="bg-main-9"></td></tr>
+                    </tbody>
+                </table>
+            </fieldset>
+    </body>
+</html>

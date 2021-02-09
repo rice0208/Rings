@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="../rings.js"></script>
+    </head>
+    <body>
+        <fieldset id="buttons">
+            <legend><h3>按钮样式<span class="tag tag-danger">v0.1.5 - Deprecated</span><span class="tag tag-warning">v0.2.0 - Developing</span></h3></legend>
+            互联网开发正在不断扁平化，平滑化——因此浏览器提供的按钮已经算是过时了。<br><button>我是一个过时的按钮</button>
+            <p>Rings使用了一系列自定义按钮样式。<br>通过给元素添加class <code>.btn-*</code> 从而添加自定义按钮样式。<br><br>有以下样式可选:</p><br>
+            <code class="blue">&nbsp;&nbsp;&nbsp;.btn.btn-blue</code><button class="btn btn-blue">我只是一个按钮</button><br>
+            <code class="danger">&nbsp;.btn.btn-danger</code><button class="btn btn-danger">我是一个危险的按钮</button><br>
+            <code class="warning">.btn.btn-warning</code><button class="btn btn-warning">我警告你，我可是一个按钮</button><br>
+            <code class="ok">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.btn.btn-ok</code><button class="btn btn-ok">我是一个按钮，一切都非常顺利</button><br>
+            <code class="info">&nbsp;&nbsp;&nbsp;.btn.btn-info</code><button class="btn btn-info">我是一个按钮，我有一些事情想告诉你</button><br>
+            <code class="gray">&nbsp;&nbsp;&nbsp;.btn.btn-dark</code><button class="btn btn-dark">我是一个很暗，很暗，很暗，很暗，非常暗的按钮</button><br>
+            <code class="gray">&nbsp;&nbsp;&nbsp;.btn.btn-gray</code><button class="btn btn-gray">我是一个没有楼上这么暗，而且看起来不怎么重要的按钮</button><br>
+            <code class="gray">&nbsp;&nbsp;.btn.btn-light</code><button class="btn btn-light">我是一个很明亮的按钮，但是通常不怎么显眼，不太引人注目</button><br>
+            <br>在v2.0.0以上的版本，有以下的新增按钮样式：<br>
+            <h5>Secondary按钮</h5>
+            <code>.btn.btn-secondary</code><button class="btn btn-secondary">Secondary</button><br>
+            <code>.btn.btn-secondary-blue</code><button class="btn btn-secondary-blue">Secondary-Blue</button><br>
+            <code>.btn.btn-secondary-danger</code><button class="btn btn-secondary-danger">Secondary-Danger</button><br>
+            <code>.btn.btn-secondary-warning</code><button class="btn btn-secondary-warning">Secondary-Warning</button><br>
+            <code>.btn.btn-secondary-ok</code><button class="btn btn-secondary-ok">Secondary-OK</button><br>
+            <code>.btn.btn-secondary-info</code><button class="btn btn-secondary-info">Secondary-Info</button><br>
+            <code>.btn.btn-secondary-dark</code><button class="btn btn-secondary-dark">Secondary-Dark</button><br>
+            <code>.btn.btn-secondary-gray</code><button class="btn btn-secondary-gray">Secondary-Gray</button><br>
+            <code>.btn.btn-secondary-light</code><button class="btn btn-secondary-light">Secondary-Light</button><br>
+            <h5>按钮大小</h5>
+            <code>.btn.btn-small</code><button class="btn btn-small">Small</button><br>
+            <code>.btn /* normal */</code><button class="btn">Normal</button><br>
+            <code>.btn.btn-large</code><button class="btn btn-large">Large</button>
+            <h5>Angular按钮</h5>
+            <code>.btn.btn-angular</code><button class="btn btn-angular">Angular</button><br>
+            <code>.btn.btn-angular-top</code><button class="btn btn-angular-top">Angular</button><br>
+            <code>.btn.btn-angular-bottom</code><button class="btn btn-angular-bottom">Angular</button><br>
+            <code>.btn.btn-angular-left</code><button class="btn btn-angular-left">Angular</button><br>
+            <code>.btn.btn-angular-right</code><button class="btn btn-angular-right">Angular</button><br>
+            <h5>按钮组</h5>
+            <pre>&lt;div class="btngroup"&gt;<br>    &lt;button class="btn btn-blue btn-angular-right"&gt;Hello&lt;/button&gt;<br>    &lt;button class="btn btn-light btn-angular"&gt;World&lt;/button&gt;<br>    &lt;button class="btn btn-light btn-angular-left"&gt;Rings!&lt;/button&gt;<br>&lt;/div&gt;</pre>
+            <div class="btngroup">
+                <button class="btn btn-blue btn-angular-right">Hello</button>
+                <button class="btn btn-light btn-angular">World</button>
+                <button class="btn btn-light btn-angular-left">Rings!</button>
+            </div>
+        </fieldset>
+    </body>
+</html>

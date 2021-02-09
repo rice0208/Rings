@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="../rings.js"></script>
+    </head>
+    <body>
+        <fieldset id="other">
+            <legend><h3>其它没有提到的class</h3></legend>
+            我们还有未提到的一些基本class，虽然不在前面的主要特性中，但还是比较实用的：
+            <br><b>.inline:</b>
+            <pre>.inline{display: inline-block;}</pre>
+            <b>.monospace:</b>
+            <pre>.mono,.monospace,.mono *,.monospace *{font-family:@font-mono;}</pre>
+            <b>.align-left,.align-right,.align-center:</b>
+            <br>这三个不说都知道。
+            <br><b>.float-*</b>
+            <pre>.float-right,.float-right *{float: right;}<br>.float-left,.float-right *{float: left;}</pre>
+            <b>text-*</b>
+            <pre>
+.text-light *,
+.text-light-1 *,
+.text-light,
+.text-light-1 {
+font-weight: 300 !important;
+}
+.text-light-2 *,
+.text-light-2 {
+font-weight: 100 !important;
+}
+.text-normal *,
+.text-normal {
+font-weight: 400 !important;
+}
+.text-bold *,
+.text-bold-1 *,
+.text-bold,
+.text-bold-1 {
+font-weight: 700 !important;
+}
+.text-bold-2 *,
+.text-bold-2 {
+font-weight: 900 !important;
+}
+            </pre>
+            <b>.lowercase , .uppercase , .caps</b>
+            <pre>
+.lowercase *,
+.lowercase {
+text-transform: lowercase !important;
+}
+.uppercase *,
+.uppercase {
+text-transform: uppercase !important;
+}
+.caps *,
+.caps {
+text-transform: capitalize !important;
+}</pre>
+            <b>.small , .big</b>
+            <pre>.small-1,.small{font-size: 85%;}
+.small-2{font-size: 72%;}
+.small-3{font-size: 60%;}
+.small-4{font-size: 50%;}
+.small-5{font-size: 42%;}
+.big-1,.big{font-size: 115%;}
+.big-2{font-size: 125%;}
+.big-3{font-size: 150%;}
+.big-4{font-size: 190%;}
+.big-5{font-size: 250%;}</pre>
+            <b>以及一些不太用得上的：</b>
+            <pre>
+.fixed{position:fixed}
+.flex-box{display:flex}
+.block{overflow:hidden;-ms-overflow-style:scrollbar;}
+.full{
+float:left;
+width:100%;
+}
+.no-selected{
+user-select:none;
+-ms-user-select:none;
+-webkit-user-select:none;
+-moz-user-select:none;
+}</pre>
+        </fieldset>
+        <p class="big-5 text-bold-2 uppercase align-center">to be continued...</p>
+        <p class="align-center"><b>Rings在不断地开发成长，欢迎大家及时<a href="https://github.com/rice0208/Rings/issues/new">提交Issue</a>或<a href="https://github.com/rice0208/Rings/compare">提交PR</a>，这有利于Rings的快速开发！</b><br>
+<a href="https://github.com/rice0208">rice0208</a> | <a href="https://github.com/rice0208/Rings">Rings</a><br>©Copyright rice0208 (2021)
+        </p>
+        <div style="height:130px;"></div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+        <script src="../rings.js"></script>
+    </head>
+    <body>
+        <fieldset id="code_pre">
+            <legend><h3> <code>&lt;code&gt;</code> 与 <code>&lt;pre&gt;</code> <span class="tag tag-ok">v0.1.5</span></h3></legend>
+            在Rings中，<code>&lt;code&gt;</code> 标签与 <code>&lt;pre&gt;</code> 标签可以设置多种颜色。
+            <br><br><b>第一种方式：通过直接添加class来更换</b><br>
+            <br>以 <code>&lt;code&gt;</code> 标签为例，我们有了这样一行代码：<br>
+            <pre>&lt;code&gt;print('Hello World')&lt;/code&gt;</pre>
+            输出元素：
+            <br><br><code>print('Hello World')</code><br><br>但当我们向标签添加class时：
+            <pre>&lt;code class="danger"&gt;print('Hello World')&lt;/code&gt;</pre>
+            输出元素：
+            <br><br><code class="danger">print('Hello World')</code>
+            <br><br><b>第二种方式：通过更改父元素的main主题色来更换</b><br>
+            相对来说，第一种方式比较适合单个元素，而第二种方式更适合一整块元素的属性设置。
+            <br>还是以code标签为例：
+            <pre>&lt;div&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;print('Hello World')&lt;/code&gt;<br>&lt;/div&gt;</pre>
+            输出同上。<br><br>当我们往父元素（即示例中的div）添加class时：
+            <pre>&lt;div class="info"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;print('Hello World')&lt;/code&gt;<br>&lt;/div&gt;</pre>
+            输出元素：<br><br><div class="info">
+                <code>print('Hello World')</code>
+            </div>
+            
+            <br><br>
+            <b>*注1：code支持blue,danger,warning,danger,info和gray.</b><br>
+            <b>*注2：虽然这两种方法在code元素上都达到了目的，几乎没有区别，但是我们还是想强调一下一个小细节：当你选取元素中的内容时，你会发现code选取的颜色是父元素的main-3。因此第一种的颜色是blue-3，而第二种则是info-3，如果谁往里面放了 <code>a</code> 标签，也是一个样。关于它的原因我们将在后面介绍。</b>
+        </fieldset>
+    </body>
+</html>

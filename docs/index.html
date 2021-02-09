@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>Rings中文文档</title>
+        <link rel="stylesheet" href="../rings.min.css" />
+        <link rel="shortcut icon" href="../rings.svg" />
+        <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/0.2.0/popper.min.js"></script>
+        <script src="../rings.js"></script>
+        <style>
+            #contents{
+                padding:2%!important;
+            }
+            @media screen and (min-width: 992px){
+                #contents{
+                    width: 19%;
+                    padding-right:0;
+                }
+            }
+            @media screen and (max-width: 992px){
+                #contents{
+                    visibility: hidden;
+                    left: -30%
+                }
+            }
+            table *{
+                z-index:1!important;
+            }
+            #btn{
+                padding:0!important;
+            }
+            @media screen and (min-width:992px){
+                #frames{width:74%;}
+                #btn{width:77%;left:23%;}
+            }
+            @media screen and (max-width:992px){
+                #frames{width:100%;}
+                #btn{width:100%;}
+            }
+        </style>
+    </head>
+    <body class="theme-light">
+        <div class="bg-theme-4 no-selected" id="contents" style="position:fixed;height:calc(94% + 60px);padding-top:60px;padding:0;z-index:200000!important;">
+            <div>
+                <h2>目录</h2>
+                <a href="../">HOME</a>
+                <ul style="height:calc(94% - 140px);overflow:auto;position: absolute;padding-right:3%"><a href="javascript:void(0)">Docs</a>
+                    <li><a href="javascript:jumpTo(0)">概述</a></li>
+                    <li><a href="javascript:jumpTo(1)">Rings颜色</a></li>
+                    <li><a href="javascript:jumpTo(2)">背景色与字体色</a></li>
+                    <li><a href="javascript:jumpTo(3)">按钮样式</a></li>
+                    <li><a href="javascript:jumpTo(4)">文字标签</a></li>
+                    <li><a href="javascript:jumpTo(5)">代码块</a></li>
+                    <li><a href="javascript:jumpTo(6)">提示框</a></li>
+                    <li><a href="javascript:jumpTo(7)">Rings表格</a></li>
+                    <li><a href="javascript:jumpTo(8)">表单控件</a></li>
+                    <li><a href="javascript:jumpTo(9)">其他没有提到的class</a></li>
+                    <li><b>源代码</b>
+                        <ul>
+                            <li>v0.1.5<ul>
+                                    <li><a href="https://github.com/rice0208/Rings/blob/master/versions/0.1.5/Rings-less.less" target="_blank">Less.js</a></li>
+                                    <li><a href="https://github.com/rice0208/Rings/blob/master/versions/0.1.5/rings-less.css" target="_blank">CSS</a></li>
+                                    <li><a href="https://github.com/rice0208/Rings/blob/master/versions/0.1.5/rings.min.css" target="_blank">Compressed CSS</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="fixed" style="right:30px;top:125px;">©Copyright rice0208 (2021)</div>
+
+        <iframe id="frames" src="demo.html" style="position:fixed;right:0;height:calc(100% - 100px);top:100px;">你的浏览器不支持iframe标签。</iframe>
+
+        <script type="text/javascript">
+            var list = ["demo.html",
+                        "color.html",
+                        "bg_text.html",
+                        "buttons.html",
+                        "tags.html",
+                        "code.html",
+                        "alert_box.html",
+                        "tables.html",
+                        "forms.html",
+                        "others.html"
+                    ];
+            function prev(){
+                index = list.indexOf(document.getElementById("frames").getAttribute("src"))
+                if (index == -1){
+                    window.location.replace("/")
+                }else if (index == 0){
+                    alert("已经到顶了！")
+                }else{
+                    document.getElementById("frames").setAttribute("src",list[index - 1])
+                }
+            }
+            function next(){
+                index = list.indexOf(document.getElementById("frames").getAttribute("src"))
+                if (index == -1){
+                    window.location.replace("/")
+                }else if (index == list.length - 1){
+                    alert("已经到顶了！")
+                }else{
+                    document.getElementById("frames").setAttribute("src",list[index + 1])
+                }
+            }
+            function jumpTo(index){
+                document.getElementById("frames").setAttribute("src",list[index])
+            }
+        </script>
+
+        <div id="main-content" style="top:55px;overflow:scroll;">
+            <div id="btn" style="position:fixed;height:100px;display:flex;top:0">
+                <a style="flex:1;" class="btn btn-light btn-angular" href="javascript:prev()">
+                    <h2 style="position:absolute;left:90px;top:10px;">Prev</h4>
+                </a>
+                <a style="flex:1;" class="btn btn-light btn-angular" href="javascript:next()">
+                    <h2 style="position:absolute;right:90px;top:10px;">Next</h4>
+                </a>
+            </div>
+        </div>
+        
+        
+        
+    </body>
+</html>
