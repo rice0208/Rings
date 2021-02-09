@@ -3,6 +3,3 @@
     Style Sheet v0.2.0-beta (js)
     (Rings stands for 'Rings Is Not GROSS Stuff')
 */
-
-const { createPopper } = Popper
-
